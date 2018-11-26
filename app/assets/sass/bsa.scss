@@ -356,7 +356,7 @@ td.strong {
     height: 24px;
   }
   [type=radio] + label::after {
-    left: 17px;
+    left: 29px;
     top: 17px;
     border: 7px solid;
   }
@@ -386,6 +386,7 @@ td.strong {
   label {
     margin-top: 5px;
     margin-left: 52px;
+    margin-bottom: 5px;
   }
 }
 

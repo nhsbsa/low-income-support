@@ -1,0 +1,46 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+  NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+  <!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<main id="content" role="main">
+
+    <div class="phase-banner">
+      <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service 
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+      </p> 
+    </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+        <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+        <header class="page-header">
+            <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-xlarge">You can't apply online yet</h1>
+            <h2 class="heading-medium">This service is still being developed</h2>
+        </header>      
+      
+        <p>Based on your circumstances, you can't apply online yet. Instead, you can apply using a paper form called an HC1.</p>
+
+      <p>You can <a href="https://www.nhsbsa.nhs.uk/nhs-low-income-scheme" target="_blank">download an HC1</a> or get one from Jobcentres, GP practices, pharmacies and Citizens Advice centres.</p>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
