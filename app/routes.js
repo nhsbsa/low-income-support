@@ -10,6 +10,7 @@ router.get('/', function (req, res) {
 
 module.exports = router
 
+
 // ************************
 // GLOBAL VARIABLES
 // ************************
@@ -38,20 +39,57 @@ router.get(/applyonline-handler/, function (req, res) {
 router.get(/partner-handler/, function (req, res) {
   if (req.query.partner == 'yes') {
     applicant.partner = true;
-    res.redirect('/beforeyoustart/money-from-these');
+    res.redirect('/beforeyoustart/money-from-these-partner');
   } else if (req.query.partner == 'no') {
     applicant.partner = false;
-    res.redirect('/beforeyoustart/money-from-these');
+    res.redirect('/beforeyoustart/money-from-these-single');
   }
 });
 
-router.get(/moneyfromthese-handler/, function (req, res) {
-  if (req.query.moneyfromthese == 'yes') {
-    res.redirect('/kickouts/developed');
-  } else if (req.query.moneyfromthese == 'no') {
-    res.redirect('/beforeyoustart/answers');
+router.get(/whatispartnersincome-handler/, function (req, res) {
+  if (req.query.incomepartner == 'earned-income' &&  req.query.incomepartner == 'benefits-income') {
+    res.redirect('../kickouts/apply-offline');
+  } else if (req.query.incomepartner == 'benefits-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner == 'pension-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner == 'maintenance-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner == 'nil-income') {
+    res.redirect('../kickouts/developed');
+  } 
+});
+
+router.get(/whatissingleincome-handler/, function (req, res) {
+  if (req.query.incomesingle == 'earned-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'benefits-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'maintenance-income') {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle == 'nil-income') {
+    res.redirect('../kickouts/developed');
   }
 });
+
+/*
+router.get(/incomepartner-handler/, function (req, res) {
+  if (req.query.partnerincometype.includes('earned-income')) {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.partnerincometype.includes('benefits-income')) {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.partnerincometype.includes('pension-income')) {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.partnerincometype.includes('maintenance-income')) {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.partnerincometype.includes('nil-income')) {
+    res.redirect('/kickouts/developed');
+  }
+});
+*/
+
 
 // ************************
 // INCOME & OTHER MONEY
@@ -74,20 +112,6 @@ router.get(/incometype-handler/, function (req, res) {
   }
 });
 */
-
-router.get(/incometype-handler/, function (req, res) {
-  if (req.query.incometype.includes('earned-income')) {
-    res.redirect('../income/paye/job-title');
-  } else if (req.query.incometype.includes('benefits-income')) {
-    res.redirect('../income/benefits');
-  } else if (req.query.incometype.includes('pension-income')) {
-    res.redirect('../income/pension');
-  } else if (req.query.incometype.includes('maintenance-income')) {
-    res.redirect('../income/maintenance');
-  } else if (req.query.incometype.includes('nil-income')) {
-    res.redirect('../income/none');
-  }
-});
 
 router.get(/jobtitle-handler/, function (req, res) {
   res.redirect('../paye/job-recent');
