@@ -299,3 +299,27 @@ router.get(/taxcredittype-handler/, function (req, res) {
 router.get(/otherbenefits-handler/, function (req, res) {
   res.redirect('../benefits/answers');
 });
+
+// ************************
+// MONEY FROM OTHER SOURCES
+// ************************
+
+router.get(/howpaying-handler/, function (req, res) {
+  if (req.query.howpaying == 'money from friends or family') {
+    res.redirect('../none/none-how-much');
+  } else if (req.query.howpaying == 'savings') {
+    res.redirect('../none/none-how-much');
+  } else if (req.query.howpaying == 'donations') {
+    res.redirect('../none/none-how-much');
+  } else if (req.query.howpaying == 'none of these') {
+    res.redirect('../none/none-how-supporting');
+  }
+});
+
+router.get(/nonehowsupporting-handler/, function (req, res) {
+  res.redirect('../none/none-how-much');
+});
+
+router.get(/nonehowmuch-handler/, function (req, res) {
+  res.redirect('../none/answers');
+});
