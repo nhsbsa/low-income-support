@@ -1,6 +1,7 @@
 {% extends "layout_bsa.html" %}
 {% block page_title %}
-NHS Prescription Payment exemption{% endblock %}
+Apply for help to pay NHS costs
+{% endblock %}
 {% block content %}
 <style>
     .versions-prod:before {
@@ -110,7 +111,7 @@ NHS Prescription Payment exemption{% endblock %}
                 <span class="visually-hidden">Warning</span>
             </i>
             <strong class="bold-small">
-                This page should be ignored for development purposes.
+                This page is a PROTOTYPE and therefore is not as robust as the live service
             </strong>
         </div>
     </div>
@@ -175,29 +176,29 @@ NHS Prescription Payment exemption{% endblock %}
                 </div>
                 <div class="column-two-thirds">
                     <div class="versions-prod">
-                        <h3 class="heading-medium" style="margin-top:0;">Earnings: Single Applicants (PAYE, Benefits,
+                        <h3 class="heading-medium" style="margin-top:0;">Earnings: Single & Partner Applicants (PAYE, Benefits,
                             Pensions, Maintenance Payments & Nil Income)</h3>
                         <h4 class="heading-small">Hypothesis</h4>
                         <p style="background: #DEE0E2; padding: 10px; margin-top:15px;">We believe that allowing
-                            applicants to submit evidence of their earnings (PAYE, Benefits, Pensions, Maintenance
-                            Payments & Trust Funds) via email and post will be a useful feature for applicants.</p>
+                            applicants to submit evidence of their income (PAYE & Benefits) via email and post will be a useful feature for applicants.</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
                             <li>Changed 'Before Your Start' section to grant access to PAYE, Benefits, Pensions,
                                 Maintenance Payments & Nil Income applicants (single & partner applicants).</li>
-                            <li>Added in PAYE user journeys for single and partner applicants.</li>
-                            <li>Added in Benefits for single and partner applicants.</li>
-                            <li>Amended Pensions user journeys for single and partner applicants.</li>
-                            <li>Added Maintenance Payments user journeys for single and partner applicants.</li>
-                            <li>Added in Nil Income user journeys for single and partner applicants.</li>
-                            <li>Added in option of choosing how evidence is sent (email or post) for single and partner
+                            <li>Added in new sections to task list (About your income & About your partners income).</li>
+                            <li>Added in PAYE journey for single and partner applicants.</li>
+                            <li>Amended Benefits journey to include Universal Credit & Working Tax Credit questions for single and partner applicants.</li>
+                            <li>Amended Pensions journey for single and partner applicants.</li>
+                            <li>Added Maintenance Payments journey for single and partner applicants.</li>
+                            <li>Added in Nil Income user journey for single and partner applicants.</li>
+                            <li>If a user enters an email address, we give them the option of whether they would like to submit their evidence by email or post, otherwise we ask them to submit it by post. Available for both single and partner
                                 applicants.</li>
                         </ul>
                         <h4 class="heading-small">What we plan to test:</h4>
                         <ul class="list list-bullet">
                             <li>Whether applicants (single & partner) can successfully navigate through the PAYE,
                                 Benefits, Pensions, Maintenance Payments & Nil Income workflow and choose how they wish
-                                to supply evidence of their income.</li>
+                                to supply evidence of their income (if required).</li>
                             <li>Whether assessors are satisfied that the following journey gives them all of the
                                 required information for single and partner applicants.</li>
                         </ul>
@@ -207,13 +208,14 @@ NHS Prescription Payment exemption{% endblock %}
                                 the majority still liked the perceived security of sending in evidence by post.</li>
                         </ul>
                         <hr>
-                        <h4 class="heading-small">Known Issues</h4>
+                        <h4 class="heading-medium">Known Issues</h4>
                         <ul class="list list-bullet">
-                            <li>Prototype only includes new / amended screens.</li>
+                            <li>Prototype only includes new / amended screens and is <strong style="font-weight: bold; text-decoration: underline;">not</strong> a true representation of the entire service.</li>
                             <li>No error messages in the prototype.</li>
-                            <li>Uses dummy data on final summary screens.</li>
+                            <li>Uses dummy data on final 'check your answer' screens.</li>
                         </ul>
-                        <a href="apply/apply-online-invite"><input class="button" type="submit" value="Specific Journey"></a><br><br>
+                        <br>
+                        <a href="apply/apply-online-invite"><input class="button" type="submit" value="Full Journey"></a><br><br>
                     </div>
                 </div>
             </div>
