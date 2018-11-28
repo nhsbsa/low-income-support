@@ -47,12 +47,12 @@ router.get(/partner-handler/, function (req, res) {
 });
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
-  if (req.query.incomepartner == 'earned-income' &&  req.query.incomepartner == 'benefits-income') {
-    res.redirect('../kickouts/apply-offline');
+  if (req.query.incomepartner == 'earned-income') {
+    res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner == 'benefits-income') {
-    res.redirect('../kickouts/developed');
+    res.redirect('/beforeyoustart/money-from-these-single');
   } else if (req.query.incomepartner == 'pension-income') {
-    res.redirect('../kickouts/developed');
+    res.redirect('/beforeyoustart/money-from-these-single');
   } else if (req.query.incomepartner == 'maintenance-income') {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner == 'nil-income') {
@@ -64,9 +64,9 @@ router.get(/whatissingleincome-handler/, function (req, res) {
   if (req.query.incomesingle == 'earned-income') {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle == 'benefits-income') {
-    res.redirect('../kickouts/developed');
+    res.redirect('/beforeyoustart/answers');
   } else if (req.query.incomesingle == 'pension-income') {
-    res.redirect('../kickouts/developed');
+    res.redirect('/beforeyoustart/answers');
   } else if (req.query.incomesingle == 'maintenance-income') {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle == 'nil-income') {
@@ -92,10 +92,8 @@ router.get(/incomepartner-handler/, function (req, res) {
 
 
 // ************************
-// INCOME & OTHER MONEY
-// ************************
-
 // PAYE
+// ************************
 
 /* 
 router.get(/incometype-handler/, function (req, res) {
@@ -210,4 +208,70 @@ router.get(/jobpersonalpensionanother-handler/, function (req, res) {
   } else if (req.query.jobpersonalpensionanother == 'no') {
     res.redirect('../../answers');
   }
+});
+
+// ************************
+// PENSIONS
+// ************************
+
+router.get(/pensiontitle-handler/, function (req, res) {
+  res.redirect('../pension/pension-how-often');
+});
+
+router.get(/pensionhowoften-handler/, function (req, res) {
+  if (req.query.pensionhowoften == 'every week' || req.query.pensionhowoften == 'every 2 weeks' || req.query.pensionhowoften == 'every 4 weeks' || req.query.pensionhowoften == 'every calendar month' || req.query.pensionhowoften == 'every 13 weeks (quarterly)' || req.query.pensionhowoften == 'once a year') {
+    res.redirect('pension-how-much');
+  } else {
+    res.redirect('pension-how-often');
+  }
+});
+
+router.get(/personalpensionhowmuch-handler/, function (req, res) {
+  res.redirect('pension-another');
+});
+
+router.get(/personalpensionanother-handler/, function (req, res) {
+  if (req.query.personalpensionanother == 'yes') {
+    res.redirect('pension-name');
+  } else if (req.query.personalpensionanother == 'no') {
+    res.redirect('answers');
+  }
+});
+
+// ************************
+// BENEFITS
+// ************************
+
+router.get(/universalcredit-handler/, function (req, res) {
+  if (req.query.universalcredit == 'yes') {
+    res.redirect('../benefits/tax-credits');
+  } if (req.query.universalcredit == 'no') {
+    res.redirect('../benefits/tax-credits');
+  } else if (req.query.universalcredit == 'not-yet') {
+    res.redirect('../benefits/tax-credits');
+  }
+});
+
+router.get(/taxcredits-handler/, function (req, res) {
+  if (req.query.taxcredits == 'yes') {
+    res.redirect('../benefits/tax-credits-type');
+  } else if (req.query.taxcredits == 'no') {
+    res.redirect('../benefits/other-benefits');
+  }
+});
+
+router.get(/taxcredittype-handler/, function (req, res) {
+  if (req.query.taxcredittype == 'WTCCTC') {
+    res.redirect('../benefits/other-benefits');
+  } if (req.query.taxcredittype == 'WTCDisability') {
+    res.redirect('../benefits/other-benefits');
+  } if (req.query.taxcredittype == 'WTC') {
+    res.redirect('../benefits/other-benefits');
+  } else if (req.query.taxcredittype == 'CTC') {
+    res.redirect('../benefits/other-benefits');
+  }
+});
+
+router.get(/otherbenefits-handler/, function (req, res) {
+  res.redirect('../benefits/answers');
 });
