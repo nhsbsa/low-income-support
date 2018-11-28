@@ -47,31 +47,55 @@ router.get(/partner-handler/, function (req, res) {
 });
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
-  if (req.query.incomepartner == 'earned-income') {
+  if (req.query.incomepartner.includes('earned-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner == 'benefits-income') {
     res.redirect('/beforeyoustart/money-from-these-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
+    res.redirect('/beforeyoustart/money-from-these-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/beforeyoustart/money-from-these-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/money-from-these-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/money-from-these-single');
   } else if (req.query.incomepartner == 'pension-income') {
     res.redirect('/beforeyoustart/money-from-these-single');
-  } else if (req.query.incomepartner == 'maintenance-income') {
-    res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner == 'nil-income') {
-    res.redirect('../kickouts/developed');
+    res.redirect('/beforeyoustart/money-from-these-single');
   } 
 });
 
 router.get(/whatissingleincome-handler/, function (req, res) {
-  if (req.query.incomesingle == 'earned-income') {
+  if (req.query.incomesingle.includes('earned-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle == 'benefits-income') {
     res.redirect('/beforeyoustart/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
+    res.redirect('/beforeyoustart/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/beforeyoustart/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/answers');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/answers');
   } else if (req.query.incomesingle == 'pension-income') {
     res.redirect('/beforeyoustart/answers');
-  } else if (req.query.incomesingle == 'maintenance-income') {
-    res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle == 'nil-income') {
-    res.redirect('../kickouts/developed');
-  }
+    res.redirect('/beforeyoustart/answers');
+  } 
 });
 
 /*
