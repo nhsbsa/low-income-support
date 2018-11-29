@@ -323,3 +323,11 @@ router.get(/nonehowsupporting-handler/, function (req, res) {
 router.get(/nonehowmuch-handler/, function (req, res) {
   res.redirect('../none/answers');
 });
+
+// ************************
+// SUBMIT APPLICATION
+// ************************
+
+router.get(/evidencebyemail-handler/, function (req, res) {
+  res.redirect('../submit/declaration');
+});
