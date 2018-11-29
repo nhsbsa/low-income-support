@@ -40,7 +40,7 @@ NHSBSA Prototype
             <h2 class="heading-small">Live permanently in a care home</h2>
           </dt>
           <dd class="cya-answer">
-              <p>No</p>
+            <p>No</p>
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -51,14 +51,14 @@ NHSBSA Prototype
 
         <div>
           <dt class="cya-question">
-              <h2 class="heading-small">Live with a partner</h2>
+            <h2 class="heading-small">Live with a partner</h2>
           </dt>
           <dd class="cya-answer">
-              {% if data['partner'] == "no" %}
-              <p>No</p>
-              {% else %}
-              <p>Yes</p>
-              {% endif %}
+            {% if data['partner'] == "no" %}
+            <p>No</p>
+            {% else %}
+            <p>Yes</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -69,10 +69,10 @@ NHSBSA Prototype
 
         <div>
           <dt class="cya-question">
-              <h2 class="heading-small">Claimed asylum</h2>
+            <h2 class="heading-small">Claimed asylum</h2>
           </dt>
           <dd class="cya-answer">
-              <p>No</p>
+            <p>No</p>
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -83,10 +83,30 @@ NHSBSA Prototype
 
         <div>
           <dt class="cya-question">
-              <h2 class="heading-small">Self-Employed or receive Trust Funds</h2>
+            <h2 class="heading-small">You receive income from </h2>
           </dt>
           <dd class="cya-answer">
-              <p>No</p>
+            {% if "earned-income" in data['incomesingle'] %}
+            Wages from a job<br>
+            {% endif %}
+            {% if "benefits-income" in data['incomesingle'] %}
+            Benefits or tax credits<br>
+            {% endif %}
+            {% if "pension-income" in data['incomesingle'] %}
+            Pensions (state, work, private)<br>
+            {% endif %}
+            {% if "maintenance-income" in data['incomesingle'] %}
+            Maintenance payments from an ex-partner<br>
+            {% endif %}
+            {% if "selfemployed-income" in data['incomesingle'] %}
+            Self-employment<br>
+            {% endif %}
+            {% if "trustfunds-income" in data['incomesingle'] %}
+            Trust funds<br>
+            {% endif %}
+            {% if "nil-income" in data['incomesingle'] %}
+            Other source
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -95,12 +115,49 @@ NHSBSA Prototype
           </dd>
         </div>
 
+
+        {% if data['partner'] == "yes" %}
         <div>
           <dt class="cya-question">
-              <h2 class="heading-small">Have more than £6,000</h2>
+            <h2 class="heading-small">Your partner receives income from </h2>
           </dt>
           <dd class="cya-answer">
-              <p>No</p>
+            {% if "earned-income" in data['incomepartner'] %}
+            Wages from a job<br>
+            {% endif %}
+            {% if "benefits-income" in data['incomepartner'] %}
+            Benefits or tax credits<br>
+            {% endif %}
+            {% if "pension-income" in data['incomepartner'] %}
+            Pensions (state, work, private)<br>
+            {% endif %}
+            {% if "maintenance-income" in data['incomepartner'] %}
+            Maintenance payments from an ex-partner<br>
+            {% endif %}
+            {% if "selfemployed-income" in data['incomepartner'] %}
+            Self-employment<br>
+            {% endif %}
+            {% if "trustfunds-income" in data['incomepartner'] %}
+            Trust funds<br>
+            {% endif %}
+            {% if "nil-income" in data['incomepartner'] %}
+            Other source
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+        {% endif %}
+
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">Have more than £6,000</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p>No</p>
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -111,7 +168,7 @@ NHSBSA Prototype
 
         <div>
           <dt class="cya-question">
-              <h2 class="heading-small">In education or training</h2>
+            <h2 class="heading-small">In education or training</h2>
           </dt>
           <dd class="cya-answer">
             <p>No</p>
@@ -128,10 +185,10 @@ NHSBSA Prototype
       <br>
 
       <div class="form-group">
-          <a href="/apply/task-list/task-list"><input class="button" type="submit" value="Next"></a>
+        <a href="/apply/task-list/task-list"><input class="button" type="submit" value="Next"></a>
       </div>
 
-      
+
 
     </div>
   </div>
