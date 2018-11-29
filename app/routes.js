@@ -19,6 +19,7 @@ var applicantMaster = require('./applicant.js');
 var applicant = applicantMaster.createApplicant();
 
 applicant.partner = null;
+applicant.maintenancefor = null;
 
 // ************************
 // PRE-APPLY
@@ -261,6 +262,42 @@ router.get(/personalpensionanother-handler/, function (req, res) {
     res.redirect('answers');
   }
 });
+
+// ************************
+// MAINTENANCE PAYMENTS
+// ************************
+
+router.get(/maintenancefor-handler/, function (req, res) {
+  if (req.query.maintenancefor == 'for you') {
+    applicant.maintenancefor = 'for you';
+    res.redirect('../maintenance/maintenance-how-often');
+  } if (req.query.maintenancefor == 'for your children') {
+    applicant.maintenancefor = 'for your children';
+    res.redirect('../maintenance/answers');
+  } else if (req.query.maintenancefor == 'both of the above') {
+    applicant.maintenancefor = 'both of the above';
+    res.redirect('../maintenance/maintenance-how-often');
+  }
+});
+
+router.get(/maintenancehowoften-handler/, function (req, res) {
+  if (applicant.maintenancefor == 'for you') {
+    res.redirect('../maintenance/maintenance-how-much-you');
+  } else if (applicant.maintenancefor == 'both of the above') {
+    res.redirect('../maintenance/maintenance-how-much-you-only');
+  } 
+});
+
+router.get(/maintenanceyouhowmuch-handler/, function (req, res) {
+  res.redirect('../maintenance/answers');
+});
+
+router.get(/maintenanceyouonlyhowmuch-handler/, function (req, res) {
+  res.redirect('../maintenance/answers');
+});
+
+
+
 
 // ************************
 // BENEFITS

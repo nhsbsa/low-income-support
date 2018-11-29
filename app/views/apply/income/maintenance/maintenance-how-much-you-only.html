@@ -30,25 +30,29 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your job title?</h1>
+        <p class="page-header--sub heading-secondary">Maintenance payments from an ex-partner</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much of your maintenance {{ data['maintenancehowoften'] }} is for you only?</h1>
       </header>
 
-      <br>
-
-      <form action="jobtitle-handler" method="get" class="form">
+      <form action="maintenanceyouonlyhowmuch-handler" method="get" class="form">
 
         <div class="form-group">
-          <label class="form-label" for="jobtitle"></label>
-          <input class="form-control" id="jobtitle" name="jobtitle" type="text">
+
+          <fieldset class="inline">
+
+              <p class="form-hint">The amount must include pence. For example, £146.20</p>
+              <span class="heading-medium">£</span>
+              <input class="form-control form-control-1-4" id="pay" name="maintenanceyouonlyhowmuch" type="text">
+
+          </fieldset>
+
         </div>
 
         <div class="form-group">
-            <input class="button" type="submit" value="Next">
+          <input class="button" type="submit" value="Next">
         </div>
 
       </form>
-
     </div>
   </div>
 </main>

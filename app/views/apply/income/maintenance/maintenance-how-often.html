@@ -30,42 +30,45 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How often are you paid?</h1>
+        <p class="page-header--sub heading-secondary">Maintenance payments from an ex-partner</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How often do you receive maintenance payments?</h1>
       </header>
 
       <br>
 
-      <form action="joboften-handler" method="get" class="form">
+      <form action="maintenancehowoften-handler" method="get" class="form">
 
           <div class="form-group">
               <fieldset>
       
                   <div class="multiple-choice">
-                      <input id="everyweek" type="radio" name="joboften" value="every week">
+                      <input id="everyweek" type="radio" name="maintenancehowoften" value="every week">
                       <label for="everyweek" id="everyweek" class=" block-label" style="line-height: 195%;">Every week</label>
                   </div>
       
                   <div class="multiple-choice">
-                      <input id="everytwo" type="radio" name="joboften" value="every 2 weeks">
+                      <input id="everytwo" type="radio" name="maintenancehowoften" value="every 2 weeks">
                       <label for="everytwo" id="everytwo" class=" block-label" style="line-height: 195%;">Every 2 weeks</label>
                   </div>
       
                   <div class="multiple-choice">
-                      <input id="everyfour" type="radio" name="joboften" value="every 4 weeks">
+                      <input id="everyfour" type="radio" name="maintenancehowoften" value="every 4 weeks">
                       <label for="everyfour" id="everyfour" class=" block-label" style="line-height: 195%;">Every 4 weeks</label>
                   </div>
       
                   <div class="multiple-choice">
-                      <input id="everycalendar" type="radio" name="joboften" value="every calendar month">
+                      <input id="everycalendar" type="radio" name="maintenancehowoften" value="every calendar month">
                       <label for="everycalendar" id="everycalendar" class=" block-label" style="line-height: 195%;">Every calendar month</label>
                   </div>
-      
-                  <p class="form-block">or</p>
+
+                  <div class="multiple-choice">
+                        <input id="everyquarter" type="radio" name="maintenancehowoften" value="every 13 weeks (quarterly)">
+                        <label for="everyquarter" id="everyquarter" class=" block-label" style="line-height: 195%;">Every 13 weeks (quarterly)</label>
+                    </div>
       
                   <div class="multiple-choice">
-                      <input id="itvaries" type="radio" name="joboften" value="it varies">
-                      <label for="itvaries" id="itvaries" class=" block-label" style="line-height: 195%;">It varies</label>
+                      <input id="onceayear" type="radio" name="maintenancehowoften" value="once a year">
+                      <label for="onceayear" id="onceayear" class=" block-label" style="line-height: 195%;">Once a year</label>
                   </div>
                   
       
