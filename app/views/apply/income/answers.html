@@ -6,7 +6,7 @@ NHSBSA Prototype
 
 {% block content %}
 <style>
-#capitalize::first-letter {
+  #capitalize::first-letter {
     text-transform: uppercase;
 }
 </style>
@@ -28,8 +28,6 @@ NHSBSA Prototype
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
       </header>
 
-      {% if "earned-income" in data['incometype'] %}
-
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
         Income from a job
@@ -40,15 +38,28 @@ NHSBSA Prototype
       <!--   * `cya-questions-long` for long questions -->
       <!--   * none for single group of q&a -->
       <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Get paid a job</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p id="capitalize">Yes</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Job title</h2>
           </dt>
           <dd class="cya-answer">
-            {% if data['jobtitle'] == "" %}
-            <p id="capitalize">N/A</p>
-            {% else %}
+            {% if data['jobtitle'] %}
             <p id="capitalize">{{ data['jobtitle'] }}</p>
+            {% else %}
+            <p id="capitalize">Cleaner</p>
             {% endif %}
           </dd>
           <dd class="cya-change">
@@ -57,7 +68,6 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        {% if data['jobrecent'] == "yes" %}
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Started in last 2 months</h2>
@@ -82,9 +92,10 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
             {% if data['jobstartdateday'] %}
-            <p id="capitalize">{{ data['jobstartdateday'] }} {{ data['jobstartdatemonth'] }} {{ data['jobstartdateyear'] }}</p>
+            <p id="capitalize">{{ data['jobstartdateday'] }} {{ data['jobstartdatemonth'] }} {{
+              data['jobstartdateyear'] }}</p>
             {% else %}
-            <p id="capitalize">DD MM YYYY</p>
+            <p id="capitalize">01 01 2000</p>
             {% endif %}
           </dd>
           <dd class="cya-change">
@@ -93,14 +104,17 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        {% endif %}
 
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Contracted hours</h2>
           </dt>
           <dd class="cya-answer">
+            {% if data['jobhours'] %}
             <p id="capitalize">{{ data['jobhours'] }}</p>
+            {% else %}
+            <p id="capitalize">37.5</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -108,13 +122,13 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        
+
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Job paid</h2>
           </dt>
           <dd class="cya-answer">
-            <p id="capitalize">{{ data['joboften'] }}</p>
+            <p id="capitalize">£123<br>every 4 weeks</p>
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -123,17 +137,17 @@ NHSBSA Prototype
           </dd>
         </div>
 
-        {% if data['joboften'] == "it varies" %}
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Date you last worked</h2>
           </dt>
           <dd class="cya-answer">
-              {% if data['jobdatelastworkedday'] %}
-              <p id="capitalize">{{ data['jobdatelastworkedday'] }} {{ data['jobdatelastworkedmonth'] }} {{ data['jobdatelastworkedyear'] }}</p>
-              {% else %}
-              <p id="capitalize">DD MM YYYY</p>
-              {% endif %}
+            {% if data['jobdatelastworkedday'] %}
+            <p id="capitalize">{{ data['jobdatelastworkedday'] }} {{ data['jobdatelastworkedmonth'] }} {{
+              data['jobdatelastworkedyear'] }}</p>
+            {% else %}
+            <p id="capitalize">01 10 2018</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -141,15 +155,16 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        {% endif %}
-
-        {% if data['jobfitnote'] %}
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Sending in fit notes</h2>
           </dt>
           <dd class="cya-answer">
-            <p id="capitalize">{{ data['jobfitnote'] }}</p>
+            {% if data['jobrfitnote'] == "yes" %}
+            <p id="capitalize">Yes</p>
+            {% else %}
+            <p id="capitalize">No</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -157,18 +172,19 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        
+
 
         <div>
           <dt class="cya-question">
             <h2 class="heading-small">Started to send fit notes</h2>
           </dt>
           <dd class="cya-answer">
-              {% if data['jobdatefitnoteday'] %}
-              <p id="capitalize">{{ data['jobdatefitnoteday'] }} {{ data['jobdatefitnotemonth'] }} {{ data['jobdatefitnoteyear'] }}</p>
-              {% else %}
-              <p id="capitalize">DD MM YYYY</p>
-              {% endif %}
+            {% if data['jobdatefitnoteday'] %}
+            <p id="capitalize">{{ data['jobdatefitnoteday'] }} {{ data['jobdatefitnotemonth'] }} {{
+              data['jobdatefitnoteyear'] }}</p>
+            {% else %}
+            <p id="capitalize">01 11 2018</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -178,35 +194,58 @@ NHSBSA Prototype
         </div>
 
         <div>
-            <dt class="cya-question">
-              <h2 class="heading-small">Have another job</h2>
-            </dt>
-            <dd class="cya-answer">
-              <p id="capitalize">{{ data['jobanother'] }}</p>
-            </dd>
-            <dd class="cya-change">
-              <a href="#">
-                Change
-              </a>
-            </dd>
+          <dt class="cya-question">
+            <h2 class="heading-small">Have another job</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p id="capitalize">No</p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
         </div>
 
-        {% endif %}
 
-        {% if data['jobpersonalpension'] %}
+
+      </dl>
+
+      <h2 class="heading-medium">
+        Personal pension details
+      </h2>
+
+      <dl class="govuk-check-your-answers cya-questions-short">
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Pay into a personal pension</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p id="capitalize">Yes</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="#">
+                  Change
+                </a>
+              </dd>
+            </div>
 
         <div>
-            <dt class="cya-question">
-              <h2 class="heading-small">Name of your personal pension</h2>
-            </dt>
-            <dd class="cya-answer">
-              <p id="capitalize">{{ data['jobpensiontitle'] }}</p>
-            </dd>
-            <dd class="cya-change">
-              <a href="#">
-                Change
-              </a>
-            </dd>
+          <dt class="cya-question">
+            <h2 class="heading-small">Name of your personal pension</h2>
+          </dt>
+          <dd class="cya-answer">
+            {% if data['jobpension'] %}
+            <p id="capitalize">{{ data['jobpension'] }}</p>
+            {% else %}
+            <p id="capitalize">Scottish Widows</p>
+            {% endif %}
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
         </div>
 
         <div>
@@ -214,7 +253,11 @@ NHSBSA Prototype
             <h2 class="heading-small">Personal pension paid</h2>
           </dt>
           <dd class="cya-answer">
-            <p id="capitalize">{{ data['jobpersonalpensionhowoften'] }}</p>
+            {% if data['jobpersonalpensionhowoften'] %}
+            <p id="capitalize">£{{ data['jobpersonalpensionhowmuch'] }}<br>{{ data['jobpersonalpensionhowoften'] }}</p>
+            {% else %}
+            <p id="capitalize">£123<br>every 4 weeks</p>
+            {% endif %}
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -223,110 +266,11 @@ NHSBSA Prototype
           </dd>
         </div>
 
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">Personal pension amount</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">£{{ data['jobpersonalpensionhowmuch'] }}</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
 
-        <div>
-            <dt class="cya-question">
-              <h2 class="heading-small">Get another personal pension</h2>
-            </dt>
-            <dd class="cya-answer">
-              <p id="capitalize">{{ data['jobpersonalpensionanother'] }}</p>
-            </dd>
-            <dd class="cya-change">
-              <a href="#">
-                Change
-              </a>
-            </dd>
-          </div>
-
-      </dl>
-      {% endif %}
-
-      {% endif %}
-
-      {% if "benefits-income" in data['incometype'] %}
-
-      <!-- only add a heading for a list if there is more than one list -->
-      <h2 class="heading-medium">
-        Income from benefits or tax credits
-      </h2>
-
-      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
-      <!--   * `cya-questions-short` for short questions -->
-      <!--   * `cya-questions-long` for long questions -->
-      <!--   * none for single group of q&a -->
-      <dl class="govuk-check-your-answers cya-questions-short">
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">Receive universal credit</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">Not yet, but I've applied</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
 
         <div>
           <dt class="cya-question">
-            <h2 class="heading-small">Receive tax credits</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">Yes</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">Type of tax credits</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">Working tax credit on it's own (including disability)</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">Get any other benefits</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">No</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
-
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">Looking after someone but can't get Carer's Allowance</h2>
+            <h2 class="heading-small">Get another personal pension</h2>
           </dt>
           <dd class="cya-answer">
             <p id="capitalize">No</p>
@@ -339,35 +283,6 @@ NHSBSA Prototype
         </div>
 
       </dl>
-
-      {% endif %}
-
-      {% if "pension-income" in data['incometype'] %}
-
-      <!-- only add a heading for a list if there is more than one list -->
-      <h2 class="heading-medium">
-        Income from pensions (state, work, private)
-      </h2>
-
-      {% endif %}
-
-      {% if "maintenance-income" in data['incometype'] %}
-
-      <!-- only add a heading for a list if there is more than one list -->
-      <h2 class="heading-medium">
-        Income from maintenance payments from an ex-partner
-      </h2>
-
-      {% endif %}
-
-      {% if "nil-income" in data['incometype'] %}
-
-      <!-- only add a heading for a list if there is more than one list -->
-      <h2 class="heading-medium">
-        Income from other sources
-      </h2>
-
-      {% endif %}
 
 
       <br>
