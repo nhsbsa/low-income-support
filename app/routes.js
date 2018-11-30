@@ -52,6 +52,8 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('apprenticeship-income')) {
+    res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('trustfunds-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('selfemployed-income')) {
@@ -77,6 +79,8 @@ router.get(/whatissingleincome-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('trustfunds-income')) {
     res.redirect('../kickouts/developed');
@@ -224,7 +228,7 @@ router.get(/jobpersonalpensionhowoften-handler/, function (req, res) {
 });
 
 router.get(/jobpersonalpensionhowmuch-handler/, function (req, res) {
-  res.redirect('personal-pension-another');
+  res.redirect('personal-pension-another-2');
 });
 
 router.get(/jobpersonalpensionanother-handler/, function (req, res) {
@@ -252,7 +256,7 @@ router.get(/pensionhowoften-handler/, function (req, res) {
 });
 
 router.get(/personalpensionhowmuch-handler/, function (req, res) {
-  res.redirect('pension-another');
+  res.redirect('pension-another-2');
 });
 
 router.get(/personalpensionanother-handler/, function (req, res) {
