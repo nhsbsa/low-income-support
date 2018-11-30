@@ -31,26 +31,10 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Pensions (state, work, private)</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Pensions you've told us about</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you claim a UK State pension?</h1>
       </header>
 
-      <h2 class="heading-small">Pensions</h2>
-
-      <table>
-          <tbody>
-              <tr>
-                  <td>State Pension</td>
-                  <td style="width: 40%">£123 every 4 weeks</td>
-                  <td style="width: 25%"><a href="#">Edit</a>
-                  </td>
-              </tr>
-          </tbody>
-      </table>
-
-
-      <h2 class="heading-medium">Do you receive another pension?</h2>
-
-      <form action="statepensionanother-handler" method="get" class="form">
+      <form action="statepension-handler" method="get" class="form">
 
         <div class="form-group">
 
@@ -59,12 +43,12 @@ NHSBSA Prototype
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="statepensionanother" value="yes">
+              <input id="yes" type="radio" name="statepension" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="statepensionanother" value="no">
+              <input id="no" type="radio" name="statepension" value="no">
               <label for="no">No</label>
             </div>
 

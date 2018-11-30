@@ -243,6 +243,34 @@ router.get(/jobpersonalpensionanother-handler/, function (req, res) {
 // PENSIONS
 // ************************
 
+router.get(/statepension-handler/, function (req, res) {
+  if (req.query.statepension== 'yes') {
+    res.redirect('../pension/state-pension-how-often');
+  } else if (req.query.statepension == 'no') {
+    res.redirect('../pension/pension-name');
+  }
+});
+
+router.get(/statepensionhowoften-handler/, function (req, res) {
+  if (req.query.statepensionhowoften == 'every week' || req.query.statepensionhowoften == 'every 2 weeks' || req.query.statepensionhowoften == 'every 4 weeks' || req.query.statepensionhowoften == 'every calendar month' || req.query.statepensionhowoften == 'every 13 weeks (quarterly)' || req.query.statepensionhowoften == 'once a year') {
+    res.redirect('../pension/state-pension-how-much');
+  } else {
+    res.redirect('../pension/state-pension-how-often');
+  }
+});
+
+router.get(/statepensionhowmuch-handler/, function (req, res) {
+  res.redirect('../pension/pension-another-1');
+});
+
+router.get(/statepensionanother-handler/, function (req, res) {
+  if (req.query.statepensionanother == 'yes') {
+    res.redirect('../pension/pension-name');
+  } else if (req.query.statepensionanother == 'no') {
+    res.redirect('answers');
+  }
+});
+
 router.get(/pensiontitle-handler/, function (req, res) {
   res.redirect('../pension/pension-how-often');
 });
