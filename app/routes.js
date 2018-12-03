@@ -52,6 +52,8 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
+    res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('apprenticeship-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('trustfunds-income')) {
@@ -79,6 +81,8 @@ router.get(/whatissingleincome-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('apprenticeship-income')) {
     res.redirect('../kickouts/developed');
