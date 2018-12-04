@@ -288,12 +288,12 @@ router.get(/jobpersonalpensionhowoften-handler/, function (req, res) {
 });
 
 router.get(/jobpersonalpensionhowmuch-handler/, function (req, res) {
-  res.redirect('personal-pension-another-2');
+  res.redirect('personal-pension-another');
 });
 
 router.get(/jobpersonalpensionanother-handler/, function (req, res) {
   if (req.query.jobpersonalpensionanother == 'yes') {
-    res.redirect('../../paye/pension/personal-pension-how-often');
+    res.redirect('../../paye/pension/personal-pension-name');
   } else if (req.query.jobpersonalpensionanother == 'no') {
     res.redirect('../../answers');
   }

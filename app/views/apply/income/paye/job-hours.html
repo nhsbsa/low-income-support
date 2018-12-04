@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many hours a week do you usually work?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many hours a week do you usually work at your '{{ data['jobtitle']}}' job?</h1>
       </header>
 
       <br>
@@ -41,7 +41,7 @@ NHSBSA Prototype
           <p class="form-hint">The amount allows for a maximum of one decimal place. For example, 37.5</p>
         <div class="form-group" style="width: 200px;">
           <label class="form-label" for="jobhours"></label>
-          <input class="form-control" id="jobhours" name="jobhours" max="168" type="number">
+          <input class="form-control" id="jobhours" name="jobhours" max="168">
         </div>
 
         <div class="form-group">
