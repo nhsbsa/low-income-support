@@ -34,13 +34,28 @@ NHSBSA Prototype
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Pensions you've told us about</h1>
       </header>
 
-      <h2 class="heading-small">Pensions</h2>
+      <h2 class="heading-medium">State Pension</h2>
+
+      <table>
+          <tbody>
+              <tr>
+                  <td>State Pension</td>
+                  <td style="width: 40%">£123 every 4 weeks</td>
+                  <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or
+                              frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish
+                              Widows from your pension income</span></a>
+                  </td>
+              </tr>
+          </tbody>
+      </table>
+
+      <h2 class="heading-medium">Private or workplace pensions</h2>
 
       <table>
           <tbody>
               <tr>
                   <td>{{ data['pensiontitle'] }}</td>
-                  <td>£{{ data['personalpensionhowmuch'] }} {{ data['personalpensionhowoften'] }}</td>
+                  <td>£{{ data['personalpensionhowmuch'] }} {{ data['pensionhowoften'] }}</td>
                   <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or
                               frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish
                               Widows from your pension income</span></a>

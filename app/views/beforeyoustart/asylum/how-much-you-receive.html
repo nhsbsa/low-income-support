@@ -30,26 +30,29 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many hours a week do you usually work?</h1>
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you get {{ data['asylumhowoften'] }}?</h1>
       </header>
 
-      <br>
+      <form action="asylumhowmuch-handler" method="get" class="form">
 
-      <form action="jobhours-handler" method="get" class="form">
+        <div class="form-group">
 
-          <p class="form-hint">The amount allows for a maximum of one decimal place. For example, 37.5</p>
-        <div class="form-group" style="width: 200px;">
-          <label class="form-label" for="jobhours"></label>
-          <input class="form-control" id="jobhours" name="jobhours" max="168" type="number">
+          <fieldset class="inline">
+
+              <p class="form-hint">The amount must include pence. For example, £146.20</p>
+              <span class="heading-medium">£</span>
+              <input class="form-control form-control-1-4" id="pay" name="asylumhowmuch" type="text">
+
+          </fieldset>
+
         </div>
 
         <div class="form-group">
-            <input class="button" type="submit" value="Next">
+          <input class="button" type="submit" value="Next">
         </div>
 
       </form>
-
     </div>
   </div>
 </main>

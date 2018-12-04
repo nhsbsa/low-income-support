@@ -40,15 +40,17 @@ router.get(/applyonline-handler/, function (req, res) {
 router.get(/partner-handler/, function (req, res) {
   if (req.query.partner == 'yes') {
     applicant.partner = true;
-    res.redirect('/beforeyoustart/money-from-these-partner');
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-partner');
   } else if (req.query.partner == 'no') {
     applicant.partner = false;
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/asylum/claimed-asylum-single');
   }
 });
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
   if (req.query.incomepartner.includes('earned-income')) {
+    res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner.includes('UCWTC-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
@@ -80,6 +82,8 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
 router.get(/whatissingleincome-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
     res.redirect('../kickouts/developed');
+  } else if (req.query.incomesingle.includes('UCWTC-income')) {
+    res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
@@ -107,21 +111,73 @@ router.get(/whatissingleincome-handler/, function (req, res) {
   } 
 });
 
-/*
-router.get(/incomepartner-handler/, function (req, res) {
-  if (req.query.partnerincometype.includes('earned-income')) {
-    res.redirect('/kickouts/developed');
-  } else if (req.query.partnerincometype.includes('benefits-income')) {
-    res.redirect('/kickouts/developed');
-  } else if (req.query.partnerincometype.includes('pension-income')) {
-    res.redirect('/kickouts/developed');
-  } else if (req.query.partnerincometype.includes('maintenance-income')) {
-    res.redirect('/kickouts/developed');
-  } else if (req.query.partnerincometype.includes('nil-income')) {
-    res.redirect('/kickouts/developed');
+router.get(/asylumsingle-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/beforeyoustart/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('../../beforeyoustart/money-from-these-single');
   }
 });
-*/
+
+router.get(/asylumPartner-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('../../kickouts/developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('../../beforeyoustart/money-from-these-partner');
+  }
+});
+
+router.get(/asylumdecision-handler/, function (req, res) {
+  if (req.query.asylumdecision == 'still-waiting') {
+    res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
+  } else if (req.query.asylumdecision == 'given-permission') {
+    res.redirect('../../beforeyoustart/money-from-these-single');
+  } else if (req.query.asylumdecision == 'refused-permission') {
+    res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
+  }
+});
+
+router.get(/whoissupporting-handler/, function (req, res) {
+  if (req.query.whoissupporting.includes('uk-visas')) {
+    res.redirect('/beforeyoustart/asylum/passport');
+  } else if (req.query.whoissupporting == 'local-authority') {
+    res.redirect('/beforeyoustart/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'a-charity') {
+    res.redirect('/beforeyoustart/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting.toString() == 'local-authority,a-charity') {
+    res.redirect('/beforeyoustart/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'none') {
+    res.redirect('/beforeyoustart/asylum/tell-us-supporting-you');
+  } 
+});
+
+router.get(/telluswhoissupportingyou-handler/, function (req, res) {
+  res.redirect('/beforeyoustart/asylum/what-type-of-support');
+});
+
+router.get(/whatsupport-handler/, function (req, res) {
+  if (req.query.whatsupport.includes('cash')) {
+    res.redirect('/beforeyoustart/asylum/how-often-receive');
+  } else if (req.query.whatsupport.includes('vouchers')) {
+    res.redirect('../../beforeyoustart/money-from-these-single');
+  } else if (req.query.whatsupport.includes('prepaid-card')) {
+    res.redirect('../../beforeyoustart/money-from-these-single');
+  } else if (req.query.whatsupport.includes('food-meals')) {
+    res.redirect('../../beforeyoustart/money-from-these-single');
+  }
+});
+
+router.get(/asylumhowoften-handler/, function (req, res) {
+  if (req.query.asylumhowoften == 'every week' || req.query.asylumhowoften == 'every 2 weeks' || req.query.asylumhowoften == 'every 4 weeks' || req.query.asylumhowoften == 'every calendar month') {
+    res.redirect('/beforeyoustart/asylum/how-much-you-receive');
+  } else {
+    res.redirect('/beforeyoustart/asylum/how-often-receive');
+  }
+});
+
+router.get(/asylumhowmuch-handler/, function (req, res) {
+  res.redirect('/beforeyoustart/answers-asylum');
+});
 
 
 // ************************
@@ -256,7 +312,7 @@ router.get(/statepension-handler/, function (req, res) {
 });
 
 router.get(/statepensionhowoften-handler/, function (req, res) {
-  if (req.query.statepensionhowoften == 'every week' || req.query.statepensionhowoften == 'every 2 weeks' || req.query.statepensionhowoften == 'every 4 weeks' || req.query.statepensionhowoften == 'every calendar month' || req.query.statepensionhowoften == 'every 13 weeks (quarterly)' || req.query.statepensionhowoften == 'once a year') {
+  if (req.query.statepensionhowoften == 'every week' || req.query.statepensionhowoften == 'every 2 weeks' || req.query.statepensionhowoften == 'every 4 weeks' || req.query.statepensionhowoften == 'every 13 weeks (quarterly)' || req.query.statepensionhowoften == 'once a year') {
     res.redirect('../pension/state-pension-how-much');
   } else {
     res.redirect('../pension/state-pension-how-often');
