@@ -63,19 +63,19 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
   } else if (req.query.incomepartner.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner == 'benefits-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner == 'pension-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner == 'nil-income') {
-    res.redirect('/beforeyoustart/money-from-these-single');
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } 
 });
 
@@ -115,7 +115,7 @@ router.get(/asylumsingle-handler/, function (req, res) {
   if (req.query.asylumsingle == 'yes') {
     res.redirect('/beforeyoustart/asylum/asylum-decision');
   } else if (req.query.asylumsingle == 'no') {
-    res.redirect('../../beforeyoustart/money-from-these-single');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   }
 });
 
@@ -123,7 +123,7 @@ router.get(/asylumPartner-handler/, function (req, res) {
   if (req.query.asylumPartner == 'yes') {
     res.redirect('../../kickouts/developed');
   } else if (req.query.asylumPartner == 'no') {
-    res.redirect('../../beforeyoustart/money-from-these-partner');
+    res.redirect('../../beforeyoustart/money-coming-in-partner');
   }
 });
 
@@ -131,7 +131,7 @@ router.get(/asylumdecision-handler/, function (req, res) {
   if (req.query.asylumdecision == 'still-waiting') {
     res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
   } else if (req.query.asylumdecision == 'given-permission') {
-    res.redirect('../../beforeyoustart/money-from-these-single');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   } else if (req.query.asylumdecision == 'refused-permission') {
     res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
   }
@@ -159,11 +159,11 @@ router.get(/whatsupport-handler/, function (req, res) {
   if (req.query.whatsupport.includes('cash')) {
     res.redirect('/beforeyoustart/asylum/how-often-receive');
   } else if (req.query.whatsupport.includes('vouchers')) {
-    res.redirect('../../beforeyoustart/money-from-these-single');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   } else if (req.query.whatsupport.includes('prepaid-card')) {
-    res.redirect('../../beforeyoustart/money-from-these-single');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   } else if (req.query.whatsupport.includes('food-meals')) {
-    res.redirect('../../beforeyoustart/money-from-these-single');
+    res.redirect('../../beforeyoustart/money-coming-in-single');
   }
 });
 
