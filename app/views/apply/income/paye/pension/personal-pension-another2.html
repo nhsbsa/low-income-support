@@ -31,24 +31,24 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Jobs you've told us about</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Personal pensions you've told us about</h1>
       </header>
 
-      <h2 class="heading-small">Jobs</h2>
+      <h2 class="heading-small">Personal pensions</h2>
 
       <table>
           <tbody>
               <tr>
-                  <td>{{ data['jobtitle'] }}</td>
-                  <td>Paid {{ data['joboften'] }}</td>
+                  <td>{{ data['jobpensiontitle'] }}</td>
+                  <td>£{{ data['jobpersonalpensionhowmuch'] }} {{ data['jobpersonalpensionhowoften'] }}</td>
                   <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or
                               frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish
                               Widows from your pension income</span></a>
                   </td>
               </tr>
               <tr>
-                  <td>Cleaner</td>
-                  <td style="width: 40%">Paid every 4 weeks</td>
+                  <td>{{ data['jobpensiontitleloop'] }}</td>
+                  <td>£{{ data['jobpersonalpensionhowmuchloop'] }} {{ data['jobpersonalpensionhowoftenloop'] }}</td>
                   <td style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or
                               frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish
                               Widows from your pension income</span></a>
@@ -58,9 +58,9 @@ NHSBSA Prototype
       </table>
 
 
-      <h2 class="heading-medium">Do you have another job?</h2>
+      <h2 class="heading-medium">Do you pay into another personal pension?</h2>
 
-      <form action="jobanother-handler" method="get" class="form">
+      <form action="jobpersonalpensionanother-loop-handler" method="get" class="form">
 
         <div class="form-group">
 
@@ -69,12 +69,12 @@ NHSBSA Prototype
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="jobanother" value="yes">
+              <input id="yes" type="radio" name="jobpersonalpensionanotherloop" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="jobanother" value="no">
+              <input id="no" type="radio" name="jobpersonalpensionanotherloop" value="no">
               <label for="no">No</label>
             </div>
 
