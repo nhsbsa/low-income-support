@@ -192,21 +192,34 @@ router.get(/jobrecent-handler/, function (req, res) {
   if (req.query.jobrecent == 'yes') {
     res.redirect('../paye/job-start-date1');
   } else if (req.query.jobrecent == 'no') {
-    res.redirect('../paye/job-hours1');
+    res.redirect('../paye/job-zero-hour1');
   }
 });
 
 router.get(/jobstartdate-handler/, function (req, res) {
   if (req.query.jobstartdateday && req.query.jobstartdatemonth && req.query.jobstartdateyear) {
-    res.redirect('../paye/job-hours1');
+    res.redirect('../paye/job-zero-hour1');
   } else {
     res.redirect('../paye/job-start-date1');
   }
 });
+router.get(/zerohour-handler/, function (req, res) {
+  if (req.query.zerohour == 'yes') {
+    res.redirect('../paye/job-how-often1');
+  } else if (req.query.zerohour == 'no') {
+    res.redirect('../paye/job-hours1');
+  }
+});
 
 router.get(/jobhours-handler/, function (req, res) {
-  res.redirect('../paye/job-how-often1');
+  if (req.query.jobhours && req.query.jobminutes) {
+    res.redirect('../paye/job-how-often1');
+  } else {
+    res.redirect('../paye/job-hours1');
+  }
 });
+
+
 
 router.get(/joboften-handler/, function (req, res) {
   if (req.query.joboften == 'every week' || req.query.joboften == 'every 2 weeks' || req.query.joboften == 'every 4 weeks' || req.query.joboften == 'every calendar month') {
@@ -263,20 +276,32 @@ router.get(/jobrecent-loop-handler/, function (req, res) {
   if (req.query.jobrecentloop == 'yes') {
     res.redirect('../paye/job-start-date2');
   } else if (req.query.jobrecentloop == 'no') {
-    res.redirect('../paye/job-hours2');
+    res.redirect('../paye/job-zero-hour2');
   }
 });
 
 router.get(/jobstartdate-loop-handler/, function (req, res) {
   if (req.query.jobstartdatedayloop && req.query.jobstartdatemonthloop && req.query.jobstartdateyearloop) {
-    res.redirect('../paye/job-hours2');
+    res.redirect('../paye/job-zero-hour2');
   } else {
     res.redirect('../paye/job-start-date2');
   }
 });
 
+router.get(/zerohour-loop-handler/, function (req, res) {
+  if (req.query.zerohourloop == 'yes') {
+    res.redirect('../paye/job-how-often2');
+  } else if (req.query.zerohourloop == 'no') {
+    res.redirect('../paye/job-hours2');
+  }
+});
+
 router.get(/jobhours-loop-handler/, function (req, res) {
-  res.redirect('../paye/job-how-often2');
+  if (req.query.jobhoursloop && req.query.jobminutesloop) {
+    res.redirect('../paye/job-how-often2');
+  } else {
+    res.redirect('../paye/job-hours2');
+  }
 });
 
 router.get(/joboften-loop-handler/, function (req, res) {

@@ -31,24 +31,50 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Wages from a job</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many hours a week do you usually work at your '{{ data['jobtitleloop']}}' job?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How many hours a week are you contracted to work at your '{{ data['jobtitleloop']}}' job?</h1>
       </header>
 
       <br>
 
       <form action="jobhours-loop-handler" method="get" class="form">
 
-          <p class="form-hint">The amount allows for a maximum of two decimal places. For example, 37.25</p>
-        <div class="form-group" style="width: 200px;">
-          <label class="form-label" for="jobhoursloop"></label>
-          <input class="form-control" id="jobhoursloop" name="jobhoursloop" max="168">
+        <p class="form-hint">For example, 37 hours 30 minutes</p>
+
+        <div class="form-group">
+
+            <span style="display:inline-block; width: 65px; margin-right: 5px;">
+                <label class="form-label" for="jobhoursloop">Hours</label>
+                <input class="form-control" id="jobhoursloop" name="jobhoursloop" max="168" style="width: 100% !important;">
+            </span>
+            <span style="margin-right: 5px;">:</span>
+            <span style="display:inline-block; width: 65px;">
+                <label class="form-label" for="jobminutesloop">Minutes</label>
+                <input class="form-control" id="jobminutesloop" name="jobminutesloop" max="59" style="width: 100% !important;">
+            </span>
+
         </div>
+
+
+
 
         <div class="form-group">
             <input class="button" type="submit" value="Next">
         </div>
 
       </form>
+
+      <details class="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Help with contracted hours
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+              A worker is often contracted to work a specific amount of hours each week. If you are unaware of your contracted hours, please speak to your employer.
+          </div>
+        </details>
+
+        <br>
 
     </div>
   </div>

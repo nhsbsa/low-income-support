@@ -30,19 +30,27 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Personal pensions</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you pay into your '{{ data['jobpensiontitle']}}' personal pension {{ data['jobpersonalpensionhowoften'] }}?</h1>
+        <p class="page-header--sub heading-secondary">Wages from a job</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Is your '{{ data['jobtitle']}}' job a zero hour contract?</h1>
       </header>
 
-      <form action="jobpersonalpensionhowmuch-handler" method="get" class="form">
+      <form action="zerohour-handler" method="get" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
 
-              <p class="form-hint">The amount must include pence. For example, £146.20</p>
-              <span class="heading-medium">£</span>
-              <input class="form-control form-control-1-4" id="pay" name="jobpersonalpensionhowmuch" type="text">
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="zerohour" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="zerohour" value="no">
+              <label for="no">No</label>
+            </div>
 
           </fieldset>
 
