@@ -576,6 +576,10 @@ router.get(/nonehowmuch-handler/, function (req, res) {
 // SUBMIT APPLICATION
 // ************************
 
-router.get(/evidencebyemail-handler/, function (req, res) {
-  res.redirect('../submit/declaration');
+router.get(/evidencebyemailmvp-handler/, function (req, res) {
+  res.redirect('../mvp/declaration');
+});
+
+router.get(/evidencebyemailiteration1-handler/, function (req, res) {
+  res.redirect('../iteration-1/declaration');
 });
