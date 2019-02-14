@@ -548,28 +548,60 @@ router.get(/otherbenefits-handler/, function (req, res) {
   res.redirect('../benefits/answers');
 });
 
-// ************************
-// MONEY FROM OTHER SOURCES
-// ************************
+// ******************************
+// MONEY FROM OTHER SOURCES - MVP
+// ******************************
 
 router.get(/howpaying-handler/, function (req, res) {
   if (req.query.howpaying == 'money from friends or family') {
-    res.redirect('../none/none-how-much');
+    res.redirect('../mvp/none-how-much');
   } else if (req.query.howpaying == 'savings') {
-    res.redirect('../none/none-how-much');
+    res.redirect('../mvp/none-how-much');
   } else if (req.query.howpaying == 'donations') {
-    res.redirect('../none/none-how-much');
+    res.redirect('../mvp/none-how-much');
   } else if (req.query.howpaying == 'none of these') {
-    res.redirect('../none/none-how-supporting');
+    res.redirect('../mvp/none-how-supporting');
   }
 });
 
 router.get(/nonehowsupporting-handler/, function (req, res) {
-  res.redirect('../none/none-how-much');
+  res.redirect('../mvp/none-how-much');
 });
 
 router.get(/nonehowmuch-handler/, function (req, res) {
-  res.redirect('../none/answers');
+  res.redirect('../mvp/answers');
+});
+
+// **************************************
+// MONEY FROM OTHER SOURCES - ITERATION 1
+// **************************************
+
+router.get(/howpayingiteration1-handler/, function (req, res) {
+  if (req.query.howpaying == 'money from friends or family') {   
+    res.redirect('../iteration-1/none-how-much-friends');
+  } else if (req.query.howpaying == 'savings') {
+    res.redirect('../iteration-1/none-how-much-savings');
+  } else if (req.query.howpaying == 'donations') {
+    res.redirect('../iteration-1/none-how-much-donations');
+  } else if (req.query.howpaying.toString() == 'money from friends or family,savings,donations') {
+    res.redirect('../iteration-1/none-how-much-friends');
+  } else if (req.query.howpaying.toString() == 'money from friends or family,savings') {
+    res.redirect('../iteration-1/none-how-much-friends');
+  } else if (req.query.howpaying.toString() == 'money from friends or family,donations') {
+    res.redirect('../iteration-1/none-how-much-friends');
+  } else if (req.query.howpaying.toString() == 'savings,donations') {
+    res.redirect('../iteration-1/none-how-much-savings');
+  } else if (req.query.howpaying == 'none of these') {
+    res.redirect('../iteration-1/none-how-supporting');
+  }
+});
+
+router.get(/nonehowsupporting1-handler/, function (req, res) {
+  res.redirect('../iteration-1/answers');
+});
+
+router.get(/nonehowmuch1-handler/, function (req, res) {
+  res.redirect('../iteration-1/answers');
 });
 
 // ************************
