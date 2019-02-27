@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Benefits or tax credits</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What type of tax credits do you get?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which type of tax credits do you get?</h1>
       </header>
 
       <form action="taxcredittype-handler" method="get" class="form">
@@ -44,28 +44,56 @@ NHSBSA Prototype
 
             <div class="multiple-choice">
               <input id="WTCCTC" type="radio" name="taxcredittype" value="WTCCTC">
-              <label for="WTCCTC"><p style="margin-bottom: 7px;">Working Tax Credit & Child Tax Credit Together</p></label>
+              <label for="WTCCTC"><p style="margin-bottom: 7px;">Working Tax Credit and Child Tax Credit together</p></label>
             </div>
 
             <div class="multiple-choice">
               <input id="WTCDisability" type="radio" name="taxcredittype" value="WTCDisability">
-              <label for="WTCDisability"><p style="margin-bottom: 7px;">Working Tax Credit on it’s own (including disability)
+              <label for="WTCDisability"><p style="margin-bottom: 7px;">Working Tax Credit on its own, including a disability element
                 </p></label>
             </div>
 
             <div class="multiple-choice">
-                <input id="WTC" type="radio" name="taxcredittype" value="WTC">
-                <label for="WTC"><p style="margin-bottom: 7px;">Working Tax Credit Only</p></label>
-              </div>
+                <input id="CTC" type="radio" name="taxcredittype" value="CTC">
+                <label for="CTC"><p style="margin-bottom: 7px;">Child Tax Credit on its own</p></label>
+            </div> 
 
             <div class="multiple-choice">
-                <input id="CTC" type="radio" name="taxcredittype" value="CTC">
-                <label for="CTC"><p style="margin-bottom: 7px;">Child Tax Credit Only</p></label>
-            </div>           
+                <input id="WTC" type="radio" name="taxcredittype" value="WTC">
+                <label for="WTC"><p style="margin-bottom: 7px;">Working Tax Credit on its own</p></label>
+              </div>
 
           </fieldset>
 
+          
+
         </div>
+
+        <details role="group">
+            <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">I'm not sure what type I get</span></summary> 
+
+
+
+
+
+            <p>To find out what help with NHS costs you're entitled to, it's important that you don't guess the answer.</p>
+            <p>If you're not sure what tax credits you get:</p>
+            <ul class="list list-bullet">
+                <li>check your tax credit award notice</li>
+                <li>contact the <a target="_blank" href="https://www.gov.uk/government/organisations/hm-revenue-customs/contact/tax-credits-enquiries">tax credits helpline</a></li>
+              </ul>
+            
+
+            
+
+                    
+                    
+   
+              
+                
+        </details>
+
+        <br>
 
         <div class="form-group">
           <input class="button" type="submit" value="Next">
