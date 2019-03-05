@@ -14,15 +14,6 @@ NHSBSA Prototype
 
 {% block content %}
 
-<style>
-    @media screen and (max-width: 640px) {
-    .save-restore-mobile {
-        display: block;
-        text-align: center;
-    }
-    }
-</style>
-
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -40,26 +31,26 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Have you or your partner claimed asylum to stay in the UK?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you live with a partner?</h1>
       </header>
 
-      <form action="asylumPartnerSaveRestoreiteration1-handler" method="get" class="form">
+      <p>This means you live together as a couple, you don't have to be married or in a civil partnership.</p>
+
+      <form action="partnerSaveRestoreiteration1-handler" method="get" class="form">
 
         <div class="form-group">
 
-          
-            <br>
           <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="asylumPartner" value="yes">
+              <input id="yes" type="radio" name="partner" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="asylumPartner" value="no">
+              <input id="no" type="radio" name="partner" value="no">
               <label for="no">No</label>
             </div>
 
@@ -68,11 +59,27 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
-            <div style="line-height: 225%;"><input class="button" type="submit" value="Next"><span class="save-restore-mobile" style="margin: 0 20px;">or</span><a class="save-restore-mobile" href="text-or-email">Save and return later</a></div>
+          <input class="button" type="submit" value="Next"></div>
         </div>
+
+      
+
+        
 
       </form>
     </div>
+  </div>
+  <div class="grid-row">
+    <div class="full">
+
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p style="padding: 0 15px;">If you don't have this information available, you can <a style="font-weight: bold;" href="memorable-word">save and return</a> to your application later.</p>
+
+    </div>
+
+
+      
   </div>
 </main>
 </main>

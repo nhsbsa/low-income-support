@@ -14,6 +14,15 @@ NHSBSA Prototype
 
 {% block content %}
 
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -32,35 +41,22 @@ NHSBSA Prototype
         <div id="validation" class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
             <h1 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h1>
             <ul class="error-summary-list">
-                <li><a href="#resumeApplication">Enter a valid reference number.</a></li>
+                <li><a href="#resumeApplication">Enter a valid date of birth.</a></li>
             </ul>
         </div>
 
       <header class="page-header">
         <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-xlarge">Resume an
           application</h1>
-        <p class="lede">We’ll use these details to find your application. You’ll be able to continue an application
-          from where you left off.</p>
+        <p class="lede">Finally, please answer the following additional question.</p>
       </header>
       <br>
 
-      <form action="resumeapplication-handler" method="get" class="form">
-
-        <div class="form-group">
-          <label style="font-weight: bold;" class="form-label" for="memorableword">What is your memorable word?</label>
-          <p class="form-hint">You provided this when you saved your application.</p>
-          <input class="form-control" id="memorableword" name="memorableword" type="text">
-        </div>
-
-        <div class="form-group">
-          <label style="font-weight: bold;" class="form-label" for="reference">What is your reference number?</label>
-          <p class="form-hint">For example, 'K5G-V78'</p>
-          <input class="form-control" id="reference" name="reference" type="text">
-        </div>
+      <form action="furthercheckiteration1-handler" method="get" class="form">
 
         <div class="form-group">
 
-          <label style="font-weight: bold;" class="form-label" for="day">What is your date of birth?</label>
+          <label style="font-weight: bold;" class="form-label" for="day">What is the main applicants date of birth?</label>
           <p class="form-hint">For example, 31 3 1980</p>
           <div class="form-date">
             <div class="form-group form-group-day">
@@ -83,7 +79,7 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
-          <input class="button" type="submit" value="Next">
+            <input class="button" type="submit" value="Next">
         </div>
 
       </form>

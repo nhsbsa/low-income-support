@@ -14,6 +14,15 @@ NHSBSA Prototype
 
 {% block content %}
 
+<style>
+    @media screen and (max-width: 640px) {
+    .save-restore-mobile {
+        display: block;
+        text-align: center;
+    }
+    }
+</style>
+
 <main id="content" role="main">
 
   <div class="phase-banner">
@@ -34,7 +43,7 @@ NHSBSA Prototype
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How much do you get {{ data['asylumhowoften'] }}?</h1>
       </header>
 
-      <form action="asylumhowmuchSaveRestore-handler" method="get" class="form">
+      <form action="asylumhowmuchSaveRestoreiteration1-handler" method="get" class="form">
 
         <div class="form-group">
 
@@ -49,7 +58,7 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
-          <input class="button" type="submit" value="Next">
+            <div style="line-height: 225%;"><input class="button" type="submit" value="Next"><span class="save-restore-mobile" style="margin: 0 20px;">or</span><a class="save-restore-mobile" href="text-or-email">Save and return later</a></div>
         </div>
 
       </form>

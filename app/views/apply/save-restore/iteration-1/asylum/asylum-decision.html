@@ -13,6 +13,14 @@ NHSBSA Prototype
 {% endblock %}
 
 {% block content %}
+<style>
+        @media screen and (max-width: 640px) {
+        .save-restore-mobile {
+            display: block;
+            text-align: center;
+        }
+        }
+    </style>
 
 <main id="content" role="main">
 
@@ -34,7 +42,7 @@ NHSBSA Prototype
                 <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What was the decision of your asylum application?</h1>
             </header>
 
-            <form action="asylumdecisionSaveRestore-handler" method="get" class="form">
+            <form action="asylumdecisionSaveRestoreiteration1-handler" method="get" class="form">
 
                 <div class="form-group">
 
@@ -63,9 +71,9 @@ NHSBSA Prototype
 
                 </div>
 
-                <div class="form-group">
-                    <input class="button" type="submit" value="Next">
-                </div>
+        <div class="form-group">
+            <div style="line-height: 225%;"><input class="button" type="submit" value="Next"><span class="save-restore-mobile" style="margin: 0 20px;">or</span><a class="save-restore-mobile" href="text-or-email">Save and return later</a></div>
+        </div>
 
             </form>
         </div>

@@ -50,8 +50,6 @@ router.get(/partner-handler/, function (req, res) {
 router.get(/whatispartnersincome-handler/, function (req, res) {
   if (req.query.incomepartner.includes('earned-income')) {
     res.redirect('../kickouts/developed');
-  } else if (req.query.incomepartner.includes('UCWTC-income')) {
-    res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
@@ -81,8 +79,6 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
 
 router.get(/whatissingleincome-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('../kickouts/developed');
-  } else if (req.query.incomesingle.includes('UCWTC-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
@@ -787,5 +783,203 @@ router.get(/saveapplicationSaveRestore-handler/, function (req, res) {
     res.redirect('/apply/save-restore/mvp/memorable-word');
   } else if (req.query.saveapplication == 'no') {
     res.redirect('/apply/save-restore/mvp/answers');
+  }
+});
+
+// ************************
+// SAVE & RESTORE (Iteration 1)
+// ************************
+
+router.get(/resumeapplicationtextiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-text-code-error');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/further-check');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/resumeapplicationemailiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-email-code-error');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/further-check');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/furthercheckiteration1-handler/, function (req, res) {
+  if (req.query.day == '' && req.query.month == '' && req.query.year == '') {
+    res.redirect('/apply/save-restore/iteration-1/further-check-error');
+  } else if (req.query.day && req.query.month == '' && req.query.year == '') {
+    res.redirect('/apply/save-restore/iteration-1/further-check-error');
+  } else if (req.query.day == '' && req.query.month && req.query.year == '') {
+    res.redirect('/apply/save-restore/iteration-1/further-check-error');
+  } else if (req.query.day == '' && req.query.month == '' && req.query.year) {
+    res.redirect('/apply/save-restore/iteration-1/further-check-error');
+  } else if (req.query.day && req.query.month && req.query.year) {
+    res.redirect('/apply/save-restore/iteration-1/task-list-in-progress');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/partnerSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.partner == 'yes' ) {
+    applicant.partner = true;
+    res.redirect('/apply/save-restore/iteration-1/asylum/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/apply/save-restore/iteration-1/asylum/claimed-asylum-single');
+  }
+});
+
+router.get(/whatispartnersincomeSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.incomepartner.includes('earned-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('UCWTC-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('maintenance-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('apprenticeship-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('trustfunds-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('selfemployed-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner == 'benefits-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner == 'pension-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.incomepartner == 'nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } 
+});
+
+router.get(/whatissingleincomeSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('earned-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('UCWTC-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle == 'benefits-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } else if (req.query.incomesingle == 'nil-income') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  } 
+});
+
+router.get(/asylumsingleSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  }
+});
+
+router.get(/asylumPartnerSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('../../kickouts/developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-partner');
+  }
+});
+
+router.get(/asylumdecisionSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.asylumdecision == 'still-waiting') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/who-is-supporting-you');
+  } else if (req.query.asylumdecision == 'given-permission') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.asylumdecision == 'refused-permission') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/who-is-supporting-you');
+  }
+});
+
+router.get(/whoissupportingSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.whoissupporting.includes('uk-visas')) {
+    res.redirect('/apply/save-restore/iteration-1/asylum/passport');
+  } else if (req.query.whoissupporting == 'local-authority') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'a-charity') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting.toString() == 'local-authority,a-charity') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'none') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/tell-us-supporting-you');
+  } 
+});
+
+router.get(/telluswhoissupportingyouSaveRestoreiteration1-handler/, function (req, res) {
+  res.redirect('/apply/save-restore/iteration-1/asylum/what-type-of-support');
+});
+
+router.get(/whatsupportSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.whatsupport.includes('cash')) {
+    res.redirect('/apply/save-restore/iteration-1/asylum/how-often-receive');
+  } else if (req.query.whatsupport.includes('vouchers')) {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.whatsupport.includes('prepaid-card')) {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  } else if (req.query.whatsupport.includes('food-meals')) {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+  }
+});
+
+router.get(/asylumhowoftenSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.asylumhowoften == 'every week' || req.query.asylumhowoften == 'every 2 weeks' || req.query.asylumhowoften == 'every 4 weeks' || req.query.asylumhowoften == 'every calendar month') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/how-much-you-receive');
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/asylum/how-often-receive');
+  }
+});
+
+router.get(/asylumhowmuchSaveRestoreiteration1-handler/, function (req, res) {
+  res.redirect('/apply/save-restore/iteration-1/answers-asylum');
+});
+
+router.get(/saveapplicationSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.saveapplication == 'yes') {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word');
+  } else if (req.query.saveapplication == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  }
+});
+
+router.get(/textemailSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-1/email');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-1/textmessage');
   }
 });
