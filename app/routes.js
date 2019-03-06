@@ -868,7 +868,7 @@ router.get(/whatispartnersincomeSaveRestoreiteration1-handler/, function (req, r
 
 router.get(/whatissingleincomeSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
+    res.redirect('/apply/save-restore/iteration-1/answers');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../../../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
