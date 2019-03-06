@@ -838,9 +838,7 @@ router.get(/partnerSaveRestoreiteration1-handler/, function (req, res) {
 
 router.get(/whatispartnersincomeSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.incomepartner.includes('earned-income')) {
-    res.redirect('../../../kickouts/developed');
-  } else if (req.query.incomepartner.includes('UCWTC-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
   } else if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../../../kickouts/developed');
   } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
@@ -870,9 +868,7 @@ router.get(/whatispartnersincomeSaveRestoreiteration1-handler/, function (req, r
 
 router.get(/whatissingleincomeSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('../../../kickouts/developed');
-  } else if (req.query.incomesingle.includes('UCWTC-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../../../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
