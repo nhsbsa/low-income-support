@@ -983,3 +983,11 @@ router.get(/textemailSaveRestoreiteration1-handler/, function (req, res) {
     res.redirect('/apply/save-restore/iteration-1/textmessage');
   }
 });
+
+router.get(/textemailmethodSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-1/saved-email');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-1/saved-textmessage');
+  }
+});
