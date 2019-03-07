@@ -987,3 +987,11 @@ router.get(/textemailmethodSaveRestoreiteration1-handler/, function (req, res) {
     res.redirect('/apply/save-restore/iteration-1/saved-textmessage');
   }
 });
+
+router.get(/textemailmethodBYSSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-1/date-of-birth-email');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-1/date-of-birth-text');
+  }
+});
