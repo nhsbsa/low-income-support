@@ -790,6 +790,38 @@ router.get(/saveapplicationSaveRestore-handler/, function (req, res) {
 // SAVE & RESTORE (Iteration 1)
 // ************************
 
+router.get(/saveforlaterSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.saveforlater == 'yes' ) {
+    res.redirect('/apply/save-restore/iteration-1/text-or-email-bys');
+  } else if (req.query.saveforlater == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/answers');
+  }
+});
+
+router.get(/carehomeSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.carehome == 'yes' ) {
+    res.redirect('/apply/save-restore/iteration-1/partner');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/partner');
+  }
+});
+
+router.get(/capitalsavingsSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.capitalsavings == 'yes' ) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.capitalsavings == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/education');
+  }
+});
+
+router.get(/educationSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.education == 'yes' ) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.education == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/save-for-later');
+  }
+});
+
 router.get(/resumeapplicationtextiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
     res.redirect('/apply/save-restore/iteration-1/enter-text-code');
@@ -814,7 +846,7 @@ router.get(/saveapplicationtextiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
     res.redirect('/apply/save-restore/iteration-1/enter-text-code-verify');
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-1/saved-textmessage-bys');    
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-text');    
   } else {
     res.redirect('/apply/save-restore/iteration-1/start-again');
   }
@@ -824,11 +856,52 @@ router.get(/saveapplicationemailiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
     res.redirect('/apply/save-restore/iteration-1/enter-email-code-verify');
   } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-email');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/saveapplicationtextBYSiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-text-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-text-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/saveapplicationemailBYSiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-email-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-email-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/memorablewordtextiteration1-handler/, function (req, res) {
+  if (req.query.memorableword == '') {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-text-bys');
+  } else if (req.query.memorableword) {
+    res.redirect('/apply/save-restore/iteration-1/saved-textmessage-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/memorablewordemailiteration1-handler/, function (req, res) {
+  if (req.query.memorableword == '') {
+    res.redirect('/apply/save-restore/iteration-1/memorable-word-email-bys');
+  } else if (req.query.memorableword) {
     res.redirect('/apply/save-restore/iteration-1/saved-email-bys');    
   } else {
     res.redirect('/apply/save-restore/iteration-1/start-again');
   }
 });
+
 
 router.get(/furthercheckiteration1-handler/, function (req, res) {
   if (req.query.day == '' && req.query.month == '' && req.query.year == '') {
@@ -888,7 +961,7 @@ router.get(/whatispartnersincomeSaveRestoreiteration1-handler/, function (req, r
 
 router.get(/whatissingleincomeSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../../../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
@@ -900,19 +973,19 @@ router.get(/whatissingleincomeSaveRestoreiteration1-handler/, function (req, res
   } else if (req.query.incomesingle.includes('selfemployed-income')) {
     res.redirect('../../../kickouts/developed');
   } else if (req.query.incomesingle == 'benefits-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle == 'pension-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } else if (req.query.incomesingle == 'nil-income') {
-    res.redirect('/apply/save-restore/iteration-1/answers');
+    res.redirect('/apply/save-restore/iteration-1/capital-savings');
   } 
 });
 
@@ -1010,8 +1083,8 @@ router.get(/textemailmethodSaveRestoreiteration1-handler/, function (req, res) {
 
 router.get(/textemailmethodBYSSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-1/email-verify');
+    res.redirect('/apply/save-restore/iteration-1/email-verify-bys');
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-1/textmessage-verify');
+    res.redirect('/apply/save-restore/iteration-1/textmessage-verify-bys');
   }
 });
