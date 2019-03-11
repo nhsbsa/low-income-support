@@ -792,7 +792,7 @@ router.get(/saveapplicationSaveRestore-handler/, function (req, res) {
 
 router.get(/resumeapplicationtextiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-1/enter-text-code-error');
+    res.redirect('/apply/save-restore/iteration-1/enter-text-code');
   } else if (req.query.code) {
     res.redirect('/apply/save-restore/iteration-1/further-check');    
   } else {
@@ -802,7 +802,7 @@ router.get(/resumeapplicationtextiteration1-handler/, function (req, res) {
 
 router.get(/resumeapplicationemailiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-1/enter-email-code-error');
+    res.redirect('/apply/save-restore/iteration-1/enter-email-code');
   } else if (req.query.code) {
     res.redirect('/apply/save-restore/iteration-1/further-check');    
   } else {
@@ -812,7 +812,7 @@ router.get(/resumeapplicationemailiteration1-handler/, function (req, res) {
 
 router.get(/saveapplicationtextiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-1/enter-text-code-verify-error');
+    res.redirect('/apply/save-restore/iteration-1/enter-text-code-verify');
   } else if (req.query.code) {
     res.redirect('/apply/save-restore/iteration-1/saved-textmessage-bys');    
   } else {
@@ -822,7 +822,7 @@ router.get(/saveapplicationtextiteration1-handler/, function (req, res) {
 
 router.get(/saveapplicationemailiteration1-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-1/enter-email-code-verify-error');
+    res.redirect('/apply/save-restore/iteration-1/enter-email-code-verify');
   } else if (req.query.code) {
     res.redirect('/apply/save-restore/iteration-1/saved-email-bys');    
   } else {
