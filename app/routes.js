@@ -810,6 +810,26 @@ router.get(/resumeapplicationemailiteration1-handler/, function (req, res) {
   }
 });
 
+router.get(/saveapplicationtextiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-text-code-verify-error');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/saved-textmessage-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
+router.get(/saveapplicationemailiteration1-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-1/enter-email-code-verify-error');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-1/saved-email-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-1/start-again');
+  }
+});
+
 router.get(/furthercheckiteration1-handler/, function (req, res) {
   if (req.query.day == '' && req.query.month == '' && req.query.year == '') {
     res.redirect('/apply/save-restore/iteration-1/further-check-error');
@@ -982,16 +1002,16 @@ router.get(/textemailSaveRestoreiteration1-handler/, function (req, res) {
 
 router.get(/textemailmethodSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-1/saved-email');
+    res.redirect('/apply/save-restore/iteration-1/email-verify');
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-1/saved-textmessage');
+    res.redirect('/apply/save-restore/iteration-1/textmessage-verify');
   }
 });
 
 router.get(/textemailmethodBYSSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-1/date-of-birth-email');
+    res.redirect('/apply/save-restore/iteration-1/email-verify');
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-1/date-of-birth-text');
+    res.redirect('/apply/save-restore/iteration-1/textmessage-verify');
   }
 });
