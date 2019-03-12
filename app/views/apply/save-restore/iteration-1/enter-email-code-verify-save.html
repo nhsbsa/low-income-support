@@ -38,20 +38,13 @@ NHSBSA Prototype
   <div class="grid-row">
     <div class="column-two-thirds">
 
-        <div id="validation" class="error-summary" role="group" aria-labelledby="error-summary-heading" tabindex="-1">
-            <h1 class="heading-medium error-summary-heading" id="error-summary-heading">There is a problem</h1>
-            <ul class="error-summary-list">
-                <li><a href="#resumeApplication">Enter a valid code.</a></li>
-            </ul>
-        </div>
-
       <header class="page-header">
           <p class="page-header--sub heading-secondary">Resume an application</p>
           <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Check your email address</h1>
-        <p>We've sent a 5-character code to your email address, enter the code to continue your application.</p>
+        <p>We've sent a 5-character code to <span style="font-weight: bold;">email@emailaddress.com</span>, enter the code to save your application.</p>
       </header>
 
-      <form action="resumeapplicationemailiteration1-handler" method="get" class="form">
+      <form action="saveapplicationemailiteration1-handler" method="get" class="form">
 
         <div class="form-group">
           <label style="font-weight: bold;" class="form-label" for="code">Enter your code</label>
@@ -65,13 +58,24 @@ NHSBSA Prototype
       </form>
 
       <details role="group">
-          <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+          <summary role="button" aria-controls="details-content-1" aria-expanded="false">
               <span class="summary">Not received an email?</span>
           </summary>
           <br>
+          <div class="panel panel-border-narrow" id="details-content-1" aria-hidden="true">
+              <p>This email may take up to 10 minutes to arrive. Please also check your junk mail folder.</p>
+              <p>If you have still not received an email after this time, please <a href="#">contact us</a></p>
+          </div>
+      </details>
+
+      <details role="group">
+          <summary role="button" aria-controls="details-content-0" aria-expanded="false">
+              <span class="summary">Entered the wrong email address?</span>
+          </summary>
+          <br>
           <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
-              <p>If an application is found with the email address entered, this email may go to your junk mail folder.</p>
-              <p>If you do not get an email, please <a href="#">contact us</a>.</p>
+              <p>The message we send contains no personal data.</p>
+            <p>If you have entered the wrong email address, please go back and <a href="javascript: history.go(-2)">enter it again</a>.</p>
           </div>
       </details>
 

@@ -904,15 +904,9 @@ router.get(/memorablewordemailiteration1-handler/, function (req, res) {
 
 
 router.get(/furthercheckiteration1-handler/, function (req, res) {
-  if (req.query.day == '' && req.query.month == '' && req.query.year == '') {
+  if (req.query.memorablewordenter == '') {
     res.redirect('/apply/save-restore/iteration-1/further-check-error');
-  } else if (req.query.day && req.query.month == '' && req.query.year == '') {
-    res.redirect('/apply/save-restore/iteration-1/further-check-error');
-  } else if (req.query.day == '' && req.query.month && req.query.year == '') {
-    res.redirect('/apply/save-restore/iteration-1/further-check-error');
-  } else if (req.query.day == '' && req.query.month == '' && req.query.year) {
-    res.redirect('/apply/save-restore/iteration-1/further-check-error');
-  } else if (req.query.day && req.query.month && req.query.year) {
+  } else if (req.query.memorablewordenter) {
     res.redirect('/apply/save-restore/iteration-1/task-list-in-progress');    
   } else {
     res.redirect('/apply/save-restore/iteration-1/start-again');
