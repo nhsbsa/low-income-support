@@ -7,9 +7,9 @@ NHSBSA Prototype
 {% block content %}
 <style>
   #capitalize::first-letter {
-    text-transform: uppercase;
-}
-</style>
+            text-transform: uppercase;
+        }
+        </style>
 <main id="content" role="main">
   <div class="phase-banner">
     <p>
@@ -31,7 +31,7 @@ NHSBSA Prototype
 
       <!-- only add a heading for a list if there is more than one list -->
       <h2 class="heading-medium">
-        Income from other sources
+        Money from somewhere else
       </h2>
 
       <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
@@ -39,9 +39,10 @@ NHSBSA Prototype
       <!--   * `cya-questions-long` for long questions -->
       <!--   * none for single group of q&a -->
       <dl class="govuk-check-your-answers cya-questions-short">
+
         <div>
           <dt class="cya-question">
-            <h2 class="heading-small">How paying at the moment</h2>
+            <h2 class="heading-small">How you're paying for things</h2>
           </dt>
           <dd class="cya-answer">
             <p id="capitalize">{{ data['howpaying'] }}</p>
@@ -53,10 +54,60 @@ NHSBSA Prototype
           </dd>
         </div>
 
-        {% if data['nonehowsupporting'] %}
+        
+
+
+        <div>
+            <dt class="cya-question">
+              <h2 class="heading-small">How much you get each week from friends or relatives</h2>
+            </dt>
+            <dd class="cya-answer">
+              <p id="capitalize">£80</p>
+            </dd>
+            <dd class="cya-change">
+              <a href="#">
+                Change
+              </a>
+            </dd>
+          </div>
+
+  
+
         <div>
           <dt class="cya-question">
-            <h2 class="heading-small">How supporting yourself</h2>
+            <h2 class="heading-small">How much you spend each week from savings</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p id="capitalize">£80</p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+
+
+
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">How much you get each week in donations</h2>
+          </dt>
+          <dd class="cya-answer">
+            <p id="capitalize">£80</p>
+          </dd>
+          <dd class="cya-change">
+            <a href="#">
+              Change
+            </a>
+          </dd>
+        </div>
+
+  
+        
+        <div>
+          <dt class="cya-question">
+            <h2 class="heading-small">How you're paying daily living costs</h2>
           </dt>
           <dd class="cya-answer">
             <p id="capitalize">{{ data['nonehowsupporting'] }}</p>
@@ -67,21 +118,9 @@ NHSBSA Prototype
             </a>
           </dd>
         </div>
-        {% endif %}
 
-        <div>
-          <dt class="cya-question">
-            <h2 class="heading-small">How much (on average) received</h2>
-          </dt>
-          <dd class="cya-answer">
-            <p id="capitalize">£{{ data['nonehowmuch'] }}</p>
-          </dd>
-          <dd class="cya-change">
-            <a href="#">
-              Change
-            </a>
-          </dd>
-        </div>
+
+
       </dl>
 
       <br>
