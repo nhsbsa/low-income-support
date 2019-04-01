@@ -125,11 +125,11 @@ router.get(/asylumPartner-handler/, function (req, res) {
 
 router.get(/asylumdecision-handler/, function (req, res) {
   if (req.query.asylumdecision == 'still-waiting') {
-    res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
+    res.redirect('/beforeyoustart/asylum/ukvi');
   } else if (req.query.asylumdecision == 'given-permission') {
     res.redirect('../../beforeyoustart/money-coming-in-single');
   } else if (req.query.asylumdecision == 'refused-permission') {
-    res.redirect('/beforeyoustart/asylum/who-is-supporting-you');
+    res.redirect('/beforeyoustart/asylum/ukvi');
   }
 });
 
@@ -173,6 +173,14 @@ router.get(/asylumhowoften-handler/, function (req, res) {
 
 router.get(/asylumhowmuch-handler/, function (req, res) {
   res.redirect('/beforeyoustart/answers-asylum');
+});
+
+router.get(/ukvi-handler/, function (req, res) {
+  if (req.query.ukvi == 'yes') {
+    res.redirect('/beforeyoustart/asylum/passport');
+  } else if (req.query.ukvi == 'no') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  }
 });
 
 
@@ -1001,11 +1009,19 @@ router.get(/asylumPartnerSaveRestoreiteration1-handler/, function (req, res) {
 
 router.get(/asylumdecisionSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.asylumdecision == 'still-waiting') {
-    res.redirect('/apply/save-restore/iteration-1/asylum/who-is-supporting-you');
+    res.redirect('/apply/save-restore/iteration-1/asylum/ukvi');
   } else if (req.query.asylumdecision == 'given-permission') {
     res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
   } else if (req.query.asylumdecision == 'refused-permission') {
-    res.redirect('/apply/save-restore/iteration-1/asylum/who-is-supporting-you');
+    res.redirect('/apply/save-restore/iteration-1/asylum/ukvi');
+  }
+});
+
+router.get(/ukviSaveRestoreiteration1-handler/, function (req, res) {
+  if (req.query.ukvi == 'yes') {
+    res.redirect('/apply/save-restore/iteration-1/asylum/passport');
+  } else if (req.query.ukvi == 'no') {
+    res.redirect('/apply/save-restore/iteration-1/money-coming-in-single');
   }
 });
 

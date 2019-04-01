@@ -30,41 +30,39 @@ NHSBSA Prototype
     <div class="column-two-thirds">
 
       <header class="page-header">
-        <p class="page-header--sub heading-secondary">Continue an application</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Which application would you like to restore?</h1>
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get support from UK Visas and Immigration?</h1>
       </header>
 
-
-      <p>We have found more than one application associated to you.</p>
+      <form action="ukviSaveRestoreiteration1-handler" method="get" class="form">
 
         <div class="form-group">
 
-          <fieldset>
+            
+            <br>
+          <fieldset class="inline">
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="applicationone" type="radio" name="taxcredittype" value="applicationone">
-              <label for="applicationone"><p style="margin-bottom: 7px;"><span style="font-weight: bold;">12/03/2019</span> - 15:37pm</label>
+              <input id="yes" type="radio" name="ukvi" value="yes">
+              <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-                <input id="applicationtwo" type="radio" name="taxcredittype" value="applicationtwo">
-                <label for="applicationtwo"><p style="margin-bottom: 7px;"><span style="font-weight: bold;">02/02/2019</span> - 11:01am</p></label>
-              </div>
+              <input id="no" type="radio" name="ukvi" value="no">
+              <label for="no">No</label>
+            </div>
 
           </fieldset>
 
-          
-
         </div>
-
-
 
         <div class="form-group">
-            <a href="task-list-in-progress"><input class="button" type="submit" value="Next"></a>
+          <input class="button" type="submit" value="Next">
         </div>
 
+      </form>
     </div>
   </div>
 </main>
