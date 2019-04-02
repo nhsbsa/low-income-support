@@ -20,6 +20,7 @@ var applicant = applicantMaster.createApplicant();
 
 applicant.partner = null;
 applicant.maintenancefor = null;
+saveforlater = null;
 
 // ************************
 // PRE-APPLY
@@ -800,8 +801,10 @@ router.get(/saveapplicationSaveRestore-handler/, function (req, res) {
 
 router.get(/saveforlaterSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.saveforlater == 'yes' ) {
+    saveforlater = true;
     res.redirect('/apply/save-restore/iteration-1/text-or-email-bys');
   } else if (req.query.saveforlater == 'no') {
+    saveforlater = false;
     res.redirect('/apply/save-restore/iteration-1/answers');
   }
 });
@@ -1096,5 +1099,312 @@ router.get(/textemailmethodBYSSaveRestoreiteration1-handler/, function (req, res
     res.redirect('/apply/save-restore/iteration-1/email-verify-bys');
   } else if (req.query.textemail == 'textmessage') {
     res.redirect('/apply/save-restore/iteration-1/textmessage-verify-bys');
+  }
+});
+
+// ************************
+// SAVE & RESTORE (Iteration 2)
+// ************************
+
+router.get(/saveforlaterSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.saveforlater == 'yes' ) {
+    saveforlater = true;
+    res.redirect('/apply/save-restore/iteration-2/text-or-email-bys');
+  } else if (req.query.saveforlater == 'no') {
+    saveforlater = false;
+    res.redirect('/apply/save-restore/iteration-2/answers');
+  }
+});
+
+router.get(/carehomeSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.carehome == 'yes' ) {
+    res.redirect('/apply/save-restore/iteration-2/partner');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/partner');
+  }
+});
+
+router.get(/capitalsavingsSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.capitalsavings == 'yes' ) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.capitalsavings == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/education');
+  }
+});
+
+router.get(/educationSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.education == 'yes' ) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.education == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/save-for-later');
+  }
+});
+
+router.get(/resumeapplicationtextiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-text-code');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/further-check');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/resumeapplicationemailiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-email-code');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/further-check');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/saveapplicationtextiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-text-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-text');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/saveapplicationemailiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-email-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-email');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/saveapplicationtextBYSiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-text-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-text-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/saveapplicationemailBYSiteration2-handler/, function (req, res) {
+  if (req.query.code == '') {
+    res.redirect('/apply/save-restore/iteration-2/enter-email-code-verify');
+  } else if (req.query.code) {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-email-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/memorablewordtextiteration2-handler/, function (req, res) {
+  if (req.query.memorableword == '') {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-text-bys');
+  } else if (req.query.memorableword) {
+    res.redirect('/apply/save-restore/iteration-2/saved-textmessage-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/memorablewordemailiteration2-handler/, function (req, res) {
+  if (req.query.memorableword == '') {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word-email-bys');
+  } else if (req.query.memorableword) {
+    res.redirect('/apply/save-restore/iteration-2/saved-email-bys');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+
+router.get(/furthercheckiteration2-handler/, function (req, res) {
+  if (req.query.memorablewordenter == '') {
+    res.redirect('/apply/save-restore/iteration-2/further-check-error');
+  } else if (req.query.memorablewordenter) {
+    res.redirect('/apply/save-restore/iteration-2/task-list-in-progress');    
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/start-again');
+  }
+});
+
+router.get(/partnerSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.partner == 'yes' ) {
+    applicant.partner = true;
+    res.redirect('/apply/save-restore/iteration-2/asylum/claimed-asylum-partner');
+  } else if (req.query.partner == 'no') {
+    applicant.partner = false;
+    res.redirect('/apply/save-restore/iteration-2/asylum/claimed-asylum-single');
+  }
+});
+
+router.get(/whatispartnersincomeSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.incomepartner.includes('earned-income')) {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner.includes('maintenance-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('apprenticeship-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('trustfunds-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner.includes('selfemployed-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomepartner == 'benefits-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner == 'pension-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.incomepartner == 'nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } 
+});
+
+router.get(/whatissingleincomeSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.incomesingle.includes('earned-income')) {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle.includes('maintenance-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('apprenticeship-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('trustfunds-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle.includes('selfemployed-income')) {
+    res.redirect('../../../kickouts/developed');
+  } else if (req.query.incomesingle == 'benefits-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle == 'pension-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } else if (req.query.incomesingle == 'nil-income') {
+    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+  } 
+});
+
+router.get(/asylumsingleSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.asylumsingle == 'yes') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/asylum-decision');
+  } else if (req.query.asylumsingle == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  }
+});
+
+router.get(/asylumPartnerSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.asylumPartner == 'yes') {
+    res.redirect('../../kickouts/developed');
+  } else if (req.query.asylumPartner == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-partner');
+  }
+});
+
+router.get(/asylumdecisionSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.asylumdecision == 'still-waiting') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/ukvi');
+  } else if (req.query.asylumdecision == 'given-permission') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.asylumdecision == 'refused-permission') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/ukvi');
+  }
+});
+
+router.get(/ukviSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.ukvi == 'yes') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/passport');
+  } else if (req.query.ukvi == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  }
+});
+
+router.get(/whoissupportingSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.whoissupporting.includes('uk-visas')) {
+    res.redirect('/apply/save-restore/iteration-2/asylum/passport');
+  } else if (req.query.whoissupporting == 'local-authority') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'a-charity') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting.toString() == 'local-authority,a-charity') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+  } else if (req.query.whoissupporting == 'none') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/tell-us-supporting-you');
+  } 
+});
+
+router.get(/telluswhoissupportingyouSaveRestoreiteration2-handler/, function (req, res) {
+  res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+});
+
+router.get(/whatsupportSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.whatsupport.includes('cash')) {
+    res.redirect('/apply/save-restore/iteration-2/asylum/how-often-receive');
+  } else if (req.query.whatsupport.includes('vouchers')) {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.whatsupport.includes('prepaid-card')) {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  } else if (req.query.whatsupport.includes('food-meals')) {
+    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+  }
+});
+
+router.get(/asylumhowoftenSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.asylumhowoften == 'every week' || req.query.asylumhowoften == 'every 2 weeks' || req.query.asylumhowoften == 'every 4 weeks' || req.query.asylumhowoften == 'every calendar month') {
+    res.redirect('/apply/save-restore/iteration-2/asylum/how-much-you-receive');
+  } else {
+    res.redirect('/apply/save-restore/iteration-2/asylum/how-often-receive');
+  }
+});
+
+router.get(/asylumhowmuchSaveRestoreiteration2-handler/, function (req, res) {
+  res.redirect('/apply/save-restore/iteration-2/answers-asylum');
+});
+
+router.get(/saveapplicationSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.saveapplication == 'yes') {
+    res.redirect('/apply/save-restore/iteration-2/memorable-word');
+  } else if (req.query.saveapplication == 'no') {
+    res.redirect('/apply/save-restore/iteration-2/answers');
+  }
+});
+
+router.get(/textemailSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-2/email');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-2/textmessage');
+  }
+});
+
+router.get(/textemailmethodSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-2/email-verify');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-2/textmessage-verify');
+  }
+});
+
+router.get(/textemailmethodBYSSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.textemail == 'email' ) {
+    res.redirect('/apply/save-restore/iteration-2/email-verify-bys');
+  } else if (req.query.textemail == 'textmessage') {
+    res.redirect('/apply/save-restore/iteration-2/textmessage-verify-bys');
   }
 });
