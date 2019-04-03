@@ -40,8 +40,13 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Does your partner have money
-          coming in from any of these?</h1>
+          {% if thirdparty %}
+          <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Does their partner have money
+              coming in from any of these?</h1>
+          {% else %}
+          <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Does your partner have money
+              coming in from any of these?</h1>
+          {% endif %}
       </header>
 
       <form action="whatispartnersincomeSaveRestoreiteration2-handler" class="form" method="get">

@@ -40,10 +40,18 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do they have more than £6,000 in savings, investments or property?</h1>
+        {% else %}
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you have more than £6,000 in savings, investments or property?</h1>
+        {% endif %}
       </header>
+      {% if thirdparty %}
+      <p>Do not include the property they live in.</p>
+            {% else %}
+      <p>Do not include the property you live in.</p>
+            {% endif %}
 
-<p>Do not include the property you live in.</p>
 
       <form action="capitalsavingsSaveRestoreiteration2-handler" method="get" class="form">
 

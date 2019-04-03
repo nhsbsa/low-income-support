@@ -17,7 +17,10 @@ function Applicant (
   contactValue,
   email,
   address,
-  age
+  age,
+  partner,
+  maintenancefor,
+  saveforlater
   ) {
     this.firstName = firstName;
     this.lastName = lastName;
@@ -37,6 +40,9 @@ function Applicant (
     this.email = email;
     this.address = address;
     this.age = age;
+    this.partner = partner;
+    this.maintenancefor = maintenancefor;
+    this.saveforlater = saveforlater;
 };
 
 Applicant.prototype.setFullName = function () {

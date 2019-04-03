@@ -20,7 +20,16 @@ var applicant = applicantMaster.createApplicant();
 
 applicant.partner = null;
 applicant.maintenancefor = null;
-saveforlater = null;
+applicant.saveforlater = null;
+
+var benificiary = {
+  firstname : "Molly",
+  lastname : "Smith",
+  thirdParty : false,
+  dobDay : "0",
+  dobMonth : "0",
+  dobYear : "0",
+};
 
 // ************************
 // PRE-APPLY
@@ -801,10 +810,10 @@ router.get(/saveapplicationSaveRestore-handler/, function (req, res) {
 
 router.get(/saveforlaterSaveRestoreiteration1-handler/, function (req, res) {
   if (req.query.saveforlater == 'yes' ) {
-    saveforlater = true;
+    applicant.saveforlater = true;
     res.redirect('/apply/save-restore/iteration-1/text-or-email-bys');
   } else if (req.query.saveforlater == 'no') {
-    saveforlater = false;
+    applicant.saveforlater = false;
     res.redirect('/apply/save-restore/iteration-1/answers');
   }
 });
@@ -1108,303 +1117,562 @@ router.get(/textemailmethodBYSSaveRestoreiteration1-handler/, function (req, res
 
 router.get(/saveforlaterSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.saveforlater == 'yes' ) {
-    saveforlater = true;
-    res.redirect('/apply/save-restore/iteration-2/text-or-email-bys');
+    applicant.saveforlater = true;
+    res.render('apply/save-restore/iteration-2/text-or-email-bys', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.saveforlater == 'no') {
-    saveforlater = false;
-    res.redirect('/apply/save-restore/iteration-2/answers');
+    applicant.saveforlater = false;
+    res.render('apply/save-restore/iteration-2/answers', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/carehomeSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.carehome == 'yes' ) {
-    res.redirect('/apply/save-restore/iteration-2/partner');
+    res.render('apply/save-restore/iteration-2/partner', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.carehome == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/partner');
+    res.render('apply/save-restore/iteration-2/partner', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/capitalsavingsSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.capitalsavings == 'yes' ) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.capitalsavings == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/education');
+    res.render('apply/save-restore/iteration-2/education', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/educationSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.education == 'yes' ) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.education == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/save-for-later');
+    res.render('apply/save-restore/iteration-2/save-for-later', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/resumeapplicationtextiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-text-code');
+    res.render('apply/save-restore/iteration-2/enter-text-code', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/further-check');    
+    res.render('apply/save-restore/iteration-2/further-check', {
+      thirdparty : benificiary.thirdParty
+    });   
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/resumeapplicationemailiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-email-code');
+    res.render('apply/save-restore/iteration-2/enter-email-code', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/further-check');    
+    res.render('apply/save-restore/iteration-2/further-check', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/saveapplicationtextiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-text-code-verify');
+    res.render('apply/save-restore/iteration-2/enter-text-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-text');    
+    res.render('apply/save-restore/iteration-2/memorable-word-text', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/saveapplicationemailiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-email-code-verify');
+    res.render('apply/save-restore/iteration-2/enter-email-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-email');    
+    res.render('apply/save-restore/iteration-2/memorable-word-email', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/saveapplicationtextBYSiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-text-code-verify');
+    res.render('apply/save-restore/iteration-2/enter-text-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-text-bys');    
+    res.render('apply/save-restore/iteration-2/memorable-word-text-bys', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/saveapplicationemailBYSiteration2-handler/, function (req, res) {
   if (req.query.code == '') {
-    res.redirect('/apply/save-restore/iteration-2/enter-email-code-verify');
+    res.render('apply/save-restore/iteration-2/enter-email-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.code) {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-email-bys');    
+    res.render('apply/save-restore/iteration-2/memorable-word-email-bys', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/memorablewordtextiteration2-handler/, function (req, res) {
   if (req.query.memorableword == '') {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-text-bys');
+    res.render('apply/save-restore/iteration-2/memorable-word-text-bys', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.memorableword) {
-    res.redirect('/apply/save-restore/iteration-2/saved-textmessage-bys');    
+    res.render('apply/save-restore/iteration-2/saved-textmessage-bys', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/memorablewordemailiteration2-handler/, function (req, res) {
   if (req.query.memorableword == '') {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word-email-bys');
+    res.render('apply/save-restore/iteration-2/memorable-word-email-bys', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.memorableword) {
-    res.redirect('/apply/save-restore/iteration-2/saved-email-bys');    
+    res.render('apply/save-restore/iteration-2/saved-email-bys', {
+      thirdparty : benificiary.thirdParty
+    });   
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 
 router.get(/furthercheckiteration2-handler/, function (req, res) {
   if (req.query.memorablewordenter == '') {
-    res.redirect('/apply/save-restore/iteration-2/further-check-error');
+    res.render('apply/save-restore/iteration-2/further-check-error', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.memorablewordenter) {
-    res.redirect('/apply/save-restore/iteration-2/task-list-in-progress');    
+    res.render('apply/save-restore/iteration-2/task-list-in-progress', {
+      thirdparty : benificiary.thirdParty
+    });    
   } else {
-    res.redirect('/apply/save-restore/iteration-2/start-again');
+    res.render('apply/save-restore/iteration-2/start-again', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/partnerSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.partner == 'yes' ) {
     applicant.partner = true;
-    res.redirect('/apply/save-restore/iteration-2/asylum/claimed-asylum-partner');
+    res.render('apply/save-restore/iteration-2/asylum/claimed-asylum-partner', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.partner == 'no') {
     applicant.partner = false;
-    res.redirect('/apply/save-restore/iteration-2/asylum/claimed-asylum-single');
+    res.render('apply/save-restore/iteration-2/asylum/claimed-asylum-single', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/whatispartnersincomeSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.incomepartner.includes('earned-income')) {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.includes('maintenance-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.includes('apprenticeship-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.includes('trustfunds-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.includes('selfemployed-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner == 'benefits-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner == 'pension-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomepartner == 'nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } 
 });
 
 router.get(/whatissingleincomeSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.includes('maintenance-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.includes('apprenticeship-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.includes('trustfunds-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.includes('selfemployed-income')) {
-    res.redirect('../../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle == 'benefits-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle == 'pension-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.incomesingle == 'nil-income') {
-    res.redirect('/apply/save-restore/iteration-2/capital-savings');
+    res.render('apply/save-restore/iteration-2/capital-savings', {
+      thirdparty : benificiary.thirdParty
+    });
   } 
 });
 
 router.get(/asylumsingleSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.asylumsingle == 'yes') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/asylum-decision');
+    res.render('apply/save-restore/iteration-2/asylum/asylum-decision', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.asylumsingle == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/asylumPartnerSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.asylumPartner == 'yes') {
-    res.redirect('../../kickouts/developed');
+    res.render('kickouts/developed', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.asylumPartner == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-partner');
+    res.render('apply/save-restore/iteration-2/money-coming-in-partner', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/asylumdecisionSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.asylumdecision == 'still-waiting') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/ukvi');
+    res.render('apply/save-restore/iteration-2/asylum/ukvi', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.asylumdecision == 'given-permission') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.asylumdecision == 'refused-permission') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/ukvi');
+    res.render('apply/save-restore/iteration-2/asylum/ukvi', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/ukviSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.ukvi == 'yes') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/passport');
+    res.render('apply/save-restore/iteration-2/asylum/passport', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.ukvi == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/whoissupportingSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.whoissupporting.includes('uk-visas')) {
-    res.redirect('/apply/save-restore/iteration-2/asylum/passport');
+    res.render('apply/save-restore/iteration-2/asylum/passport', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whoissupporting == 'local-authority') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+    res.render('apply/save-restore/iteration-2/asylum/what-type-of-support', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whoissupporting == 'a-charity') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+    res.render('apply/save-restore/iteration-2/asylum/what-type-of-support', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whoissupporting.toString() == 'local-authority,a-charity') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+    res.render('apply/save-restore/iteration-2/asylum/what-type-of-support', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whoissupporting == 'none') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/tell-us-supporting-you');
+    res.render('apply/save-restore/iteration-2/asylum/tell-us-supporting-you', {
+      thirdparty : benificiary.thirdParty
+    });
   } 
 });
 
 router.get(/telluswhoissupportingyouSaveRestoreiteration2-handler/, function (req, res) {
-  res.redirect('/apply/save-restore/iteration-2/asylum/what-type-of-support');
+  res.render('apply/save-restore/iteration-2/asylum/what-type-of-support', {
+    thirdparty : benificiary.thirdParty
+  });
 });
 
 router.get(/whatsupportSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.whatsupport.includes('cash')) {
-    res.redirect('/apply/save-restore/iteration-2/asylum/how-often-receive');
+    res.render('apply/save-restore/iteration-2/asylum/how-often-receive', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whatsupport.includes('vouchers')) {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whatsupport.includes('prepaid-card')) {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.whatsupport.includes('food-meals')) {
-    res.redirect('/apply/save-restore/iteration-2/money-coming-in-single');
+    res.render('apply/save-restore/iteration-2/money-coming-in-single', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/asylumhowoftenSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.asylumhowoften == 'every week' || req.query.asylumhowoften == 'every 2 weeks' || req.query.asylumhowoften == 'every 4 weeks' || req.query.asylumhowoften == 'every calendar month') {
-    res.redirect('/apply/save-restore/iteration-2/asylum/how-much-you-receive');
+    res.render('apply/save-restore/iteration-2/asylum/how-much-you-receive', {
+      thirdparty : benificiary.thirdParty
+    });
   } else {
-    res.redirect('/apply/save-restore/iteration-2/asylum/how-often-receive');
+    res.render('apply/save-restore/iteration-2/asylum/how-often-receive', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/asylumhowmuchSaveRestoreiteration2-handler/, function (req, res) {
-  res.redirect('/apply/save-restore/iteration-2/answers-asylum');
+  res.render('apply/save-restore/iteration-2/answers-asylum', {
+    thirdparty : benificiary.thirdParty
+  });
 });
 
 router.get(/saveapplicationSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.saveapplication == 'yes') {
-    res.redirect('/apply/save-restore/iteration-2/memorable-word');
+    res.render('apply/save-restore/iteration-2/memorable-word', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.saveapplication == 'no') {
-    res.redirect('/apply/save-restore/iteration-2/answers');
+    res.render('apply/save-restore/iteration-2/answers', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/textemailSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-2/email');
+    res.render('apply/save-restore/iteration-2/email', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-2/textmessage');
+    res.render('apply/save-restore/iteration-2/textmessage', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/textemailmethodSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-2/email-verify');
+    res.render('apply/save-restore/iteration-2/enter-email-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-2/textmessage-verify');
+    res.render('apply/save-restore/iteration-2/enter-text-code-verify', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
 
 router.get(/textemailmethodBYSSaveRestoreiteration2-handler/, function (req, res) {
   if (req.query.textemail == 'email' ) {
-    res.redirect('/apply/save-restore/iteration-2/email-verify-bys');
+    res.render('apply/save-restore/iteration-2/enter-email-code-verify-bys', {
+      thirdparty : benificiary.thirdParty
+    });
   } else if (req.query.textemail == 'textmessage') {
-    res.redirect('/apply/save-restore/iteration-2/textmessage-verify-bys');
+    res.render('apply/save-restore/iteration-2/enter-text-code-verify-bys', {
+      thirdparty : benificiary.thirdParty
+    });
   }
 });
+
+router.get(/applyingforSaveRestoreiteration2-handler/, function (req, res) {
+  if (req.query.applyingfor == 'myself' ) {
+    benificiary.thirdParty = false;
+    res.render('apply/save-restore/iteration-2/care-home', {
+      thirdparty : benificiary.thirdParty
+    }); 
+  } else if (req.query.applyingfor == 'someoneelse' ) {
+    benificiary.thirdParty = false;
+    res.redirect('/apply/save-restore/iteration-2/applying-for');
+  } else if (req.query.applyingfor.includes('understand') ) {
+    benificiary.thirdParty = true;
+    res.render('apply/save-restore/iteration-2/care-home', {
+      thirdparty : benificiary.thirdParty
+    });
+  }
+});
+
+
+router.get(/answersSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/answers-saved', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/tasklistSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/task-list', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/beneficiarySaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/name-of-beneficiary', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/nameSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/date-of-birth', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/dobSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/address', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/addressSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/nhs-number', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/nhsnumberSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/sight-impaired', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/sightimpairedSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/details/answers', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+
+router.get(/detailsSaveRestoreiteration2-handler/, function (req, res) {
+  res.render('apply/save-restore/iteration-2/text-or-email', {
+    thirdparty : benificiary.thirdParty
+  });
+});
+

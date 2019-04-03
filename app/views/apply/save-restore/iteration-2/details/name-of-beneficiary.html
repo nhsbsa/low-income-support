@@ -14,6 +14,19 @@ NHSBSA Prototype
 
 {% block content %}
 
+<style>
+        @media screen and (max-width: 640px) {
+        .save-restore-mobile {
+            display: block;
+            text-align: center;
+        }
+        }
+        .save-restore-mobile:hover {
+            cursor: pointer;
+            text-decoration: underline;
+        }   
+</style>
+
 <main id="content" role="main">
 
     <div class="phase-banner">
@@ -31,12 +44,18 @@ NHSBSA Prototype
 
             <header class="page-header">
                 <p class="page-header--sub heading-secondary">Personal details</p>
-                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your name?</h1>
+                {% if thirdparty %}
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is their name?</h1>
+                <p class="form-hint">Use their full name. For example, Susan not Sue.</p>
+                 {% else %}
+                 <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What is your name?</h1>
                 <p class="form-hint">Use your full name. For example, Susan not Sue.</p>
+
+                {% endif %}
             </header>
 
 
-            <form action="jobtitle-handler" method="get" class="form">
+            <form action="nameSaveRestoreiteration2-handler" method="get" class="form">
 
                 <div class="form-group">
                     <label class="form-label" for="firstname">First name</label>
@@ -54,7 +73,7 @@ NHSBSA Prototype
                 </div>
 
 
-            </form>
+            
 
 
 
@@ -62,16 +81,29 @@ NHSBSA Prototype
                     <div style="line-height: 225%;">
 
                         {% if data['memorableword']  %}
-                        <a href="date-of-birth"><input class="button" type="submit" value="Save and continue"></a>
+                        <input class="button" type="submit" value="Save and Continue">
                         {% else %}
       
-                        <a href="date-of-birth"><input class="button" type="submit" value="Continue"></a>
-                          <span class="save-restore-mobile" style="margin: 0 20px;">or</span>
-                        <a class="save-restore-mobile" href="../text-or-email">Save and continue later</a>
+                        <input class="button" type="submit" value="Continue">
+                    </form>
       
+                        {% endif %}
+
+                        {% if not data['memorableword']  %}
+                        <span class="save-restore-mobile" style="margin: 0 20px;">or</span>
+                        <form action="detailsSaveRestoreiteration2-handler" method="get" class="form" style="display: inline-block;">
+                            <input class="save-restore-mobile" type="submit" value="Save and continue later" style="background: none!important;
+                            border: none;
+                            padding: 0!important;
+                            text-align: left;
+                            color: #005ea5;">
+                        </form>
+
                         {% endif %}
       
                       </div>                    </div>
+
+                    
 
         </div>
     </div>

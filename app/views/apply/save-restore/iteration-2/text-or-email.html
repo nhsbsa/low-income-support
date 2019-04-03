@@ -31,8 +31,13 @@ NHSBSA Prototype
 
         <header class="page-header">
             <p class="page-header--sub heading-secondary">Save an application</p>
+            {% if thirdparty %}
+            <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do they want to save this application?</h1>
+            <p>We'll need to send them a 6 digit code to save this application.</p>
+            {% else %}
             <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">How do you want to save this application?</h1>
-    <p>We'll need to send you a 6 digit code to save this application.</p>
+            <p>We'll need to send you a 6 digit code to save this application.</p>
+            {% endif %}
             
           </header>
 
@@ -49,8 +54,11 @@ NHSBSA Prototype
 
               <div class="panel panel-border-narrow js-hidden" id="email">
                   <label class="form-label-bold" for="nhsno">Email address</label>
+                  {% if thirdparty %}
+                  <p class="form-hint">We'll only use this email address to send them their save code</p>
+                  {% else %}
                   <p class="form-hint">We'll only use this email address to send you your save code</p>
-                  <div>
+                  {% endif %}                  <div>
                     <input class="form-control" id="saveforlateremail" name="saveforlateremail" type="text">
                   </div>
                   <br>
@@ -65,7 +73,11 @@ NHSBSA Prototype
 
               <div class="panel panel-border-narrow js-hidden" id="textmessage">
                   <label class="form-label-bold" for="nhsno">Mobile phone number</label>
-                  <p class="form-hint">We'll only use this number to send you your save code</p>
+                  {% if thirdparty %}
+<p class="form-hint">We'll only use this number to send them their save code</p>
+{% else %}
+<p class="form-hint">We'll only use this number to send you your save code</p>
+{% endif %}
                   <div>
                     <input class="form-control" id="saveforlatermobile" name="saveforlatermobile" type="text">
                   </div>

@@ -32,7 +32,11 @@ NHSBSA Prototype
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Provide a memorable word</h1>
-        <p class="form-hint">This is a word you'll need to remember as we'll ask for this when you resume your application</p>
+        {% if thirdparty %}
+        <p>We'll ask for this when they continue this application. Make sure they choose a word that's easy to remember.</p>
+        {% else %}
+        <p>We'll ask for this when you continue this application. Make sure you choose a word that's easy to remember.</p>
+        {% endif %}
         
       </header>
 

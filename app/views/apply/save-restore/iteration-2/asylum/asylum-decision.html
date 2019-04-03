@@ -39,7 +39,11 @@ NHSBSA Prototype
 
             <header class="page-header">
                 <p class="page-header--sub heading-secondary">Before you start</p>
+                {% if thirdparty %}
+                <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What was the decision of their asylum application?</h1>
+                {% else %}
                 <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What was the decision of your asylum application?</h1>
+                {% endif %}
             </header>
 
             <form action="asylumdecisionSaveRestoreiteration2-handler" method="get" class="form">

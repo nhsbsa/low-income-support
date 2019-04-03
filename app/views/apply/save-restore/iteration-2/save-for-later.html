@@ -40,8 +40,13 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do they want to save this application?</h1>
+        <p>They can save this application for 7 days, and continue later.</p>
+        {% else %}
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you want to save this application?</h1>
         <p>You can save this application for 7 days, and continue later.</p>
+        {% endif %} 
       </header>
 
       <form action="saveforlaterSaveRestoreiteration2-handler" method="get" class="form">

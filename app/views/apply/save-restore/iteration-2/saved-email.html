@@ -32,15 +32,22 @@
                     
                     <h2 class="heading-medium">What happens next</h2>
         
-                    <p>We've sent a message to <strong style="font-weight: bold;">email@emailaddress.com</strong> with information about how to return to your application later.</p>
+                    {% if thirdparty %}
+                    <p>We've sent them an email with a link they can use to continue later.</p>
+            <p>You can continue their application, or close this window.</p>
+
+                     {% else %}
+                    <p>We've sent you an email with a link you can use to continue later.</p>
+                    <p>You can continue, or close this window.</p>
+
+                    {% endif %}
         
-                    <p>You can now safely close this window and return later.</p>
 
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-                    <p>However, if you would like to continue your application please click 'continue your application'.</p>
+                    <p><a href="#" onclick="javascript:history.back(-5); location.reload(true)"><input class="button" type="submit" value="Continue this application"></a></p>
 
-                    <p><a href="javascript: history.go(-5)"><input class="button" type="submit" value="Continue this application"></a></p>
+
                         
 
                 

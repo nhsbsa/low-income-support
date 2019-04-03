@@ -24,6 +24,10 @@ Help paying for NHS Costs prototype
 .secondary-button.disabled:hover, .secondary-button[disabled="disabled"]:hover, .secondary-button[disabled]:hover {
   background-color: #005EA5;
 }
+.task-name:hover {
+cursor: pointer;
+color: #2b8cc4 !important;
+}
 </style>
 
 <main id="content" role="main">
@@ -55,7 +59,18 @@ Help paying for NHS Costs prototype
           <li style="list-style: none; display: inline">
           </li>
           <li class="task-list-item">
-            <a aria-describedby="personal-details-completed" class="task-name" href="details/who-is-applying">Personal details</a> <strong class="task-completed"
+
+              <form action="beneficiarySaveRestoreiteration2-handler" method="get" class="form">
+                  <input class="task-name" type="submit" value="Personal details" style="background: none!important;
+                  border: none;
+                  padding: 0!important;
+                  text-align: left;
+                  color: #005ea5;
+                  text-decoration: underline;">
+              </form>
+            
+            
+            <strong class="task-completed"
             id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           <li class="task-list-item">

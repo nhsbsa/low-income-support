@@ -32,13 +32,25 @@
             
             <h2 class="heading-medium">What happens next</h2>
 
+            
+            {% if thirdparty %}
+            <p>We've sent them a text with a link they can use to continue later.</p>
+            <p>You can continue their application, or close this window.</p>
+            {% else %}
             <p>We've sent you a text with a link you can use to continue later.</p>
-
             <p>You can continue, or close this window.</p>
+            {% endif %}
+
+            
 
             <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-            <p><a href="answers-saved"><input class="button" type="submit" value="Continue this application"></a></p>
+            <div class="form-group">
+                    <form action="answersSaveRestoreiteration2-handler" method="get" class="form">
+                      <input class="button" type="submit" value="Continue this application">
+                  </form>
+                </div>
+
 
 
 

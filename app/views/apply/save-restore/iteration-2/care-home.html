@@ -40,7 +40,11 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">Before you start</p>
+        {% if thirdparty %}
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do they live permanently in a care home?</h1>
+        {% else %}
         <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you live permanently in a care home?</h1>
+        {% endif %}
       </header>
 
       <form action="carehomeSaveRestoreiteration2-handler" method="get" class="form">

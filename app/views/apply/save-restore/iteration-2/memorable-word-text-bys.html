@@ -41,7 +41,11 @@ NHSBSA Prototype
         <header class="page-header">
             <p class="page-header--sub heading-secondary">Before you start</p>
             <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Choose a memorable word</h1>
+            {% if thirdparty %}
+            <p>We'll ask for this when they continue this application. Make sure they choose a word that's easy to remember.</p>
+            {% else %}
             <p>We'll ask for this when you continue this application. Make sure you choose a word that's easy to remember.</p>
+            {% endif %}
           </header>
 
       <form action="memorablewordtextiteration2-handler" method="get" class="form">
