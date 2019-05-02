@@ -1676,3 +1676,64 @@ router.get(/detailsSaveRestoreiteration2-handler/, function (req, res) {
   });
 });
 
+// ************************
+// BENEFITS (Iteration 1)
+// ************************
+
+router.get(/universalcredititeration1-handler/, function (req, res) {
+  if (req.query.universalcredit == 'yes') {
+    res.redirect('universal-credit-any');
+  } if (req.query.universalcredit == 'no') {
+    res.redirect('tax-credits');
+  } else if (req.query.universalcredit == 'not-yet') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/universalcreditanyiteration1-handler/, function (req, res) {
+  if (req.query.universalcreditany == 'yes') {
+    res.redirect('universal-credit-935');
+  } else if (req.query.universalcreditany == 'no') {
+    res.redirect('universal-credit-435');
+  }
+});
+
+router.get(/universalcredit935iteration1-handler/, function (req, res) {
+  if (req.query.universalcredit935 == 'yes') {
+    res.redirect('passport-935');
+  } else if (req.query.universalcredit935 == 'no') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/universalcredit435iteration1-handler/, function (req, res) {
+  if (req.query.universalcredit435 == 'yes') {
+    res.redirect('passport-435');
+  } else if (req.query.universalcredit435 == 'no') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/taxcreditsiteration1-handler/, function (req, res) {
+  if (req.query.taxcredits == 'yes') {
+    res.redirect('../benefits/tax-credits-type');
+  } else if (req.query.taxcredits == 'no') {
+    res.redirect('../benefits/other-benefits');
+  }
+});
+
+router.get(/taxcredittypeiteration1-handler/, function (req, res) {
+  if (req.query.taxcredittype == 'WTCCTC') {
+    res.redirect('../benefits/other-benefits');
+  } if (req.query.taxcredittype == 'WTCDisability') {
+    res.redirect('../benefits/other-benefits');
+  } if (req.query.taxcredittype == 'WTC') {
+    res.redirect('../benefits/other-benefits');
+  } else if (req.query.taxcredittype == 'CTC') {
+    res.redirect('../benefits/other-benefits');
+  }
+});
+
+router.get(/otherbenefitsiteration1-handler/, function (req, res) {
+  res.redirect('../benefits/answers');
+});
