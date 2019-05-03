@@ -1737,3 +1737,41 @@ router.get(/taxcredittypeiteration1-handler/, function (req, res) {
 router.get(/otherbenefitsiteration1-handler/, function (req, res) {
   res.redirect('../benefits/answers');
 });
+
+// ************************
+// COUNCIL TAX (Iteration 1)
+// ************************
+
+router.get(/counciltaxiteration1-handler/, function (req, res) {
+  if (req.query.counciltax == 'yes') {
+    res.redirect('council-tax-frequency');
+  } else if (req.query.counciltax == 'no') {
+    res.redirect('check-your-answers');
+  }
+});
+
+router.get(/counciltaxfrequencyiteration1-handler/, function (req, res) {
+  if (req.query.counciltaxfrequency == '10') {
+    res.redirect('council-tax-month');
+  } if (req.query.counciltaxfrequency == '12') {
+    res.redirect('council-tax-month');
+  } else if (req.query.counciltaxfrequency == 'lump') {
+    res.redirect('council-tax-lump');
+  }
+});
+
+router.get(/counciltaxmonthiteration1-handler/, function (req, res) {
+  if (req.query.counciltaxmonth) {
+    res.redirect('check-your-answers-month');
+  } else {
+    res.redirect('council-tax-month');
+  }
+});
+
+router.get(/counciltaxlumpiteration1-handler/, function (req, res) {
+  if (req.query.counciltaxlump) {
+    res.redirect('check-your-answers-lump');
+  } else {
+    res.redirect('council-tax-lump');
+  }
+});
