@@ -1739,6 +1739,52 @@ router.get(/otherbenefitsiteration1-handler/, function (req, res) {
 });
 
 // ************************
+// BENEFITS (Iteration 2 & 3)
+// ************************
+
+router.get(/universalcredititeration23-handler/, function (req, res) {
+  if (req.query.universalcredit == 'yes') {
+    res.redirect('tax-credits');
+  } if (req.query.universalcredit == 'no') {
+    res.redirect('tax-credits');
+  } else if (req.query.universalcredit == 'not-yet') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/taxcreditsiteration23-handler/, function (req, res) {
+  if (req.query.taxcredits == 'yes') {
+    res.redirect('tax-credits-type');
+  } else if (req.query.taxcredits == 'no') {
+    res.redirect('other-benefits');
+  }
+});
+
+router.get(/taxcredittypeiteration23-handler/, function (req, res) {
+  if (req.query.taxcredittype == 'WTCCTC') {
+    res.redirect('other-benefits');
+  } if (req.query.taxcredittype == 'WTCDisability') {
+    res.redirect('other-benefits');
+  } if (req.query.taxcredittype == 'WTC') {
+    res.redirect('other-benefits');
+  } else if (req.query.taxcredittype == 'CTC') {
+    res.redirect('other-benefits');
+  }
+});
+
+router.get(/otherbenefitsiteration23-handler/, function (req, res) {
+  res.redirect('additional-benefits');
+});
+
+router.get(/additionalbenefitsiteration23-handler/, function (req, res) {
+  res.redirect('carers-allowance');
+});
+
+router.get(/carersallowanceiteration23-handler/, function (req, res) {
+  res.redirect('answers');
+});
+
+// ************************
 // COUNCIL TAX (Iteration 1)
 // ************************
 
