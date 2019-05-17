@@ -1821,3 +1821,47 @@ router.get(/counciltaxlumpiteration1-handler/, function (req, res) {
     res.redirect('council-tax-lump');
   }
 });
+
+// ************************
+// COUNCIL TAX (Iteration 1)
+// ************************
+
+router.get(/counciltaxiteration2-handler/, function (req, res) {
+  if (req.query.counciltax == 'yes') {
+    res.redirect('council-tax-frequency');
+  } else if (req.query.counciltax == 'no') {
+    res.redirect('check-your-answers');
+  }
+});
+
+router.get(/counciltaxfrequencyiteration2-handler/, function (req, res) {
+  if (req.query.counciltaxfrequency == 'monthly') {
+    res.redirect('council-tax-monthperiod');
+  } else if (req.query.counciltaxfrequency == 'yearly') {
+    res.redirect('council-tax-lump');
+  }
+});
+
+router.get(/counciltaxmonthlyperioditeration2-handler/, function (req, res) {
+  if (req.query.counciltaxmonthlyperiod == '10') {
+    res.redirect('council-tax-month');
+  } else if (req.query.counciltaxmonthlyperiod == '12') {
+    res.redirect('council-tax-month');
+  }
+});
+
+router.get(/counciltaxmonthiteration2-handler/, function (req, res) {
+  if (req.query.counciltaxmonth) {
+    res.redirect('check-your-answers-month');
+  } else {
+    res.redirect('council-tax-month');
+  }
+});
+
+router.get(/counciltaxlumpiteration2-handler/, function (req, res) {
+  if (req.query.counciltaxlump) {
+    res.redirect('check-your-answers-lump');
+  } else {
+    res.redirect('council-tax-lump');
+  }
+});
