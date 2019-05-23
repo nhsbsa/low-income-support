@@ -1823,7 +1823,7 @@ router.get(/counciltaxlumpiteration1-handler/, function (req, res) {
 });
 
 // ************************
-// COUNCIL TAX (Iteration 1)
+// COUNCIL TAX (Iteration 2)
 // ************************
 
 router.get(/counciltaxiteration2-handler/, function (req, res) {
@@ -1835,8 +1835,10 @@ router.get(/counciltaxiteration2-handler/, function (req, res) {
 });
 
 router.get(/counciltaxfrequencyiteration2-handler/, function (req, res) {
-  if (req.query.counciltaxfrequency == 'monthly') {
-    res.redirect('council-tax-monthperiod');
+  if (req.query.counciltaxfrequency == '10') {
+    res.redirect('council-tax-month');
+  } else if (req.query.counciltaxfrequency == '12') {
+    res.redirect('council-tax-month');
   } else if (req.query.counciltaxfrequency == 'yearly') {
     res.redirect('council-tax-lump');
   }
