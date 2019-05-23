@@ -1867,3 +1867,47 @@ router.get(/counciltaxlumpiteration2-handler/, function (req, res) {
     res.redirect('council-tax-lump');
   }
 });
+
+// ************************
+// CONTACT DETAILS (Iteration 1)
+// ************************
+
+router.get(/telephone-handler/, function (req, res) {
+  if (req.query.telephone) {
+    res.redirect('telephone-confirm');
+  } else if (req.query.telephoneconfirm == 'telephoneconfirm') {
+    res.redirect('email');
+  } else if (req.query.telephone && req.query.telephoneconfirm) {
+    res.redirect('telephone-confirm');
+  } else {
+    res.redirect('telephone');
+  }
+});
+
+router.get(/telephoneconfirm-handler/, function (req, res) {
+  if (req.query.telephoneconfirm == 'yes') {
+    res.redirect('email');
+  } else if (req.query.telephoneconfirm == 'no') {
+    res.redirect('telephone');
+  }
+});
+
+router.get(/email-handler/, function (req, res) {
+  if (req.query.email) {
+    res.redirect('email-confirm');
+  } else if (req.query.emailconfirm == 'emailconfirm') {
+    res.redirect('check-your-answers');
+  } else if (req.query.email && req.query.emailconfirm) {
+    res.redirect('email-confirm');
+  } else {
+    res.redirect('email');
+  }
+});
+
+router.get(/emailconfirm-handler/, function (req, res) {
+  if (req.query.emailconfirm == 'yes') {
+    res.redirect('check-your-answers');
+  } else if (req.query.emailconfirm == 'no') {
+    res.redirect('email');
+  }
+});
