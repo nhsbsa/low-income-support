@@ -41,7 +41,7 @@ NHSBSA Prototype
 
         <div class="form-group">
           <label class="form-label" for="telephone">Telephone number</label>
-          <input class="form-control" id="telephone" name="telephone" type="text">
+          <input class="form-control" id="telephone" name="telephone" type="text" value="{{ data['telephone'] }}">
         </div>
 
         <div class="form-group">
@@ -52,14 +52,19 @@ NHSBSA Prototype
         </div>
 
         <div class="form-group">
+<!--
+  <p><a href="email">Continue without providing a telephone number</a></p>
+-->
+
+
           <details>
             <summary><span class="summary">Continue without providing a telephone number</span></summary>
             <br>
             <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false" style="padding-bottom: 15px;
             padding-top: 15px;">
 
-              <p style="font-weight: bold;">If you don't provide a telephone number we won't be able to send updates on
-                your application</p>
+              <p style="font-weight: bold;">If you don't provide a telephone number we won't be able to contact you about updates to
+                your application.</p>
 
               <fieldset class="form-group">
                 <div class="multiple-choice multiple-radio" style="margin-top: 0">
@@ -70,9 +75,10 @@ NHSBSA Prototype
               </fieldset>
 
             </div>
-
-
           </details>
+
+
+
         </div>
 
 

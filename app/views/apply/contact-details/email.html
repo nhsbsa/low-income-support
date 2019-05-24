@@ -41,7 +41,7 @@ NHSBSA Prototype
         <div class="form-group">
           <label class="form-label" for="email">Email address</label>
           <p class="form-hint">For example, myname@example.com</p>
-          <input class="form-control" id="email" name="email" type="text">
+          <input class="form-control" id="email" name="email" type="text" value="{{ data['email'] }}">
         </div>
 
         <div class="form-group">
@@ -51,7 +51,8 @@ NHSBSA Prototype
             <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false" style="padding-bottom: 15px;
             padding-top: 15px;">
     
-              <p style="font-weight: bold;">If you don't provide an email address we won't be able to send updates on your application</p>
+              <p style="font-weight: bold;">If you don't provide an email address we won't be able to contact you about updates to
+                  your application.</p>
 
               <fieldset class="form-group">
                 <div class="multiple-choice multiple-radio" style="margin-top: 0">
