@@ -5,124 +5,134 @@ Apply for help to pay NHS costs
 {% block content %}
 <style>
     .versions-prod:before {
-   content: "PRIVATE BETA";
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
-   font-family: Arial, sans-serif;
-   font-weight: 400;
-   text-transform: none;
-   font-size: 16px;
-   line-height: 1.25;
-   background: #2360AC;
-   color: white;
-   }
-   .versions-prod {
-   position: relative;
-   overflow: hidden;
-   border: 3px solid #2360AC;
-   margin-top: 30px;
-   margin-bottom: 35px;
-   padding-top: 15px;
-   padding-right: 15px;
-   padding-bottom: 15px;
-   padding-left: 15px;
-   }
-   @media (min-width: 641px) {
-   .versions-prod {
-   padding-top: 50px;
-   padding-right: 30px;
-   padding-bottom: 20px;
-   padding-left: 30px;
-   }
-   }
-   .versions:before {
-   content: "RESEARCH";
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
-   font-family: Arial, sans-serif;
-   font-weight: 400;
-   text-transform: none;
-   font-size: 16px;
-   line-height: 1.25;
-   background: #bfc1c3;
-   color: white;
-   }
-   .versions-alpha {
-   position: relative;
-   overflow: hidden;
-   border: 3px solid #D53880;
-   margin-top: 30px;
-   margin-bottom: 35px;
-   padding-top: 15px;
-   padding-right: 15px;
-   padding-bottom: 15px;
-   padding-left: 15px;
-   }
-   @media (min-width: 641px) {
-   .versions-alpha {
-   padding-top: 50px;
-   padding-right: 30px;
-   padding-bottom: 20px;
-   padding-left: 30px;
-   }
-   }
-   .versions-alpha:before {
-   content: "ALPHA";
-   position: absolute;
-   top: 0;
-   left: 0;
-   padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
-   font-family: Arial, sans-serif;
-   font-weight: 400;
-   text-transform: none;
-   font-size: 16px;
-   line-height: 1.25;
-   background: #D53880;
-   color: white;
-   }
-   .versions {
-   position: relative;
-   overflow: hidden;
-   border: 3px solid #bfc1c3;
-   margin-top: 30px;
-   margin-bottom: 35px;
-   padding-top: 15px;
-   padding-right: 15px;
-   padding-bottom: 15px;
-   padding-left: 15px;
-   }
-   @media (min-width: 641px) {
-   .versions {
-   padding-top: 50px;
-   padding-right: 30px;
-   padding-bottom: 20px;
-   padding-left: 30px;
-   }
-   }
+        content: "PRIVATE BETA";
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        background: #2360AC;
+        color: white;
+    }
 
-blockquote {
-  background: #f9f9f9;
-  border-left: 10px solid #ccc;
-  margin: 1.5em 0;
-  padding: 0.5em 10px;
-  quotes: "\201C""\201D""\2018""\2019";
-  font-style: italic;
-}
-blockquote:before {
-  color: #ccc;
-  content: open-quote;
-  font-size: 4em;
-  line-height: 0.1em;
-  margin-right: 0.15em;
-  vertical-align: -0.4em;
-}
-blockquote p {
-  display: inline;
-}
+    .versions-prod {
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #2360AC;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+
+    @media (min-width: 641px) {
+        .versions-prod {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+    }
+
+    .versions:before {
+        content: "RESEARCH";
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        background: #bfc1c3;
+        color: white;
+    }
+
+    .versions-alpha {
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #D53880;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+
+    @media (min-width: 641px) {
+        .versions-alpha {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+    }
+
+    .versions-alpha:before {
+        content: "ALPHA";
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 0.2105263158em 0.7894736842em 0.2105263158em 0.7894736842em;
+        font-family: Arial, sans-serif;
+        font-weight: 400;
+        text-transform: none;
+        font-size: 16px;
+        line-height: 1.25;
+        background: #D53880;
+        color: white;
+    }
+
+    .versions {
+        position: relative;
+        overflow: hidden;
+        border: 3px solid #bfc1c3;
+        margin-top: 30px;
+        margin-bottom: 35px;
+        padding-top: 15px;
+        padding-right: 15px;
+        padding-bottom: 15px;
+        padding-left: 15px;
+    }
+
+    @media (min-width: 641px) {
+        .versions {
+            padding-top: 50px;
+            padding-right: 30px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+        }
+    }
+
+    blockquote {
+        background: #f9f9f9;
+        border-left: 10px solid #ccc;
+        margin: 1.5em 0;
+        padding: 0.5em 10px;
+        quotes: "\201C""\201D""\2018""\2019";
+        font-style: italic;
+    }
+
+    blockquote:before {
+        color: #ccc;
+        content: open-quote;
+        font-size: 4em;
+        line-height: 0.1em;
+        margin-right: 0.15em;
+        vertical-align: -0.4em;
+    }
+
+    blockquote p {
+        display: inline;
+    }
 </style>
 <main id="content" role="main">
     <div style="background-color: #DEE0E2; padding: 25px 25px 1px 25px; margin-top:15px;">
@@ -192,6 +202,63 @@ blockquote p {
     <h2 class="heading-large">Sprint Work</h2>
 
     <details>
+        <summary><span class="summary">Sprint 63</span></summary>
+        <br>
+        <div class="panel panel-border-narrow">
+            <div class="grid-row">
+                <div class="column-third">
+                    <h2 class="heading-medium">Experimental</h2>
+                </div>
+                <div class="column-two-thirds">
+                    <div class="versions-prod">
+                        <h3 class="heading-medium" style="margin-top:0;">Reduce number of claims coming through where
+                            user is unlikely to get help</h3>
+                        <h4 class="heading-small">Hypothesis A</h4>
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that improving the content on the 'invitation to apply' pages on Eligibility Checker and LIS apply 
+                            <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all applicants who don't realise that this is 'low income' service
+                            <strong style="font-weight: bold;">as it will</strong> stop wasting applicants time applying for a service where they are unlikely to receive help. <strong style="font-weight: bold;">This
+                                will</strong>
+                                number of applications coming through to the assessment team where the user is likely to receive help.</p>
+                        <p>...<p>
+
+
+                            </p>
+                        </p>
+                        <h4 class="heading-small">What we changed:</h4>
+                        <ul class="list list-bullet">
+                            <li>...</li>
+                        </ul>
+                        <h4 class="heading-small">What we plan to test:</h4>
+                        <ul class="list list-bullet">
+                            <li>...</li>
+                        </ul>
+                        <h4 class="heading-small">What we found:</h4>
+                        <ul class="list list-bullet">
+                            <li>...</li>
+                        </ul>
+                        <br>
+                        <a href="apply/iteration-1/eligibility-invite"><input class="button" type="submit"
+                                value="Invitation Pages"></a><br><br>
+
+                        <hr>
+                        <h4 class="heading-medium">Known Issues</h4>
+                        <ul class="list list-bullet">
+                            <li>No error messages in the prototype.</li>
+                            <li>Uses dummy data on final 'check your answer' screens.</li>
+                        </ul>
+                        <br>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </details>
+
+    <details>
         <summary><span class="summary">Sprint 62</span></summary>
         <br>
         <div class="panel panel-border-narrow">
@@ -203,32 +270,48 @@ blockquote p {
                     <div class="versions-prod">
                         <h3 class="heading-medium" style="margin-top:0;">Confirm email address and telephone number</h3>
                         <h4 class="heading-small">Hypothesis A</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                believe</strong> that getting applicants to confirm their telephone number and email address <strong style="font-weight: bold;">will
-                                be a useful feature for</strong> all applicants who wish to be reassured about their application progress
-                            <strong style="font-weight: bold;">as it will</strong> allow us to successfully contact them when there are updates to their application. <strong style="font-weight: bold;">This will</strong>
-                            decrease the number email bounces that will be received due to information being entered incorrectly.</p>
-                        <p>During our work to reassure applicants that we have received their application, as well as reduce the number of multiple applications, we want to limit the number of email bounces received by getting applicants to check their email address after they have entered it.<p>
-<p>Speaking to the assessment team, email bounces are a common occurance and are therefore a source of delay to applicants receiving help with their health costs.</p>
-<p>One reason this happens for postal applicants is the assessment team not understanding the applicants handwriting.</p>
- 
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that getting applicants to confirm their telephone number and email
+                            address <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all applicants who wish to be reassured about their
+                            application progress
+                            <strong style="font-weight: bold;">as it will</strong> allow us to successfully contact them
+                            when there are updates to their application. <strong style="font-weight: bold;">This
+                                will</strong>
+                            decrease the number email bounces that will be received due to information being entered
+                            incorrectly.</p>
+                        <p>During our work to reassure applicants that we have received their application, as well as
+                            reduce the number of multiple applications, we want to limit the number of email bounces
+                            received by getting applicants to check their email address after they have entered it.<p>
+                                <p>Speaking to the assessment team, email bounces are a common occurance and are
+                                    therefore a source of delay to applicants receiving help with their health costs.
+                                </p>
+                                <p>One reason this happens for postal applicants is the assessment team not
+                                    understanding the applicants handwriting.</p>
+
                             </p>
                         </p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
-                            <li>After an applicant enters a telephone number or email address, we get them to confirm this is correct before proceeding.</li>
-                            <li>We ensure that any applicant who does not wish to give us their telephone number or email address understands that this means that we can't update them on the progress of their application.</li>
+                            <li>After an applicant enters a telephone number or email address, we get them to confirm
+                                this is correct before proceeding.</li>
+                            <li>We ensure that any applicant who does not wish to give us their telephone number or
+                                email address understands that this means that we can't update them on the progress of
+                                their application.</li>
                         </ul>
                         <h4 class="heading-small">What we plan to test:</h4>
                         <ul class="list list-bullet">
-                            <li>Does the solution mean a higher accuracy rate and therefore lower result in the number of email bounces?</li>
+                            <li>Does the solution mean a higher accuracy rate and therefore lower result in the number
+                                of email bounces?</li>
                         </ul>
                         <h4 class="heading-small">What we found:</h4>
                         <ul class="list list-bullet">
                             <li>...</li>
                         </ul>
                         <br>
-                        <a href="apply/contact-details/telephone"><input class="button" type="submit" value="Contact Details"></a><br><br>
+                        <a href="apply/contact-details/telephone"><input class="button" type="submit"
+                                value="Contact Details"></a><br><br>
 
                         <hr>
                         <h4 class="heading-medium">Known Issues</h4>
@@ -257,60 +340,90 @@ blockquote p {
                     <div class="versions-prod">
                         <h3 class="heading-medium" style="margin-top:0;">State benefits improvement</h3>
                         <h4 class="heading-small">Hypothesis A</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                believe</strong> that amending the default view of the list of benefits to be expanded by default instead of collapsed <strong style="font-weight: bold;">will
-                                be a useful feature for</strong> all single &amp; partner applicants who are in receipt of state benefits
-                            <strong style="font-weight: bold;">as it will</strong> allow them to successfully tell us what benefit they are on. <strong style="font-weight: bold;">This will</strong>
-                            decrease the number of times assessors need to contact applicants for further information by XX% and therefore increase the speed from awareness to outcome.</p>
-                        <p>During our regular Assessor Feedback sessions, it was highlighted that Assessors were seeing a number of applicants say they received a state benefit, but when asked which one - they didn't select one from our list which which meant that they had to go back to clarify.<p>
-                        <p>During research (PrB 60_2) we saw this first hand when during an initital conversation, the user told us they received 'ESA' but despite this option being available to them - they didn't select it.</p>
-                        <p>We believe that this is because each person sees what type of benefit they are on very differently e.g. They saw 'ESA' as 'Sick Pay', whereas the section title said 'Disability, illness and carer benefits'. </p>
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that amending the default view of the list of benefits to be expanded
+                            by default instead of collapsed <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all single &amp; partner applicants who are in receipt
+                            of state benefits
+                            <strong style="font-weight: bold;">as it will</strong> allow them to successfully tell us
+                            what benefit they are on. <strong style="font-weight: bold;">This will</strong>
+                            decrease the number of times assessors need to contact applicants for further information by
+                            XX% and therefore increase the speed from awareness to outcome.</p>
+                        <p>During our regular Assessor Feedback sessions, it was highlighted that Assessors were seeing
+                            a number of applicants say they received a state benefit, but when asked which one - they
+                            didn't select one from our list which which meant that they had to go back to clarify.<p>
+                                <p>During research (PrB 60_2) we saw this first hand when during an initital
+                                    conversation, the user told us they received 'ESA' but despite this option being
+                                    available to them - they didn't select it.</p>
+                                <p>We believe that this is because each person sees what type of benefit they are on
+                                    very differently e.g. They saw 'ESA' as 'Sick Pay', whereas the section title said
+                                    'Disability, illness and carer benefits'. </p>
 
- 
+
                             </p>
                         </p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
-                            <li>Instead of the list of benefits being hidden under a section title that we have decided, we made it that each section was open by default.</li>
+                            <li>Instead of the list of benefits being hidden under a section title that we have decided,
+                                we made it that each section was open by default.</li>
                         </ul>
                         <h4 class="heading-small">What we plan to test:</h4>
                         <ul class="list list-bullet">
-                            <li>Does the solution allow applicants to successfully tell us which benefit they receive.</li>
-                            <li>This change also has the added benefit of being an improvement to users with learning disabilities - who during a recent session (11th April 2019) stated that longer lists were an improvement to them.</li>
+                            <li>Does the solution allow applicants to successfully tell us which benefit they receive.
+                            </li>
+                            <li>This change also has the added benefit of being an improvement to users with learning
+                                disabilities - who during a recent session (11th April 2019) stated that longer lists
+                                were an improvement to them.</li>
                         </ul>
                         <h4 class="heading-small">What we found:</h4>
                         <ul class="list list-bullet">
                             <li>...</li>
                         </ul>
                         <br>
-                        <a href="apply/income/benefits/iteration-2/universal-credit"><input class="button" type="submit" value="Benefit Journey (Version A)"></a><br><br>
+                        <a href="apply/income/benefits/iteration-2/universal-credit"><input class="button" type="submit"
+                                value="Benefit Journey (Version A)"></a><br><br>
 
                         <h4 class="heading-small">Hypothesis B</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                believe</strong> that rewording the content of some of the more common benefits e.g. 'Job Seekers Allowance', 'Employment and Support Allowance' etc... to include the acronyms at the beginning instead of the end <strong style="font-weight: bold;">will
-                                be a useful feature for</strong> all single &amp; partner applicants who are in receipt of state benefits
-                            <strong style="font-weight: bold;">as it will</strong> allow them to successfully tell us what benefit they are on. <strong style="font-weight: bold;">This will</strong>
-                            decrease the number of times assessors need to contact applicants for further information by XX% and therefore increase the speed from awareness to outcome.</p>
-                        <p>During additional research, when asking what benefit each person was on - the majority of people responded with the relevant acronym e.g. ESA, rather than it's full name e.g. 'Employment and Support Allowance'.</p>
-                        <p>We believe that by putting the acronym at the beginning instead of the end, will allow users who are quickly scanning down the list to successfully choose what benefit they receive instead of potentially missing it.</p>
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that rewording the content of some of the more common benefits e.g.
+                            'Job Seekers Allowance', 'Employment and Support Allowance' etc... to include the acronyms
+                            at the beginning instead of the end <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all single &amp; partner applicants who are in receipt
+                            of state benefits
+                            <strong style="font-weight: bold;">as it will</strong> allow them to successfully tell us
+                            what benefit they are on. <strong style="font-weight: bold;">This will</strong>
+                            decrease the number of times assessors need to contact applicants for further information by
+                            XX% and therefore increase the speed from awareness to outcome.</p>
+                        <p>During additional research, when asking what benefit each person was on - the majority of
+                            people responded with the relevant acronym e.g. ESA, rather than it's full name e.g.
+                            'Employment and Support Allowance'.</p>
+                        <p>We believe that by putting the acronym at the beginning instead of the end, will allow users
+                            who are quickly scanning down the list to successfully choose what benefit they receive
+                            instead of potentially missing it.</p>
 
- 
-                            </p>
+
+                        </p>
                         </p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
-                            <li>We changed those benefits with an acronym so that it appears at the beginning instead of the end e.g. 'Employment and Support Allowance (ESA)' becomes 'ESA (Employment and Support Allowance)'.</li>
+                            <li>We changed those benefits with an acronym so that it appears at the beginning instead of
+                                the end e.g. 'Employment and Support Allowance (ESA)' becomes 'ESA (Employment and
+                                Support Allowance)'.</li>
                         </ul>
                         <h4 class="heading-small">What we plan to test:</h4>
                         <ul class="list list-bullet">
-                            <li>Does the solution allow applicants to successfully tell us which benefit they receive.</li>
+                            <li>Does the solution allow applicants to successfully tell us which benefit they receive.
+                            </li>
                         </ul>
                         <h4 class="heading-small">What we found:</h4>
                         <ul class="list list-bullet">
                             <li>...</li>
                         </ul>
                         <br>
-                        <a href="apply/income/benefits/iteration-3/universal-credit"><input class="button" type="submit" value="Benefit Journey (Version B)"></a><br><br>
+                        <a href="apply/income/benefits/iteration-3/universal-credit"><input class="button" type="submit"
+                                value="Benefit Journey (Version B)"></a><br><br>
 
                         <hr>
                         <h4 class="heading-medium">Known Issues</h4>
@@ -328,67 +441,83 @@ blockquote p {
     </details>
 
     <details>
-            <summary><span class="summary">Sprint 60</span></summary>
-            <br>
-            <div class="panel panel-border-narrow">
-                <div class="grid-row">
-                    <div class="column-third">
-                        <h2 class="heading-medium">Experimental</h2>
-                    </div>
-                    <div class="column-two-thirds">
-                        <div class="versions-prod">
-                            <h3 class="heading-medium" style="margin-top:0;">Council Tax</h3>
-                            <h4 class="heading-small">Hypothesis A</h4>
-                            <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                    believe</strong> that allowing applicants to enter a monthly council tax figure instead of a yearly one <strong style="font-weight: bold;">will
-                                    be a useful feature for</strong> all applicants who pay council tax and live in a property that they own
-                                <strong style="font-weight: bold;">as it will</strong> enable them to enter an amount they know or can get access to quickly. <strong style="font-weight: bold;">This will</strong>
-                                decrease the number of times assessors need to contact applicants for the correct value by XX% and therefore increase the speed from awareness to outcome.</p>
-                            <p>During our regular Assessor Feedback sessions, it was highlighted that Assessors were having to go back a number of times to clarify Council Tax figures from applicants.<p>
-                            <p>During research (PrB 60_2) we saw this first hand with a user who immediately entered their monthly council tax figure, despite the question asking for how much they pay in total a year.</p>
-                            <p>We believe this is because the monthly figure is a lot more accessible to them e.g. via online banking etc..., to get a yearly amount they either have to dig out the single letter they receive at the beginning of the year (if they've still kept it!) or attempt some maths in their head.</p>
+        <summary><span class="summary">Sprint 60</span></summary>
+        <br>
+        <div class="panel panel-border-narrow">
+            <div class="grid-row">
+                <div class="column-third">
+                    <h2 class="heading-medium">Experimental</h2>
+                </div>
+                <div class="column-two-thirds">
+                    <div class="versions-prod">
+                        <h3 class="heading-medium" style="margin-top:0;">Council Tax</h3>
+                        <h4 class="heading-small">Hypothesis A</h4>
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that allowing applicants to enter a monthly council tax figure instead
+                            of a yearly one <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all applicants who pay council tax and live in a
+                            property that they own
+                            <strong style="font-weight: bold;">as it will</strong> enable them to enter an amount they
+                            know or can get access to quickly. <strong style="font-weight: bold;">This will</strong>
+                            decrease the number of times assessors need to contact applicants for the correct value by
+                            XX% and therefore increase the speed from awareness to outcome.</p>
+                        <p>During our regular Assessor Feedback sessions, it was highlighted that Assessors were having
+                            to go back a number of times to clarify Council Tax figures from applicants.<p>
+                                <p>During research (PrB 60_2) we saw this first hand with a user who immediately entered
+                                    their monthly council tax figure, despite the question asking for how much they pay
+                                    in total a year.</p>
+                                <p>We believe this is because the monthly figure is a lot more accessible to them e.g.
+                                    via online banking etc..., to get a yearly amount they either have to dig out the
+                                    single letter they receive at the beginning of the year (if they've still kept it!)
+                                    or attempt some maths in their head.</p>
 
-     
-                                </p>
+
                             </p>
-                            <h4 class="heading-small">What we changed:</h4>
-                            <ul class="list list-bullet">
-                                <li>Added in the ability to choose the frequency of council payments e.g. 10 months, 12 months or a lump sum.</li>
-                                <li>If a user selects 10 or 12 months, we ask for the monthly figure with some hint text to give us their first monthly payment if possible.</li>
-                                <li>If a user selects a lump sum, we ask for the yearly figure.</li>
-                            </ul>
-                            <h4 class="heading-small">What we plan to test:</h4>
-                            <ul class="list list-bullet">
-                                <li>Does the solution meet applicants needs as well as adhere to regulations.</li>
-                            </ul>
-                            <h4 class="heading-small">What we found:</h4>
-                            <ul class="list list-bullet">
-                                <li>...</li>
-                            </ul>
-                            <br>
-                            <a href="apply/where-you-live/iteration-1/council-tax"><input class="button" type="submit" value="Council Tax (Version A)"></a><br><br>
-                            <a href="apply/where-you-live/iteration-2/council-tax"><input class="button" type="submit" value="Council Tax (Version B)"></a><br><br>
-    
-    
-    
-                            <hr>
-                            <h4 class="heading-medium">Known Issues</h4>
-                            <ul class="list list-bullet">
-                                <li>Content hasn't been through the Content Team yet.</li>
-                                <li>Prototype only includes new / amended screens and is <strong style="font-weight: bold; text-decoration: underline;">not</strong>
-                                    intended to be a full representation of the entire service.</li>
-                                <li>No error messages in the prototype.</li>
-                                <li>Uses dummy data on final 'check your answer' screens.</li>
-                            </ul>
-                            <br>
-    
-                        </div>
+                        </p>
+                        <h4 class="heading-small">What we changed:</h4>
+                        <ul class="list list-bullet">
+                            <li>Added in the ability to choose the frequency of council payments e.g. 10 months, 12
+                                months or a lump sum.</li>
+                            <li>If a user selects 10 or 12 months, we ask for the monthly figure with some hint text to
+                                give us their first monthly payment if possible.</li>
+                            <li>If a user selects a lump sum, we ask for the yearly figure.</li>
+                        </ul>
+                        <h4 class="heading-small">What we plan to test:</h4>
+                        <ul class="list list-bullet">
+                            <li>Does the solution meet applicants needs as well as adhere to regulations.</li>
+                        </ul>
+                        <h4 class="heading-small">What we found:</h4>
+                        <ul class="list list-bullet">
+                            <li>...</li>
+                        </ul>
+                        <br>
+                        <a href="apply/where-you-live/iteration-1/council-tax"><input class="button" type="submit"
+                                value="Council Tax (Version A)"></a><br><br>
+                        <a href="apply/where-you-live/iteration-2/council-tax"><input class="button" type="submit"
+                                value="Council Tax (Version B)"></a><br><br>
+
+
+
+                        <hr>
+                        <h4 class="heading-medium">Known Issues</h4>
+                        <ul class="list list-bullet">
+                            <li>Content hasn't been through the Content Team yet.</li>
+                            <li>Prototype only includes new / amended screens and is <strong
+                                    style="font-weight: bold; text-decoration: underline;">not</strong>
+                                intended to be a full representation of the entire service.</li>
+                            <li>No error messages in the prototype.</li>
+                            <li>Uses dummy data on final 'check your answer' screens.</li>
+                        </ul>
+                        <br>
+
                     </div>
                 </div>
-    
             </div>
-        </details>
-    
+
+        </div>
+    </details>
+
     <details>
         <summary><span class="summary">Sprint 55, 56</span></summary>
         <br>
@@ -401,7 +530,8 @@ blockquote p {
                     <div class="versions-prod">
                         <h3 class="heading-medium" style="margin-top:0;">Save &amp Restore</h3>
                         <h4 class="heading-small">Hypothesis A</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that allowing applicants to save and restore an incomplete application
                             later <strong style="font-weight: bold;">will
                                 be a useful feature for</strong> all busy users who need help with their health costs
@@ -440,12 +570,16 @@ blockquote p {
                                 send a 7 digit code to the email address or phone number that was collected during the
                                 application to allow an applicant to resume. One potential issue is that these fields
                                 aren't mandatory currently in LIS.</li>
-                            <li>Security were concerned that there was a risk that somebody might input their email address / mobile number incorrectly and this could potentially allow someone else access to their application.</li>
+                            <li>Security were concerned that there was a risk that somebody might input their email
+                                address / mobile number incorrectly and this could potentially allow someone else access
+                                to their application.</li>
                         </ul>
                         <br>
-                        <a href="apply/save-restore/mvp/apply-online-invite"><input class="button" type="submit" value="Save &amp; Resume (MVP)"></a><br><br>
+                        <a href="apply/save-restore/mvp/apply-online-invite"><input class="button" type="submit"
+                                value="Save &amp; Resume (MVP)"></a><br><br>
                         <h4 class="heading-small">Hypothesis B</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that allowing applicants to save an application at any time, as well
                             as return to it at a time convenient to them <strong style="font-weight: bold;">will
                                 be a useful feature for</strong> all busy users who need help with their health costs
@@ -455,10 +589,22 @@ blockquote p {
                         </p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
-                            <li>Before a user can successfully save an application, they are asked to enter and verify an email address or mobile number by entering a 5 character code (to ensure they have entered the correct details). As well as this they are asked to enter a memorable word. As of 12th March 2019 only 25 users out of 4051 applications couldn't provide either an email address or mobile number.</li>      
-                            <li>Added in the ability to return to an application using a combination of seperate 5 character code sent to the email address or mobile phone number that they used to save the application, as well as their memorable word. Alpha research showed that pensioners didn't like jumping between different methods e.g. Computer > Mobile, so providing email as an option was important to this target group.</li>  
-                            <li>After a user has determined that they are eligible for help, they have the ability to save the application at each point of the service (End of eligibility checks, task list, individual sections etc...).</li>
-                            <li>Research discovered that certain applicants didn't just want to save their application and return later, they wanted to save their application and continue. Because of this, once saved, the applicant can also choose to continue as well.</li>
+                            <li>Before a user can successfully save an application, they are asked to enter and verify
+                                an email address or mobile number by entering a 5 character code (to ensure they have
+                                entered the correct details). As well as this they are asked to enter a memorable word.
+                                As of 12th March 2019 only 25 users out of 4051 applications couldn't provide either an
+                                email address or mobile number.</li>
+                            <li>Added in the ability to return to an application using a combination of seperate 5
+                                character code sent to the email address or mobile phone number that they used to save
+                                the application, as well as their memorable word. Alpha research showed that pensioners
+                                didn't like jumping between different methods e.g. Computer > Mobile, so providing email
+                                as an option was important to this target group.</li>
+                            <li>After a user has determined that they are eligible for help, they have the ability to
+                                save the application at each point of the service (End of eligibility checks, task list,
+                                individual sections etc...).</li>
+                            <li>Research discovered that certain applicants didn't just want to save their application
+                                and return later, they wanted to save their application and continue. Because of this,
+                                once saved, the applicant can also choose to continue as well.</li>
                         </ul>
                         <h4 class="heading-small">What we found:</h4>
                         <ul class="list list-bullet">
@@ -466,35 +612,42 @@ blockquote p {
                         </ul>
                         <a href="apply/save-restore/iteration-1/apply-online-invite"><input class="button" type="submit"
                                 value="Save &amp; Resume (Iteration 1)"></a><br><br>
-                                <h4 class="heading-small">Hypothesis C</h4>
-                                <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                        believe</strong> that allowing applicants to save an application at any time, as well
-                                    as return to it at a time convenient to them <strong style="font-weight: bold;">will
-                                        be a useful feature for</strong> all busy users who need help with their health costs
-                                    <strong style="font-weight: bold;">as it will</strong> enable them to apply in a way that
-                                    meets their needs and preferences. <strong style="font-weight: bold;">This will</strong>
-                                    increase the number of completions by XX%.</p>
-                                </p>
-                                <h4 class="heading-small">What we changed:</h4>
-                                <ul class="list list-bullet">
-                                    <li>To conform to GDS standards, we've updated all buttons from 'Next' to 'Continue'.</li>      
-                                    <li>After an application is saved for the first time, we change the primary action from 'Continue' to 'Save and continue' to signify that the service is now saving a user’s information each time they proceed.</li>
-                                    <li>We brought forward the 'Who are you applying for' question to the very front of the application to ensure that we can be as clear as possible to users who are applying on behalf of someone else, that if they choose to 'Save the application' for later - that we need the APPLICANT's email / mobile details and not theirs.</li>  
+                        <h4 class="heading-small">Hypothesis C</h4>
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> that allowing applicants to save an application at any time, as well
+                            as return to it at a time convenient to them <strong style="font-weight: bold;">will
+                                be a useful feature for</strong> all busy users who need help with their health costs
+                            <strong style="font-weight: bold;">as it will</strong> enable them to apply in a way that
+                            meets their needs and preferences. <strong style="font-weight: bold;">This will</strong>
+                            increase the number of completions by XX%.</p>
+                        </p>
+                        <h4 class="heading-small">What we changed:</h4>
+                        <ul class="list list-bullet">
+                            <li>To conform to GDS standards, we've updated all buttons from 'Next' to 'Continue'.</li>
+                            <li>After an application is saved for the first time, we change the primary action from
+                                'Continue' to 'Save and continue' to signify that the service is now saving a user’s
+                                information each time they proceed.</li>
+                            <li>We brought forward the 'Who are you applying for' question to the very front of the
+                                application to ensure that we can be as clear as possible to users who are applying on
+                                behalf of someone else, that if they choose to 'Save the application' for later - that
+                                we need the APPLICANT's email / mobile details and not theirs.</li>
 
-                                </ul>
-                                <h4 class="heading-small">What we found:</h4>
-                                <ul class="list list-bullet">
-                                    <li>...</li>
-                                </ul>
-                                <a href="apply/save-restore/iteration-2/apply-online-invite"><input class="button" type="submit"
-                                        value="Save &amp; Resume (Iteration 2)"></a><br><br>
+                        </ul>
+                        <h4 class="heading-small">What we found:</h4>
+                        <ul class="list list-bullet">
+                            <li>...</li>
+                        </ul>
+                        <a href="apply/save-restore/iteration-2/apply-online-invite"><input class="button" type="submit"
+                                value="Save &amp; Resume (Iteration 2)"></a><br><br>
 
 
 
                         <hr>
                         <h4 class="heading-medium">Known Issues</h4>
                         <ul class="list list-bullet">
-                            <li>Prototype only includes new / amended screens and is <strong style="font-weight: bold; text-decoration: underline;">not</strong>
+                            <li>Prototype only includes new / amended screens and is <strong
+                                    style="font-weight: bold; text-decoration: underline;">not</strong>
                                 intended to be a full representation of the entire service.</li>
                             <li>No error messages in the prototype.</li>
                             <li>Uses dummy data on final 'check your answer' screens.</li>
@@ -520,8 +673,10 @@ blockquote p {
                         <h3 class="heading-medium" style="margin-top:0;">Submitting Evidence of Earnings (Single &
                             Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis A</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
-                                believe</strong> adding the ability to provide evidence by email OR post <strong style="font-weight: bold;">will
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
+                                believe</strong> adding the ability to provide evidence by email OR post <strong
+                                style="font-weight: bold;">will
                                 be a useful feature for</strong> users who are required to submit earnings evidence
                             <strong style="font-weight: bold;">as it will</strong> allow them a digital route of
                             providing evidence other than post. <strong style="font-weight: bold;">This will</strong>
@@ -547,9 +702,11 @@ blockquote p {
                                 on extending this research before commiting to email fully as a viable option.</li>
                         </ul>
                         <br>
-                        <a href="apply/submit/mvp/task-list-complete.html"><input class="button" type="submit" value="Submitting Evidence Journey (MVP)"></a><br><br>
+                        <a href="apply/submit/mvp/task-list-complete.html"><input class="button" type="submit"
+                                value="Submitting Evidence Journey (MVP)"></a><br><br>
                         <h4 class="heading-small">Hypothesis B</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> showing what specific evidence is required from applicants on the end
                             end page
                             <strong style="font-weight: bold;">will be a useful feature for</strong> all users who
@@ -596,7 +753,8 @@ blockquote p {
                         <hr>
                         <h4 class="heading-medium">Known Issues</h4>
                         <ul class="list list-bullet">
-                            <li>Prototype only includes new / amended screens and is <strong style="font-weight: bold; text-decoration: underline;">not</strong>
+                            <li>Prototype only includes new / amended screens and is <strong
+                                    style="font-weight: bold; text-decoration: underline;">not</strong>
                                 intended to be a full representation of the entire service.</li>
                             <li>No error messages in the prototype.</li>
                             <li>Uses dummy data on final 'check your answer' screens.</li>
@@ -623,11 +781,13 @@ blockquote p {
 
                         <h3 class="heading-medium" style="margin-top:0;">PAYE (Single & Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis A</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Wages from a job'
                             <strong style="font-weight: bold;">will be a useful feature for</strong> people who receive
                             'Wages from a job' <strong style="font-weight: bold;">as it will</strong> allow them to
-                            successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
@@ -650,16 +810,20 @@ blockquote p {
                             <li>User Research showed initial confusion surrounding 'Fit Notes', but by reading the
                                 'hint text' she then quickly understood what these were.</li>
                         </ul>
-                        <a href="apply/income/paye/job-title1"><input class="button" type="submit" value="PAYE Journey"></a><br><br>
+                        <a href="apply/income/paye/job-title1"><input class="button" type="submit"
+                                value="PAYE Journey"></a><br><br>
 
 
                         <h3 class="heading-medium" style="margin-top:0;">Benefits - including Universal Credit &amp;
                             Working Tax Credits (Single & Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis B</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Universal Credit
-                            &amp; Working Tax Credits' <strong style="font-weight: bold;">will be a useful feature for</strong>
-                            people who receive 'Universal Credit &amp; Working Tax Credits' <strong style="font-weight: bold;">as
+                            &amp; Working Tax Credits' <strong style="font-weight: bold;">will be a useful feature
+                                for</strong>
+                            people who receive 'Universal Credit &amp; Working Tax Credits' <strong
+                                style="font-weight: bold;">as
                                 it will</strong> allow them to successfully apply digitally for help with health costs.
                             <strong style="font-weight: bold;">This will</strong> increase the number of people who can
                             apply digitally by XX%</p>
@@ -684,15 +848,18 @@ blockquote p {
                             <li>Assessors were happy with the suggested user flow for 'Universal Credit &amp; Working
                                 Tax Credits'</li>
                         </ul>
-                        <a href="apply/income/benefits/universal-credit"><input class="button" type="submit" value="Benefits Journey"></a><br><br>
+                        <a href="apply/income/benefits/universal-credit"><input class="button" type="submit"
+                                value="Benefits Journey"></a><br><br>
 
                         <h3 class="heading-medium" style="margin-top:0;">Pensions (Single & Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis C</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Pensions' <strong
                                 style="font-weight: bold;">will be a useful feature for</strong> people who receive
                             'Pensions' <strong style="font-weight: bold;">as it will</strong> allow them to
-                            successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
 
                         <h4 class="heading-small">What we changed:</h4>
@@ -714,17 +881,21 @@ blockquote p {
                         <ul class="list list-bullet">
                             <li>Assessors were happy with the suggested user flow for 'Pensions'</li>
                         </ul>
-                        <a href="apply/income/pension/pension-name"><input class="button" type="submit" value="Pensions Journey (Under 63)"></a><br><br>
-                        <a href="apply/income/pension/state-pension-receive"><input class="button" type="submit" value="Pensions Journey (Over 63)"></a><br><br>
+                        <a href="apply/income/pension/pension-name"><input class="button" type="submit"
+                                value="Pensions Journey (Under 63)"></a><br><br>
+                        <a href="apply/income/pension/state-pension-receive"><input class="button" type="submit"
+                                value="Pensions Journey (Over 63)"></a><br><br>
 
                         <h3 class="heading-medium" style="margin-top:0;">Maintenance Payments (Single & Partner
                             Applicants)</h3>
                         <h4 class="heading-small">Hypothesis D</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Maintenance
                             Payments' <strong style="font-weight: bold;">will be a useful feature for</strong> people
                             who receive 'Maintenance Payments' <strong style="font-weight: bold;">as it will</strong>
-                            allow them to successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            allow them to successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
@@ -745,17 +916,20 @@ blockquote p {
                         <ul class="list list-bullet">
                             <li>Assessors were happy with the suggested user flow for 'Maintenance Payments'</li>
                         </ul>
-                        <a href="apply/income/maintenance/receiving-for"><input class="button" type="submit" value="Maintenance Payments Journey"></a><br><br>
+                        <a href="apply/income/maintenance/receiving-for"><input class="button" type="submit"
+                                value="Maintenance Payments Journey"></a><br><br>
 
                         <h3 class="heading-medium" style="margin-top:0;">Nil-Income (Single & Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis E</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Money from other
                             sources'
                             <strong style="font-weight: bold;">will be a useful feature for</strong> people who receive
                             'Money from other sources' <strong style="font-weight: bold;">as it will</strong> allow
                             them to
-                            successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
@@ -778,17 +952,21 @@ blockquote p {
                             <li>Assessors were happy with the suggested user flow for people who receive 'Money from
                                 other sources'</li>
                         </ul>
-                        <a href="apply/income/none/mvp/none-how-paying"><input class="button" type="submit" value="Nil-Income Journey (MVP)"></a><br><br>
+                        <a href="apply/income/none/mvp/none-how-paying"><input class="button" type="submit"
+                                value="Nil-Income Journey (MVP)"></a><br><br>
                         <a href="apply/income/none/iteration-1/none-how-paying"><input class="button" type="submit"
                                 value="Nil-Income Journey (Iteration 1)"></a><br><br>
 
-                        <h3 class="heading-medium" style="margin-top:0;">Self-Employed (Single & Partner Applicants)</h3>
+                        <h3 class="heading-medium" style="margin-top:0;">Self-Employed (Single & Partner Applicants)
+                        </h3>
                         <h4 class="heading-small">Hypothesis F</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Self-Employed'
                             <strong style="font-weight: bold;">will be a useful feature for</strong> people who receive
                             'Self-Employed' <strong style="font-weight: bold;">as it will</strong> allow them to
-                            successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
@@ -809,16 +987,18 @@ blockquote p {
                         <ul class="list list-bullet">
                             <li>...</li>
                         </ul>
-                        <a href="apply/income/selfemployment/"><input class="button" type="submit" value="Self-Employment Journey"
-                                disabled="disabled"></a><br><br>
+                        <a href="apply/income/selfemployment/"><input class="button" type="submit"
+                                value="Self-Employment Journey" disabled="disabled"></a><br><br>
 
                         <h3 class="heading-medium" style="margin-top:0;">Trust Funds (Single & Partner Applicants)</h3>
                         <h4 class="heading-small">Hypothesis G</h4>
-                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong style="font-weight: bold;">We
+                        <p style="background: #DEE0E2; padding: 10px; margin-top:15px;"><strong
+                                style="font-weight: bold;">We
                                 believe</strong> that accepting applications from people who receive 'Trust Funds'
                             <strong style="font-weight: bold;">will be a useful feature for</strong> people who receive
                             'Trust Funds' <strong style="font-weight: bold;">as it will</strong> allow them to
-                            successfully apply digitally for help with health costs. <strong style="font-weight: bold;">This
+                            successfully apply digitally for help with health costs. <strong
+                                style="font-weight: bold;">This
                                 will</strong> increase the number of people who can apply digitally by XX%</p>
                         <h4 class="heading-small">What we changed:</h4>
                         <ul class="list list-bullet">
@@ -839,8 +1019,8 @@ blockquote p {
                         <ul class="list list-bullet">
                             <li>...</li>
                         </ul>
-                        <a href="apply/income/trustfunds"><input class="button" type="submit" value="Trust Funds Journey"
-                                disabled="disabled"></a><br><br>
+                        <a href="apply/income/trustfunds"><input class="button" type="submit"
+                                value="Trust Funds Journey" disabled="disabled"></a><br><br>
 
 
 
@@ -848,7 +1028,8 @@ blockquote p {
                         <hr>
                         <h4 class="heading-medium">Known Issues</h4>
                         <ul class="list list-bullet">
-                            <li>Prototype only includes new / amended screens and is <strong style="font-weight: bold; text-decoration: underline;">not</strong>
+                            <li>Prototype only includes new / amended screens and is <strong
+                                    style="font-weight: bold; text-decoration: underline;">not</strong>
                                 intended to be a full representation of the entire service.</li>
                             <li>No error messages in the prototype.</li>
                             <li>Uses dummy data on final 'check your answer' screens.</li>

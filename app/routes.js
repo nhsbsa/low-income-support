@@ -43,6 +43,14 @@ router.get(/applyonline-handler/, function (req, res) {
   }
 });
 
+router.get(/applyonlineiteration1-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/apply/iteration-1/what-you-will-need');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
 // ************************
 // BEFORE YOU START
 // ************************
@@ -1877,11 +1885,9 @@ router.get(/telephone-handler/, function (req, res) {
     res.redirect('telephone-confirm');
   } else if (req.query.telephoneconfirm == 'telephoneconfirm') {
     res.redirect('email');
-  } else if (req.query.telephone && req.query.telephoneconfirm) {
-    res.redirect('telephone-confirm');
-  } else {
-    res.redirect('telephone');
-  }
+  } else if (req.query.telephone && req.query.telephoneconfirm == 'telephoneconfirm') {
+    res.redirect('email');
+  } 
 });
 
 router.get(/telephoneconfirm-handler/, function (req, res) {
@@ -1898,7 +1904,7 @@ router.get(/email-handler/, function (req, res) {
   } else if (req.query.emailconfirm == 'emailconfirm') {
     res.redirect('check-your-answers');
   } else if (req.query.email && req.query.emailconfirm) {
-    res.redirect('email-confirm');
+    res.redirect('check-your-answers');
   } else {
     res.redirect('email');
   }
