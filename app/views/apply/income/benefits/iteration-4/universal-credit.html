@@ -31,33 +31,35 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">State benefits</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get any of these other benefits?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get paid Universal Credit?</h1>
       </header>
 
-      <ul class="list list-bullet">
-          <li>Child benefit</li>
-          <li>Housing benefit</li>
-          <li>Pension credit</li>
-          <li>Council Tax Benefit</li>
-        </ul>
+      <p>Universal Credit is paid jointly to you and your partner. We'll only ask about it once.</p>
 
-      <form action="additionalbenefitsiteration23-handler" method="get" class="form">
+      <form action="universalcredititeration23-handler" method="get" class="form">
 
         <div class="form-group">
 
-          <fieldset class="inline">
+          <fieldset>
             <legend class="visually-hidden">
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="taxcredits" value="yes">
-              <label for="yes">Yes</label>
+              <input id="yes" type="radio" name="universalcredit" value="yes">
+              <label for="yes"><p style="margin-bottom: 7px;">Yes</p></label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="taxcredits" value="no">
-              <label for="no">No</label>
+              <input id="no" type="radio" name="universalcredit" value="no">
+              <label for="no"><p style="margin-bottom: 7px;">No</p></label>
             </div>
+
+            <p class="form-block">or</p>
+
+            <div class="multiple-choice">
+                <input id="not-yet" type="radio" name="universalcredit" value="not-yet">
+                <label for="not-yet"><p style="margin-bottom: 7px;">Not yet, but have applied</p></label>
+            </div>           
 
           </fieldset>
 
