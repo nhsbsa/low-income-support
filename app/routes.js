@@ -207,37 +207,37 @@ router.get(/ukvi-handler/, function (req, res) {
 // ************************
 
 router.get(/jobtitle-handler/, function (req, res) {
-  res.redirect('../paye/job-recent1');
+  res.redirect('../iteration-1/job-recent1');
 });
 
 router.get(/jobrecent-handler/, function (req, res) {
   if (req.query.jobrecent == 'yes') {
-    res.redirect('../paye/job-start-date1');
+    res.redirect('../iteration-1/job-start-date1');
   } else if (req.query.jobrecent == 'no') {
-    res.redirect('../paye/job-zero-hour1');
+    res.redirect('../iteration-1/job-zero-hour1');
   }
 });
 
 router.get(/jobstartdate-handler/, function (req, res) {
   if (req.query.jobstartdateday && req.query.jobstartdatemonth && req.query.jobstartdateyear) {
-    res.redirect('../paye/job-zero-hour1');
+    res.redirect('../iteration-1/job-zero-hour1');
   } else {
-    res.redirect('../paye/job-start-date1');
+    res.redirect('../iteration-1/job-start-date1');
   }
 });
 router.get(/zerohour-handler/, function (req, res) {
   if (req.query.zerohour == 'yes') {
-    res.redirect('../paye/job-how-often1');
+    res.redirect('../iteration-1/job-how-often1');
   } else if (req.query.zerohour == 'no') {
-    res.redirect('../paye/job-hours1');
+    res.redirect('../iteration-1/job-hours1');
   }
 });
 
 router.get(/jobhours-handler/, function (req, res) {
   if (req.query.jobhours && req.query.jobminutes) {
-    res.redirect('../paye/job-how-often1');
+    res.redirect('../iteration-1/job-how-often1');
   } else {
-    res.redirect('../paye/job-hours1');
+    res.redirect('../iteration-1/job-hours1');
   }
 });
 
@@ -245,44 +245,44 @@ router.get(/jobhours-handler/, function (req, res) {
 
 router.get(/joboften-handler/, function (req, res) {
   if (req.query.joboften == 'every week' || req.query.joboften == 'every 2 weeks' || req.query.joboften == 'every 4 weeks' || req.query.joboften == 'every calendar month') {
-    res.redirect('../paye/job-fit-notes1');
+    res.redirect('../iteration-1/job-fit-notes1');
   } else if (req.query.joboften == 'it varies') {
-    res.redirect('../paye/job-date-last-worked1');
+    res.redirect('../iteration-1/job-date-last-worked1');
   } else {
-    res.redirect('../paye/job-how-often1');
+    res.redirect('../iteration-1/job-how-often1');
   }
 });
 
 router.get(/jobdatelastworked-handler/, function (req, res) {
   if (req.query.jobdatelastworkedday && req.query.jobdatelastworkedmonth && req.query.jobdatelastworkedyear) {
-    res.redirect('../paye/job-fit-notes1');
+    res.redirect('../iteration-1/job-fit-notes1');
   } else {
-    res.redirect('../paye/job-date-last-worked1');
+    res.redirect('../iteration-1/job-date-last-worked1');
   }
 });
 
 router.get(/jobfitnote-handler/, function (req, res) {
   if (req.query.jobfitnote == 'yes') {
-    res.redirect('../paye/job-date-fit-notes1');
+    res.redirect('../iteration-1/job-date-fit-notes1');
   } else if (req.query.jobfitnote == 'no') {
-    res.redirect('../paye/job-another1');
+    res.redirect('../iteration-1/job-another1');
   }
 });
 
 router.get(/jobdatefitnote-handler/, function (req, res) {
   if (req.query.jobdatefitnoteday && req.query.jobdatefitnotemonth && req.query.jobdatefitnoteyear) {
-    res.redirect('../paye/job-another1');
+    res.redirect('../iteration-1/job-another1');
   } else {
-    res.redirect('../paye/job-date-fit-notes1');
+    res.redirect('../iteration-1/job-date-fit-notes1');
   }
 });
 
 
 router.get(/jobanother-handler/, function (req, res) {
   if (req.query.jobanother == 'yes') {
-    res.redirect('../paye/job-title2');
+    res.redirect('../iteration-1/job-title2');
   } else if (req.query.jobanother == 'no') {
-    res.redirect('../paye/pension/personal-pension1');
+    res.redirect('../iteration-1/pension/personal-pension1');
   }
 });
 
@@ -291,81 +291,81 @@ router.get(/jobanother-handler/, function (req, res) {
 // Job (Loop)
 
 router.get(/jobtitle-loop-handler/, function (req, res) {
-  res.redirect('../paye/job-recent2');
+  res.redirect('../iteration-1/job-recent2');
 });
 
 router.get(/jobrecent-loop-handler/, function (req, res) {
   if (req.query.jobrecentloop == 'yes') {
-    res.redirect('../paye/job-start-date2');
+    res.redirect('../iteration-1/job-start-date2');
   } else if (req.query.jobrecentloop == 'no') {
-    res.redirect('../paye/job-zero-hour2');
+    res.redirect('../iteration-1/job-zero-hour2');
   }
 });
 
 router.get(/jobstartdate-loop-handler/, function (req, res) {
   if (req.query.jobstartdatedayloop && req.query.jobstartdatemonthloop && req.query.jobstartdateyearloop) {
-    res.redirect('../paye/job-zero-hour2');
+    res.redirect('../iteration-1/job-zero-hour2');
   } else {
-    res.redirect('../paye/job-start-date2');
+    res.redirect('../iteration-1/job-start-date2');
   }
 });
 
 router.get(/zerohour-loop-handler/, function (req, res) {
   if (req.query.zerohourloop == 'yes') {
-    res.redirect('../paye/job-how-often2');
+    res.redirect('../iteration-1/job-how-often2');
   } else if (req.query.zerohourloop == 'no') {
-    res.redirect('../paye/job-hours2');
+    res.redirect('../iteration-1/job-hours2');
   }
 });
 
 router.get(/jobhours-loop-handler/, function (req, res) {
   if (req.query.jobhoursloop && req.query.jobminutesloop) {
-    res.redirect('../paye/job-how-often2');
+    res.redirect('../iteration-1/job-how-often2');
   } else {
-    res.redirect('../paye/job-hours2');
+    res.redirect('../iteration-1/job-hours2');
   }
 });
 
 router.get(/joboften-loop-handler/, function (req, res) {
   if (req.query.joboftenloop == 'every week' || req.query.joboftenloop == 'every 2 weeks' || req.query.joboftenloop == 'every 4 weeks' || req.query.joboftenloop == 'every calendar month') {
-    res.redirect('../paye/job-fit-notes2');
+    res.redirect('../iteration-1/job-fit-notes2');
   } else if (req.query.joboftenloop == 'it varies') {
-    res.redirect('../paye/job-date-last-worked2');
+    res.redirect('../iteration-1/job-date-last-worked2');
   } else {
-    res.redirect('../paye/job-how-often2');
+    res.redirect('../iteration-1/job-how-often2');
   }
 });
 
 router.get(/jobdatelastworked-loop-handler/, function (req, res) {
   if (req.query.jobdatelastworkeddayloop && req.query.jobdatelastworkedmonthloop && req.query.jobdatelastworkedyearloop) {
-    res.redirect('../paye/job-fit-notes2');
+    res.redirect('../iteration-1/job-fit-notes2');
   } else {
-    res.redirect('../paye/job-date-last-worked2');
+    res.redirect('../iteration-1/job-date-last-worked2');
   }
 });
 
 router.get(/jobfitnote-loop-handler/, function (req, res) {
   if (req.query.jobfitnoteloop == 'yes') {
-    res.redirect('../paye/job-date-fit-notes2');
+    res.redirect('../iteration-1/job-date-fit-notes2');
   } else if (req.query.jobfitnoteloop == 'no') {
-    res.redirect('../paye/job-another2');
+    res.redirect('../iteration-1/payslips-2');
   }
 });
 
 router.get(/jobdatefitnote-loop-handler/, function (req, res) {
   if (req.query.jobdatefitnotedayloop && req.query.jobdatefitnotemonthloop && req.query.jobdatefitnoteyearloop) {
-    res.redirect('../paye/job-another2');
+    res.redirect('../iteration-1/payslips-2');
   } else {
-    res.redirect('../paye/job-date-fit-notes2');
+    res.redirect('../iteration-1/job-date-fit-notes2');
   }
 });
 
 
 router.get(/jobanother-loop-handler/, function (req, res) {
   if (req.query.jobanotherloop == 'yes') {
-    res.redirect('../paye/job-title2');
+    res.redirect('../iteration-1/job-title2');
   } else if (req.query.jobanotherloop == 'no') {
-    res.redirect('../paye/pension/personal-pension1');
+    res.redirect('../iteration-1/pension/personal-pension1');
   }
 });
 
@@ -374,9 +374,9 @@ router.get(/jobanother-loop-handler/, function (req, res) {
 
 router.get(/jobpersonalpension-handler/, function (req, res) {
   if (req.query.jobpersonalpension == 'yes') {
-    res.redirect('../../paye/pension/personal-pension-name1');
+    res.redirect('../../iteration-1/pension/personal-pension-name1');
   } else if (req.query.jobpersonalpension == 'no') {
-    res.redirect('../../answers');
+    res.redirect('../../iteration-1/answers');
   }
 });
 
@@ -386,7 +386,7 @@ router.get(/jobpensiontitle-handler/, function (req, res) {
 
 router.get(/jobpersonalpensionhowoften-handler/, function (req, res) {
   if (req.query.jobpersonalpensionhowoften == 'every week' || req.query.jobpersonalpensionhowoften == 'every 2 weeks' || req.query.jobpersonalpensionhowoften == 'every 4 weeks' || req.query.jobpersonalpensionhowoften == 'every calendar month' || req.query.jobpersonalpensionhowoften == 'every 13 weeks (quarterly)' || req.query.jobpersonalpensionhowoften == 'once a year') {
-    res.redirect('../../paye/pension/personal-pension-how-much1');
+    res.redirect('../../iteration-1/pension/personal-pension-how-much1');
   } else {
     res.redirect('personal-pension-how-often1');
   }
@@ -398,9 +398,9 @@ router.get(/jobpersonalpensionhowmuch-handler/, function (req, res) {
 
 router.get(/jobpersonalpensionanother-handler/, function (req, res) {
   if (req.query.jobpersonalpensionanother == 'yes') {
-    res.redirect('../../paye/pension/personal-pension-name2');
+    res.redirect('../../iteration-1/pension/personal-pension-name2');
   } else if (req.query.jobpersonalpensionanother == 'no') {
-    res.redirect('../../answers');
+    res.redirect('../../../answers');
   }
 });
 
@@ -410,9 +410,9 @@ router.get(/jobpersonalpensionanother-handler/, function (req, res) {
 
 router.get(/jobpersonalpension-loop-handler/, function (req, res) {
   if (req.query.jobpersonalpensionloop == 'yes') {
-    res.redirect('../../paye/pension/personal-pension-name2');
+    res.redirect('../../iteration-1/pension/personal-pension-name2');
   } else if (req.query.jobpersonalpensionloop == 'no') {
-    res.redirect('../../answers');
+    res.redirect('../../../answers');
   }
 });
 
@@ -422,7 +422,7 @@ router.get(/jobpensiontitle-loop-handler/, function (req, res) {
 
 router.get(/jobpersonalpensionhowoften-loop-handler/, function (req, res) {
   if (req.query.jobpersonalpensionhowoftenloop == 'every week' || req.query.jobpersonalpensionhowoftenloop == 'every 2 weeks' || req.query.jobpersonalpensionhowoftenloop == 'every 4 weeks' || req.query.jobpersonalpensionhowoftenloop == 'every calendar month' || req.query.jobpersonalpensionhowoftenloop == 'every 13 weeks (quarterly)' || req.query.jobpersonalpensionhowoftenloop == 'once a year') {
-    res.redirect('../../paye/pension/personal-pension-how-much2');
+    res.redirect('../../iteration-1/pension/personal-pension-how-much2');
   } else {
     res.redirect('personal-pension-how-often2');
   }
@@ -434,7 +434,7 @@ router.get(/jobpersonalpensionhowmuch-loop-handler/, function (req, res) {
 
 router.get(/jobpersonalpensionanother-loop-handler/, function (req, res) {
   if (req.query.jobpersonalpensionanotherloop == 'yes') {
-    res.redirect('../../paye/pension/personal-pension-name2');
+    res.redirect('../../iteration-1/pension/personal-pension-name2');
   } else if (req.query.jobpersonalpensionanotherloop == 'no') {
     res.redirect('../../answers');
   }
@@ -1915,5 +1915,324 @@ router.get(/emailconfirm-handler/, function (req, res) {
     res.redirect('check-your-answers');
   } else if (req.query.emailconfirm == 'no') {
     res.redirect('email');
+  }
+});
+
+// ************************
+// PAYE (ITERATION 2)
+// ************************
+
+router.get(/jobtitle-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-recent1');
+});
+
+router.get(/jobrecent-iteration-2-handler/, function (req, res) {
+  if (req.query.jobrecent == 'yes') {
+    res.redirect('../iteration-2/job-start-date1');
+  } else if (req.query.jobrecent == 'no') {
+    res.redirect('../iteration-2/job-zero-hour1');
+  }
+});
+
+router.get(/jobstartdate-iteration-2-handler/, function (req, res) {
+  if (req.query.jobstartdateday && req.query.jobstartdatemonth && req.query.jobstartdateyear) {
+    res.redirect('../iteration-2/job-zero-hour1');
+  } else {
+    res.redirect('../iteration-2/job-start-date1');
+  }
+});
+router.get(/zerohour-iteration-2-handler/, function (req, res) {
+  if (req.query.zerohour == 'yes') {
+    res.redirect('../iteration-2/job-how-often1');
+  } else if (req.query.zerohour == 'no') {
+    res.redirect('../iteration-2/job-hours1');
+  }
+});
+
+router.get(/jobhours-iteration-2-handler/, function (req, res) {
+  if (req.query.jobhours) {
+    res.redirect('../iteration-2/job-how-often1');
+  } else {
+    res.redirect('../iteration-2/job-hours1');
+  }
+});
+
+
+
+router.get(/joboften-iteration-2-handler/, function (req, res) {
+  if (req.query.joboften == 'every week' || req.query.joboften == 'every 2 weeks' || req.query.joboften == 'every 4 weeks' || req.query.joboften == 'every calendar month') {
+    res.redirect('../iteration-2/job-fit-notes1');
+  } else if (req.query.joboften == 'it varies') {
+    res.redirect('../iteration-2/job-date-last-worked1');
+  } else {
+    res.redirect('../iteration-2/job-how-often1');
+  }
+});
+
+router.get(/jobdatelastworked-iteration-2-handler/, function (req, res) {
+  if (req.query.jobdatelastworkedday && req.query.jobdatelastworkedmonth && req.query.jobdatelastworkedyear) {
+    res.redirect('../iteration-2/job-fit-notes1');
+  } else {
+    res.redirect('../iteration-2/job-date-last-worked1');
+  }
+});
+
+router.get(/jobfitnote-iteration-2-handler/, function (req, res) {
+  if (req.query.jobfitnote == 'yes') {
+    res.redirect('../iteration-2/job-date-fit-notes1');
+  } else if (req.query.jobfitnote == 'no') {
+    res.redirect('../iteration-2/job-bonus-1');
+  }
+});
+
+router.get(/jobdatefitnote-iteration-2-handler/, function (req, res) {
+  if (req.query.jobdatefitnoteday && req.query.jobdatefitnotemonth && req.query.jobdatefitnoteyear) {
+    res.redirect('../iteration-2/job-bonus-1');
+  } else {
+    res.redirect('../iteration-2/job-date-fit-notes1');
+  }
+});
+
+
+router.get(/jobanother-iteration-2-handler/, function (req, res) {
+  if (req.query.jobanother == 'yes') {
+    res.redirect('../iteration-2/job-title2');
+  } else if (req.query.jobanother == 'no') {
+    res.redirect('../iteration-2/pension/personal-pension1');
+  }
+});
+
+router.get(/bonus-iteration-2-handler/, function (req, res) {
+  if (req.query.bonus == 'yes') {
+    res.redirect('../iteration-2/job-another1');
+  } else if (req.query.bonus == 'no') {
+    res.redirect('../iteration-2/job-work-expenses1');
+  }
+});
+
+router.get(/jobgross-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-tax1');
+});
+
+router.get(/jobtax-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-national-insurance1');
+});
+
+router.get(/jobnationalinsurance-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-work-pension1');
+});
+
+router.get(/jobworkpension-iteration-2-handler/, function (req, res) {
+  if (req.query.workpension == 'yes') {
+    res.redirect('../iteration-2/job-work-pension-how-much1');
+  } else if (req.query.workpension == 'no') {
+    res.redirect('../iteration-2/job-answers1');
+  }
+});
+
+router.get(/jobworkpension-how-much-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-answers1');
+});
+
+router.get(/jobworkexpenses-iteration-2-handler/, function (req, res) {
+  if (req.query.workexpenses == 'yes') {
+    res.redirect('../iteration-2/job-another1');
+  } else if (req.query.workexpenses == 'no')  {
+    res.redirect('../iteration-2/payslips-1');
+  }
+});
+
+router.get(/jobbonus-how-much-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-work-expenses1');
+});
+
+// *******
+
+// Job (Loop)
+
+router.get(/jobtitle-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-recent2');
+});
+
+router.get(/jobrecent-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobrecentloop == 'yes') {
+    res.redirect('../iteration-2/job-start-date2');
+  } else if (req.query.jobrecentloop == 'no') {
+    res.redirect('../iteration-2/job-zero-hour2');
+  }
+});
+
+router.get(/jobstartdate-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobstartdatedayloop && req.query.jobstartdatemonthloop && req.query.jobstartdateyearloop) {
+    res.redirect('../iteration-2/job-zero-hour2');
+  } else {
+    res.redirect('../iteration-2/job-start-date2');
+  }
+});
+
+router.get(/zerohour-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.zerohourloop == 'yes') {
+    res.redirect('../iteration-2/job-how-often2');
+  } else if (req.query.zerohourloop == 'no') {
+    res.redirect('../iteration-2/job-hours2');
+  }
+});
+
+router.get(/jobhours-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobhoursloop) {
+    res.redirect('../iteration-2/job-how-often2');
+  } else {
+    res.redirect('../iteration-2/job-hours2');
+  }
+});
+
+router.get(/joboften-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.joboftenloop == 'every week' || req.query.joboftenloop == 'every 2 weeks' || req.query.joboftenloop == 'every 4 weeks' || req.query.joboftenloop == 'every calendar month') {
+    res.redirect('../iteration-2/job-fit-notes2');
+  } else if (req.query.joboftenloop == 'it varies') {
+    res.redirect('../iteration-2/job-date-last-worked2');
+  } else {
+    res.redirect('../iteration-2/job-how-often2');
+  }
+});
+
+router.get(/jobdatelastworked-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobdatelastworkeddayloop && req.query.jobdatelastworkedmonthloop && req.query.jobdatelastworkedyearloop) {
+    res.redirect('../iteration-2/job-fit-notes2');
+  } else {
+    res.redirect('../iteration-2/job-date-last-worked2');
+  }
+});
+
+router.get(/jobfitnote-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobfitnoteloop == 'yes') {
+    res.redirect('../iteration-2/job-date-fit-notes2');
+  } else if (req.query.jobfitnoteloop == 'no') {
+    res.redirect('../iteration-2/job-another2');
+  }
+});
+
+router.get(/jobdatefitnote-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobdatefitnotedayloop && req.query.jobdatefitnotemonthloop && req.query.jobdatefitnoteyearloop) {
+    res.redirect('../iteration-2/job-another2');
+  } else {
+    res.redirect('../iteration-2/job-date-fit-notes2');
+  }
+});
+
+
+router.get(/jobanother-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobanotherloop == 'yes') {
+    res.redirect('../iteration-2/job-title2');
+  } else if (req.query.jobanotherloop == 'no') {
+    res.redirect('../iteration-2/pension/personal-pension2');
+  }
+});
+
+router.get(/bonus-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.bonus == 'yes') {
+    res.redirect('../iteration-2/job-another2');
+  } else if (req.query.bonus == 'no') {
+    res.redirect('../iteration-2/job-work-expenses2');
+  }
+});
+
+router.get(/jobgross-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-tax2');
+});
+
+router.get(/jobtax-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-national-insurance2');
+});
+
+router.get(/jobnationalinsurance-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-work-pension2');
+});
+
+router.get(/jobworkpension-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.workpension2 == 'yes') {
+    res.redirect('../iteration-2/job-work-pension-how-much2');
+  } else if (req.query.workpension2 == 'no') {
+    res.redirect('../iteration-2/job-answers2');
+  }
+});
+
+router.get(/jobworkpension-how-much-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-answers2');
+});
+
+
+router.get(/jobbonus-how-much-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../iteration-2/job-work-expenses2');
+});
+
+
+// *******
+
+router.get(/jobpersonalpension-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpension == 'yes') {
+    res.redirect('../../iteration-2/pension/personal-pension-name1');
+  } else if (req.query.jobpersonalpension == 'no') {
+    res.redirect('../../iteration-2/answers');
+  }
+});
+
+router.get(/jobpensiontitle-iteration-2-handler/, function (req, res) {
+  res.redirect('../pension/personal-pension-how-often1');
+});
+
+router.get(/jobpersonalpensionhowoften-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpensionhowoften == 'every week' || req.query.jobpersonalpensionhowoften == 'every 2 weeks' || req.query.jobpersonalpensionhowoften == 'every 4 weeks' || req.query.jobpersonalpensionhowoften == 'every calendar month' || req.query.jobpersonalpensionhowoften == 'every 13 weeks (quarterly)' || req.query.jobpersonalpensionhowoften == 'once a year') {
+    res.redirect('../../iteration-2/pension/personal-pension-how-much1');
+  } else {
+    res.redirect('personal-pension-how-often1');
+  }
+});
+
+router.get(/jobpersonalpensionhowmuch-iteration-2-handler/, function (req, res) {
+  res.redirect('personal-pension-another1');
+});
+
+router.get(/jobpersonalpensionanother-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpensionanother == 'yes') {
+    res.redirect('../../iteration-2/pension/personal-pension-name2');
+  } else if (req.query.jobpersonalpensionanother == 'no') {
+    res.redirect('../../../answers');
+  }
+});
+
+// *******
+
+// Personal Pension (Loop)
+
+router.get(/jobpersonalpension-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpensionloop == 'yes') {
+    res.redirect('../../iteration-2/pension/personal-pension-name2');
+  } else if (req.query.jobpersonalpensionloop == 'no') {
+    res.redirect('../../../answers');
+  }
+});
+
+router.get(/jobpensiontitle-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('../pension/personal-pension-how-often2');
+});
+
+router.get(/jobpersonalpensionhowoften-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpensionhowoftenloop == 'every week' || req.query.jobpersonalpensionhowoftenloop == 'every 2 weeks' || req.query.jobpersonalpensionhowoftenloop == 'every 4 weeks' || req.query.jobpersonalpensionhowoftenloop == 'every calendar month' || req.query.jobpersonalpensionhowoftenloop == 'every 13 weeks (quarterly)' || req.query.jobpersonalpensionhowoftenloop == 'once a year') {
+    res.redirect('../../iteration-2/pension/personal-pension-how-much2');
+  } else {
+    res.redirect('personal-pension-how-often2');
+  }
+});
+
+router.get(/jobpersonalpensionhowmuch-loop-iteration-2-handler/, function (req, res) {
+  res.redirect('personal-pension-another2');
+});
+
+router.get(/jobpersonalpensionanother-loop-iteration-2-handler/, function (req, res) {
+  if (req.query.jobpersonalpensionanotherloop == 'yes') {
+    res.redirect('../../iteration-2/pension/personal-pension-name2');
+  } else if (req.query.jobpersonalpensionanotherloop == 'no') {
+    res.redirect('../../answers');
   }
 });
