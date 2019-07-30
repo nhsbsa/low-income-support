@@ -2236,3 +2236,73 @@ router.get(/jobpersonalpensionanother-loop-iteration-2-handler/, function (req, 
     res.redirect('../../answers');
   }
 });
+
+// ************************
+// STUDENTS (Iteration 1)
+// ************************
+
+router.get(/coursetype-handler/, function (req, res) {
+  if (req.query.coursetype == 'yes') {
+    res.redirect('name-of-establishment');
+  } else if (req.query.coursetype == 'no') {
+    res.redirect('name-of-establishment');
+  }
+});
+
+router.get(/finalyear-handler/, function (req, res) {
+  if (req.query.finalyear == 'yes') {
+    res.redirect('course-finish-date');
+  } else if (req.query.finalyear == 'no') {
+    res.redirect('financial-help');
+  }
+});
+
+router.get(/coursefinishdate-handler/, function (req, res) {
+  res.redirect('financial-help');
+});
+
+router.get(/financialhelp-handler/, function (req, res) {
+  if (req.query.financialhelp.includes('loanmaintenance-help')) {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.includes('bursary-help')) {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.includes('money-help')) {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.includes('scholarships-help')) {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.includes('overseas-help')) {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help,money-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'loanmaintenance-help,bursary-help,money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'bursary-help,money-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'bursary-help,money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'bursary-help,money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'money-help,scholarships-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'money-help,scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp.toString() == 'scholarships-help,overseas-help') {
+    res.redirect('money-from-parents');
+  } else if (req.query.financialhelp == 'none-help') {
+    res.redirect('money-from-parents');
+  } 
+});
+
+router.get(/moneyfromparents-handler/, function (req, res) {
+  if (req.query.moneyfromparents == 'yes') {
+    res.redirect('parents-income-assessed');
+  } else if (req.query.moneyfromparents == 'no') {
+    res.redirect('...');
+  }
+});
