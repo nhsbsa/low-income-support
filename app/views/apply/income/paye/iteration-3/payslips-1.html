@@ -1,0 +1,182 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .white-button {
+    background-color: #ffffff !important;
+    color: #005ea5 !important;
+    box-shadow: #00243f 0px 2px 0px 0px !important;
+  }
+
+  .white-button:hover {
+    background-color: #f2f2f2 !important;
+    color: #005ea5 !important;
+  }
+
+  .white-link {
+    color: white !important;
+    text-decoration: underline !important;
+  }
+
+  .white-link:hover {
+    color: #e6e6e6 !important;
+  }
+</style>
+
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <div style="width: 100%; background-color: #005EB8; padding: 25px; margin-top: 1.8em; color: white;">
+
+        <span style="font-size: 32px; line-height: 42px;">
+
+          We require further information about the last<br>
+
+          {% if data['joboften'] == "every week" %}
+          <span style="font-weight: bold;">5 weeks</span>
+          {% endif %}
+
+          {% if data['joboften'] == "every 2 weeks" %}
+          <span style="font-weight: bold;">4 weeks</span>
+          {% endif %}
+
+          {% if data['joboften'] == "every 4 weeks" %}
+          <span style="font-weight: bold;">2 months</span>
+          {% endif %}
+
+          {% if data['joboften'] == "every calendar month" %}
+          <span style="font-weight: bold;">2 months</span>
+          {% endif %}
+
+
+
+          of income from your<br> <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
+
+        </span>
+
+
+
+
+
+
+        <h2 class="heading-medium" style="margin-top: 25px;">We'll ask you to upload:</h2>
+
+        <ul class="list list-bullet">
+          <li>digital photos or scans of your last
+
+            {% if data['joboften'] == "every week" %}
+            <span style="font-weight: bold;">5</span>
+            {% endif %}
+
+            {% if data['joboften'] == "every 2 weeks" %}
+            <span style="font-weight: bold;">4</span>
+            {% endif %}
+
+            {% if data['joboften'] == "every 4 weeks" %}
+            <span style="font-weight: bold;">2</span>
+            {% endif %}
+
+            {% if data['joboften'] == "every calendar month" %}
+            <span style="font-weight: bold;">2</span>
+            {% endif %}
+
+            payslips leading up to <script>
+              var today = new Date();
+              var dd = today.getDate();
+              var mm = today.getMonth() + 1; //January is 0!
+              var yyyy = today.getFullYear();
+
+              if (dd < 10) {
+                dd = '0' + dd
+              }
+
+              if (mm < 10) {
+                mm = '0' + mm
+              }
+
+              today = dd + '/' + mm + '/' + yyyy;
+              document.write(today);
+            </script> (today).
+          </li>
+        </ul>
+
+
+
+
+
+
+
+
+       
+
+        <p>If you currently do not have this information to hand, you can save and continue your application later.</p>
+
+        <p>Your application will be saved for a total of 6 days.</p>
+
+        <details role="group">
+
+          <summary role="button" aria-controls="details-content-0" aria-expanded="false" style="color: white !important;"><span class="summary" style="color: white !important;">How to take the picture</span></summary>
+          <br>
+          <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true" style="border-color: white !important;">
+           
+      
+            <ol class="list list-number">
+      
+              <li>Place your payslip on a flat service in a well lit room. Use a flash if you need to.</li>
+      
+              <li>Take a good quality picture of the entire payslip. You should be able to see its edges.</li>
+      
+              <li>Check that the image is in focus. You must be able to read all the writing on the payslip, 
+              including any text. Zoom in if you need to check this.</li>
+      
+              <li>Send the picture to this device (For example, by email) and save it.</li>
+      
+            </ol>
+      
+          </div>
+      
+        </details>
+
+        <hr style="background: white;">
+        
+
+        <a href="job-upload1" role="button" class="button white-button">
+          Next
+        </a>
+
+        <p style="margin-top: 20px;"><a class="white-link" href="#">Save and continue later</a></p>
+
+
+      </div>
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}
