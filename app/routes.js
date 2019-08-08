@@ -2427,13 +2427,13 @@ router.get(/jobfitnote-loop-iteration-3-handler/, function (req, res) {
   if (req.query.jobfitnoteloop == 'yes') {
     res.redirect('../iteration-3/job-date-fit-notes2');
   } else if (req.query.jobfitnoteloop == 'no') {
-    res.redirect('../iteration-3/job-another2');
+    res.redirect('../iteration-3/payslips-2');
   }
 });
 
 router.get(/jobdatefitnote-loop-iteration-3-handler/, function (req, res) {
   if (req.query.jobdatefitnotedayloop && req.query.jobdatefitnotemonthloop && req.query.jobdatefitnoteyearloop) {
-    res.redirect('../iteration-3/job-another2');
+    res.redirect('../iteration-3/payslips-2');
   } else {
     res.redirect('../iteration-3/job-date-fit-notes2');
   }
@@ -2553,6 +2553,28 @@ router.get(/jobpersonalpensionanother-loop-iteration-3-handler/, function (req, 
     res.redirect('../../iteration-3/pension/personal-pension-name2');
   } else if (req.query.jobpersonalpensionanotherloop == 'no') {
     res.redirect('../../answers');
+  }
+});
+
+//Payslip Upload
+
+router.get(/payslip-iteration-3-handler/, function (req, res) {
+  if (req.query.uploadskip == 'uploadskip') {
+    res.redirect('job-another1');
+  } else if (req.query.uploadskip == '') {
+    res.redirect('job-another1');
+  } else {
+    res.redirect('job-upload1');
+  }
+});
+
+router.get(/payslip-loop-iteration-3-handler/, function (req, res) {
+  if (req.query.uploadskiploop == 'uploadskiploop') {
+    res.redirect('job-another2');
+  } else if (req.query.uploadskiploop == '') {
+    res.redirect('job-another2');
+  } else {
+    res.redirect('job-upload2');
   }
 });
 

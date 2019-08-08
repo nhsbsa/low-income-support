@@ -56,7 +56,7 @@ NHSBSA Prototype
           <header class="page-header" style="margin-top: 10px;">
               <p class="page-header--sub heading-secondary" style="color: white;">Apply for help with NHS costs</p>
               <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Upload your
-                '{{ data['jobtitle']}}' payslips</h1>
+                '{{ data['jobtitleloop']}}' payslips</h1>
             </header>
            
 
@@ -64,21 +64,21 @@ NHSBSA Prototype
 
           We require further information about the last 
 
-          {% if data['joboften'] == "every week" %}
+          {% if data['joboftenloop'] == "every week" %}
           <span style="font-weight: bold;">5 weeks</span>
           {% endif %}
 
-          {% if data['joboften'] == "every 2 weeks" %}
+          {% if data['joboftenloop'] == "every 2 weeks" %}
           <span style="font-weight: bold;">4 weeks</span>
           {% endif %}
 
-          {% if data['joboften'] == "every 4 weeks" %}
+          {% if data['joboftenloop'] == "every 4 weeks" %}
           <span style="font-weight: bold;">2 months</span>
           {% endif %}
 
-          {% if data['joboften'] == "every calendar month" %}
+          {% if data['joboftenloop'] == "every calendar month" %}
           <span style="font-weight: bold;">2 months</span>
-          {% endif %} of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
+          {% endif %} of income from your <span style="font-weight: bold;">‘{{ data['jobtitleloop'] }}’</span> job.
 
         </span>
         
@@ -87,19 +87,19 @@ NHSBSA Prototype
         <ul class="list list-bullet">
           <li>photos or scans of your last
 
-            {% if data['joboften'] == "every week" %}
+            {% if data['joboftenloop'] == "every week" %}
             <span style="font-weight: bold;">5</span>
             {% endif %}
 
-            {% if data['joboften'] == "every 2 weeks" %}
+            {% if data['joboftenloop'] == "every 2 weeks" %}
             <span style="font-weight: bold;">4</span>
             {% endif %}
 
-            {% if data['joboften'] == "every 4 weeks" %}
+            {% if data['joboftenloop'] == "every 4 weeks" %}
             <span style="font-weight: bold;">2</span>
             {% endif %}
 
-            {% if data['joboften'] == "every calendar month" %}
+            {% if data['joboftenloop'] == "every calendar month" %}
             <span style="font-weight: bold;">2</span>
             {% endif %}
 
@@ -139,7 +139,7 @@ NHSBSA Prototype
 
         
 
-        <a href="job-upload1" role="button" class="button white-button">
+        <a href="job-upload2" role="button" class="button white-button">
           Next
         </a>
 
