@@ -638,6 +638,16 @@ router.get(/evidencebyemailiteration1-handler/, function (req, res) {
   res.redirect('../iteration-1/declaration');
 });
 
+router.get(/evidencebyemail-iteration-5-handler/, function (req, res) {
+  if (req.query.evidencebyemail == 'post') {
+    res.redirect('further-information-post');
+  } else if (req.query.evidencebyemail && req.query.emailconfirm == 'emailconfirm') {
+    res.redirect('further-information-email');
+  } else {
+    res.redirect('email-or-post');
+  }
+});
+
 // ************************
 // SAVE & RESTORE (MVP)
 // ************************
