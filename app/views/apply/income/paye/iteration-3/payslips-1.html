@@ -55,46 +55,58 @@ NHSBSA Prototype
         
           <header class="page-header" style="margin-top: 10px;">
               <p class="page-header--sub heading-secondary" style="color: white;">Apply for help with NHS costs</p>
-              <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Upload your
-                last 
+              <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;"> 
 
           {% if data['joboften'] == "every week" %}
-          <span style="font-weight: bold;">5</span>
+          <span style="font-weight: bold;">Upload your
+            last 5 payslips</span>
           {% endif %}
 
           {% if data['joboften'] == "every 2 weeks" %}
-          <span style="font-weight: bold;">4</span>
+          <span style="font-weight: bold;">Upload your
+            last 4 payslips</span>
           {% endif %}
 
           {% if data['joboften'] == "every 4 weeks" %}
-          <span style="font-weight: bold;">2</span>
+          <span style="font-weight: bold;">Upload your
+            last 2 payslips</span>
           {% endif %}
 
           {% if data['joboften'] == "every calendar month" %}
-          <span style="font-weight: bold;">2</span>
-          {% endif %} payslips</h1>
+          <span style="font-weight: bold;">Upload your
+            last 2 payslips</span>
+          {% endif %}
+
+          {% if data['joboften'] == "it varies" %}
+          <span style="font-weight: bold;">Upload every payslip received</span>
+          {% endif %}
+        </h1>
             </header>
            
 
         <p>
 
-          We require further information about the last 
+          
 
           {% if data['joboften'] == "every week" %}
-          <span style="font-weight: bold;">5 weeks</span>
+          We require further information about the last <span style="font-weight: bold;">5 weeks</span> of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
           {% endif %}
 
           {% if data['joboften'] == "every 2 weeks" %}
-          <span style="font-weight: bold;">4 weeks</span>
+          We require further information about the last <span style="font-weight: bold;">4 weeks</span> of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
           {% endif %}
 
           {% if data['joboften'] == "every 4 weeks" %}
-          <span style="font-weight: bold;">2 months</span>
+          We require further information about the last <span style="font-weight: bold;">2 months</span> of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
           {% endif %}
 
           {% if data['joboften'] == "every calendar month" %}
-          <span style="font-weight: bold;">2 months</span>
-          {% endif %} of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
+          We require further information about the last <span style="font-weight: bold;">2 months</span> of income from your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
+          {% endif %}
+          
+          {% if data['joboften'] == "it varies" %}
+          We require further information about your <span style="font-weight: bold;">‘{{ data['jobtitle'] }}’</span> job.
+          {% endif %} 
 
         </p>
 
@@ -103,22 +115,26 @@ NHSBSA Prototype
         <h2 class="heading-small" style="margin-top: 25px;">We'll ask you to upload:</h2>
 
         <ul class="list list-bullet">
-          <li>photos or scans of your last
+          <li>
 
             {% if data['joboften'] == "every week" %}
-            <span style="font-weight: bold;">5</span>
+            photos or scans of your last <span style="font-weight: bold;">5</span>
             {% endif %}
 
             {% if data['joboften'] == "every 2 weeks" %}
-            <span style="font-weight: bold;">4</span>
+            photos or scans of your last <span style="font-weight: bold;">4</span>
             {% endif %}
 
             {% if data['joboften'] == "every 4 weeks" %}
-            <span style="font-weight: bold;">2</span>
+            photos or scans of your last <span style="font-weight: bold;">2</span>
             {% endif %}
 
             {% if data['joboften'] == "every calendar month" %}
-            <span style="font-weight: bold;">2</span>
+            photos or scans of your last <span style="font-weight: bold;">2</span>
+            {% endif %}
+
+            {% if data['joboften'] == "it varies" %}
+            photos or scans of <span style="font-weight: bold;">all</span> of your
             {% endif %}
 
             payslips leading up to <script>
