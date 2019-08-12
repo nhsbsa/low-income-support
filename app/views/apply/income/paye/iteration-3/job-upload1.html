@@ -10,12 +10,14 @@ NHSBSA Prototype
 <script>
   // "myAwesomeDropzone" is the camelized version of the HTML element's ID
   Dropzone.options.myAwesomeDesktopDropzone = {
-    dictDefaultMessage: "<p>Drag and drop files here</p><p>or</p><p style='color: #005EB8; text-decoration: underline;'>click to choose a file</p>"
+    dictDefaultMessage: "<p>Drag and drop files here</p><p>or</p><p style='color: #005EB8; text-decoration: underline;'>click to choose a file</p>",
+    maxFilesize: 10
   };
 
   // "myAwesomeDropzone" is the camelized version of the HTML element's ID
   Dropzone.options.myAwesomeMobileDropzone = {
-    dictDefaultMessage: "<p style='color: #005EB8; text-decoration: underline;'>Choose a file</p><p>or</p><p><a href='#'><input class='button' type='submit' value='Take a photo' capture='camera'></a></p>"
+    dictDefaultMessage: "<p style='color: #005EB8; text-decoration: underline;'>Choose a file</p><p>or</p><p><a href='#'><input class='button' type='submit' value='Take a photo' capture='camera'></a></p>",
+    maxFilesize: 10
   };
 </script>
 
