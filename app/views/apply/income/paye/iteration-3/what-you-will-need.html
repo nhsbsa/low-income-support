@@ -1,0 +1,111 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+  .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+  }
+
+  .form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  @media (min-width: 641px) {
+    .form-group {
+      margin-bottom: 30px;
+    }
+  }
+</style>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Wages from a job</p>
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">What you'll need</h1>
+      </header>
+
+      <p>Depending on how often you are paid, you'll need to supply photos or scans of your payslips for each job you have:</p>
+
+      <ul class="list list-bullet">
+          <li><strong style="font-weight: bold;">Paid weekly</strong> - last 5 consecutive payslips</li>
+          <li><strong style="font-weight: bold;">Paid every 2 weeks</strong> - last 4 consecutive payslips</li>
+          <li><strong style="font-weight: bold;">Paid every 4 weeks</strong> - last 2 consecutive payslips</li>
+          <li><strong style="font-weight: bold;">Paid every calendar month</strong> - last 2 consecutive payslips</li>
+          <li><strong style="font-weight: bold;">Pay varies</strong> - every payslip since starting</li>
+      </ul>
+
+<p>If you are unable to supply photos or scans of your payslips, you can still submit your application but it
+    will take longer for us to make a decision.</p>
+
+    <details role="group">
+
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">Help with
+            submitting documents</span></summary><br>
+
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+
+          <p>To take a picture of your payslips:</p>
+
+          <ol class="list list-number">
+
+            <li>Place your payslip on a flat service in a well lit room. Use a flash if you need to.</li>
+
+            <li>Take a good quality picture of the entire payslip. You should be able to see its edges.</li>
+
+            <li>Check that the image is in focus. You must be able to read all the writing on the payslip,
+              including the handwriting. Zoom in if you need to check this.</li>
+
+            <li>Send the picture to this device (For example, by email) and save it.</li>
+
+          </ol>
+
+        </div>
+
+      </details>
+      <br>
+
+
+      <br><br>
+
+      <div class="form-group">
+        <a href="job-title1"><input class="button" type="submit" value="Next"></a>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
