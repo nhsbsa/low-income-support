@@ -38,52 +38,116 @@ NHSBSA Prototype
       <p>Because you receive wages from a job, universal credit or working tax credits, we require further information
         e.g. payslips, benefits awards notice etc...</p>
 
-      <form action="evidencebyemail-iteration-5-handler" method="get" class="form">
 
-        <div class="form-group">
+        {% if data['email'] %}
+        
+        <form action="evidencebyemail-iteration-5-handler" method="get" class="form">
 
-          <fieldset>
-            <legend class="visually-hidden">
-            </legend>
-
-            <div class="multiple-choice" data-target="reveal">
-              <input id="yes" type="radio" name="evidencebyemail" value="email">
-              <label for="yes" style="line-height: 195%;">Email</label>
-            </div>
-
-            <div class="panel panel-border-narrow js-hidden" id="reveal">
-              <p style="font-weight: bold;">Email is not always secure. If you do not want to send this information by email,
-                you can instead post this to us.</p>
-              <fieldset class="form-group" style="margin-bottom: 20px;">
-                <div class="multiple-choice multiple-radio" style="margin-top: 0">
-                  <input id="emailconfirm" name="emailconfirm" value="emailconfirm" type="checkbox">
-                  <label for="emailconfirm" style="margin-top: 5px; margin-bottom: 5px;">I understand and would still like
-                    to send by email</label>
+            <div class="form-group">
+    
+              <fieldset>
+                <legend class="visually-hidden">
+                </legend>
+    
+                <div class="multiple-choice" data-target="reveal">
+                  <input id="yes" type="radio" name="evidencebyemail" value="email">
+                  <label for="yes" style="line-height: 195%;">Email</label>
                 </div>
-                
+    
+                <div class="panel panel-border-narrow js-hidden" id="reveal">
+                  <p style="font-weight: bold;">Email is not always secure. If you do not want to send this information by email,
+                    you can instead post this to us.</p>
+                  <fieldset class="form-group" style="margin-bottom: 20px;">
+                    <div class="multiple-choice multiple-radio" style="margin-top: 0">
+                      <input id="emailconfirm" name="emailconfirm" value="emailconfirm" type="checkbox">
+                      <label for="emailconfirm" style="margin-top: 5px; margin-bottom: 5px;">I understand and would still like
+                        to send by email</label>
+                    </div>
+                    
+                  </fieldset>
+                </div>
+    
+                <div class="multiple-choice">
+                  <input id="no" type="radio" name="evidencebyemail" value="post">
+                  <label for="no" style="line-height: 195%;">Post</label>
+                </div>
+    
+    
+    
+    
               </fieldset>
+    
+    
+    
+    
             </div>
-
-            <div class="multiple-choice">
-              <input id="no" type="radio" name="evidencebyemail" value="post">
-              <label for="no" style="line-height: 195%;">Post</label>
+    
+            <div class="form-group">
+              <input class="button" type="submit" value="Next">
             </div>
+    
+          </form>
+    
+
+
+        {% else %}
+        
+        <form action="evidencebyemail-iteration-6-handler" method="get" class="form">
+
+            <div class="form-group">
+    
+              <fieldset>
+                <legend class="visually-hidden">
+                </legend>
+    
+                <div class="multiple-choice" data-target="reveal">
+                  <input id="yes" type="radio" name="evidencebyemail" value="email">
+                  <label for="yes" style="line-height: 195%;">Email</label>
+                </div>
+    
+                <div class="panel panel-border-narrow js-hidden" id="reveal">
+                  <p style="font-weight: bold;">Email is not always secure. If you do not want to send this information by email,
+                    you can instead post this to us.</p>
+                  <fieldset class="form-group" style="margin-bottom: 20px;">
+                    <div class="multiple-choice multiple-radio" style="margin-top: 0">
+                      <input id="emailconfirm" name="emailconfirm" value="emailconfirm" type="checkbox">
+                      <label for="emailconfirm" style="margin-top: 5px; margin-bottom: 5px;">I understand and would still like
+                        to send by email</label>
+                    </div>
+                    
+                  </fieldset>
+                </div>
+    
+                <div class="multiple-choice">
+                  <input id="no" type="radio" name="evidencebyemail" value="post">
+                  <label for="no" style="line-height: 195%;">Post</label>
+                </div>
+    
+    
+    
+    
+              </fieldset>
+    
+    
+    
+    
+            </div>
+    
+            <div class="form-group">
+              <input class="button" type="submit" value="Next">
+            </div>
+    
+          </form>
+    
+
+
+        {% endif %}     
 
 
 
 
-          </fieldset>
 
 
-
-
-        </div>
-
-        <div class="form-group">
-          <input class="button" type="submit" value="Next">
-        </div>
-
-      </form>
     </div>
   </div>
 </main>

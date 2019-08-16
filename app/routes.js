@@ -640,9 +640,19 @@ router.get(/evidencebyemailiteration1-handler/, function (req, res) {
 
 router.get(/evidencebyemail-iteration-5-handler/, function (req, res) {
   if (req.query.evidencebyemail == 'post') {
-    res.redirect('further-information-post');
+    res.redirect('declaration');
   } else if (req.query.evidencebyemail && req.query.emailconfirm == 'emailconfirm') {
-    res.redirect('further-information-email');
+    res.redirect('declaration');
+  } else {
+    res.redirect('email-or-post');
+  }
+});
+
+router.get(/evidencebyemail-iteration-6-handler/, function (req, res) {
+  if (req.query.evidencebyemail == 'post') {
+    res.redirect('declaration');
+  } else if (req.query.evidencebyemail && req.query.emailconfirm == 'emailconfirm') {
+    res.redirect('email');
   } else {
     res.redirect('email-or-post');
   }
@@ -1925,6 +1935,22 @@ router.get(/emailconfirm-handler/, function (req, res) {
     res.redirect('check-your-answers');
   } else if (req.query.emailconfirm == 'no') {
     res.redirect('email');
+  }
+});
+
+router.get(/emailsubmission-handler/, function (req, res) {
+  if (req.query.email) {
+    res.redirect('email-confirm');
+  } else {
+    res.redirect('email');
+  }
+});
+
+router.get(/sendbyemail-iteration1-handler/, function (req, res) {
+  if (req.query.email) {
+    res.redirect('further-information-email-sent');
+  } else {
+    res.redirect('more-information-error');
   }
 });
 

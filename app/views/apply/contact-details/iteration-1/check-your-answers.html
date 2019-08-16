@@ -43,7 +43,11 @@ NHSBSA Prototype
             <h2 class="heading-small">Telephone number</h2>
           </dt>
           <dd class="cya-answer">
-            <p>{{ data['telephone'] }}</p>
+            <p>{% if data['telephone'] %}
+                {{ data['telephone'] }}
+                {% else %}
+                N/A
+                {% endif %}</p>
           </dd>
           <dd class="cya-change">
             <a href="#">
@@ -56,7 +60,11 @@ NHSBSA Prototype
             <h2 class="heading-small">Email address</h2>
           </dt>
           <dd class="cya-answer" style="border: 0 !important;">
-            <p>{{ data['email'] }}</p>
+              <p>{% if data['email'] %}
+                  {{ data['email'] }}
+                  {% else %}
+                  N/A
+                  {% endif %}</p>
           </dd>
           <dd class="cya-change" style="border: 0 !important;">
             <a href="#">
@@ -74,7 +82,7 @@ NHSBSA Prototype
 
       <div class="form-group">
 
-        <a href="#"><input class="button" type="submit" value="Next"></a>
+        <a href="/apply/submit/iteration-5/task-list-complete"><input class="button" type="submit" value="Next"></a>
 
       </div>
 
