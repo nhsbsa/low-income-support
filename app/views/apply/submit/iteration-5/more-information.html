@@ -170,6 +170,9 @@ margin-top: 1em !important;
                 Street
                 <br>Newcastle upon Tyne<br>NE1 6SN.</p>
 
+
+            {% if not data['email'] %}
+
             <details role="group">
                 <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span
                         class="summary">I want to send this by email</span></summary>
@@ -192,13 +195,10 @@ margin-top: 1em !important;
                     
                     </form>
 
-
-
-
-
-
                 </div>
             </details>
+
+            {% endif %}
 
             <details role="group">
                 <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span

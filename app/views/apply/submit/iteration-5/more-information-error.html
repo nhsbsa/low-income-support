@@ -177,44 +177,34 @@ margin-top: 1em !important;
                 Street
                 <br>Newcastle upon Tyne<br>NE1 6SN.</p>
 
-            <details role="group" open>
-                <summary role="button" aria-controls="details-content-0" aria-expanded="true"><span
-                        class="summary">I want to send this by email</span></summary>
+                {% if not data['email'] %}
 
-                <div class="panel panel-border-wide" style="margin-top: 30px;" id="details-content-0"
-                    aria-hidden="true">
-                    
-
-         
-                    
-                    <p>To send this information by email, we require an email address to send further instructions to.</p>
-
-                    <form action="sendbyemail-iteration1-handler" method="get" class="form">
-
-                        <div class="form-group">
-                            <label class="form-label" for="email" style="font-weight: bold;">Enter your email address</label>
-                            <p class="form-hint">For example, myname@example.com</p>
-                            <div style="font-weight: bold; color: #b10e1e;">
-                                    <span class="visually-hidden">Error:</span> Enter a valid email address
+                <details role="group">
+                    <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span
+                            class="summary">I want to send this by email</span></summary>
+    
+                    <div class="panel panel-border-wide" style="margin-top: 30px;" id="details-content-0"
+                        aria-hidden="true">
+                        <p>To send this information by email, we require an email address to send further instructions to.</p>
+    
+                        <form action="sendbyemail-iteration1-handler" method="get" class="form">
+    
+                            <div class="form-group">
+                                <label class="form-label" for="email" style="font-weight: bold;">Enter your email address</label>
+                                <p class="form-hint">For example, myname@example.com</p>
+                                <input class="form-control" id="email" name="email" type="text" value="{{ data['email'] }}">
                             </div>
-                            <input class="form-control" id="email" name="email" type="text" style="border: 4px solid #b10e1e;">
-                        </div>
-                
-                        <div class="form-group">
-                            <input class="button" type="submit" value="Send">
-                        </div>
                     
-                    </form>
-
-
-
-
-
-
-
-
-                </div>
-            </details>
+                            <div class="form-group">
+                                <input class="button" type="submit" value="Send">
+                            </div>
+                        
+                        </form>
+    
+                    </div>
+                </details>
+    
+                {% endif %}
 
             <details role="group">
                 <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span
