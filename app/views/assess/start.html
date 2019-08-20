@@ -1,0 +1,69 @@
+{% extends "layout_bsa_assess.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Low Income Scheme</p>
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-xlarge">Sign in to your
+          assessment account</h1>
+      </header>
+
+      <p>This is the case working system for assessing digital applications to the NHS Low Income Scheme (LIS).</p>
+
+      <p>Depending on an applicant's circumstances, they could be entitled to help with NHS costs.</p>
+
+      <div class="form-group">
+        <a id="next-button" class="button button-start" role="button" href="secure">
+          Sign in
+        </a>
+      </div>
+
+      <details id="problem-signin" role="group">
+        <summary role="button" aria-controls="details-content-0" aria-expanded="false"><span class="summary">I'm having
+            problems signing in</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="true">
+          <p>Speak to your line manager about:</p>
+          <ul class="list list-bullet">
+            <li>problems signing into the system</li>
+            <li>password resets</li>
+          </ul>
+        </div>
+      </details>
+
+      <details id="no-account" role="group">
+        <summary role="button" aria-controls="details-content-1" aria-expanded="false"><span class="summary">How to get
+            access to the system</span></summary>
+        <div class="panel panel-border-narrow" id="details-content-1" aria-hidden="true">
+          <p>To use this system you must:</p>
+          <ul class="list list-bullet">
+            <li>work for the NHS Business Services Authority</li>
+            <li>be an LIS assessor or contact centre member of staff</li>
+            <li>have an NHSmail email address</li>
+          </ul>
+        </div>
+      </details>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
