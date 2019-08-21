@@ -276,12 +276,24 @@ NHSBSA Prototype
   <div style="width: 20%;">
   
       <div class="form-group">
-          <span class="heading-medium ref-section">5757</span><div class="form-hint">CRS number</div>
+          <span class="heading-medium ref-section" id="crs"></span><div class="form-hint">CRS number</div>
       </div>
+<script>
+var fourdigitsrandom = Math.floor(1000 + Math.random() * 9000);
+document.getElementById("crs").innerHTML=fourdigitsrandom;
+// alert(fourdigitsrandom);
+</script>
 
       <div class="form-group">
-          <span class="heading-medium ref-section">4zun 5739</span><div class="form-hint"> Digital reference</div>
+          <span class="heading-medium ref-section"><span id="digiref1"></span>-<span id="digiref2"></span></span><div class="form-hint"> Digital reference</div>
       </div>
+      <script>
+          var threedigitsrandom1 = Math.floor(100 + Math.random() * 900);
+          var threedigitsrandom2 = Math.floor(100 + Math.random() * 900);
+          document.getElementById("digiref1").innerHTML=(threedigitsrandom1);
+          document.getElementById("digiref2").innerHTML=(threedigitsrandom2);
+          // alert(threedigitsrandom);
+      </script>
 
       <div class="form-group">
           <span class="heading-medium ref-section">20-08-2019</span><div class="form-hint">Date of application</div>
