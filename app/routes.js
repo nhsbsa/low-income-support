@@ -2683,3 +2683,11 @@ router.get(/moneyfromparents-handler/, function (req, res) {
     res.redirect('...');
   }
 });
+
+// ************************
+// ASSESS
+// ************************
+
+router.get(/assess-search-handler/, function (req, res) {
+    res.redirect('evidence-case');
+});

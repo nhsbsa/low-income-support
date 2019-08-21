@@ -1,0 +1,81 @@
+{% extends "layout_bsa_assess_signedin.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+
+<style type="text/css">
+
+#content {
+  max-width: 100%;
+  padding: 30px;
+}
+
+@keyframes spinner {
+    0% {
+        transform: translate3d(-50%, -50%, 0) rotate(0deg);
+    }
+    100% {
+         transform: translate3d(-50%, -50%, 0) rotate(360deg);
+    }
+}
+.spinner {
+    margin-top: 1.5em;
+    height: 50px;
+    opacity: 1;
+    position: relative;
+    transition: opacity linear 0.1s;    
+}
+.spinner::before {
+        
+        animation: 2s linear infinite spinner;
+        border: solid 5px #dee0e2;
+        border-bottom-color: #005EB8;
+        border-radius: 50%;
+        content: "";
+        height: 50px;
+        left: 50%;
+        opacity: inherit;
+        position: absolute;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        transform-origin: center;
+        width: 50px;
+        will-change: transform;
+}
+</style>
+<script>
+    setTimeout("location.href = 'normal-case';",3000);
+</script>
+
+<main id="content" role="main" style="min-height: 500px;">
+
+    <div class="grid-row">
+		
+        <div class="full">
+
+            <h1 class="heading-xlarge" style="text-align: center; margin-top: 1em; margin-bottom: 0.5em;">We are registering the next case</h1>
+            <p style="text-align: center;">This may take a moment.</p>
+    
+            <div class="spinner"></div>
+
+
+            
+
+			
+        </div>
+        </div>
+
+</main>
+
+{% endblock %}
