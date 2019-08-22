@@ -330,7 +330,16 @@ document.getElementById("crs").innerHTML=fourdigitsrandom;
                       <h2 class="heading-small">Full name</h2>
                     </dt>
                     <dd class="cya-answer">
-                      <p>Stephen Hill</p>
+                      <p><span id="name"></span></p>
+                      <script type="text/javascript">
+
+var firstPart = ["Stephen", "Charlotte", "Elizabeth", "Simon", "James", "Andrew", "Catherine"];
+var secondPart = ["Jones", "Smith", "Holliday", "Reed", "Woods", "Ferguson", "Pratt"];
+
+var name = firstPart[Math.floor(Math.random() * firstPart.length)] + " " + secondPart[Math.floor(Math.random() * secondPart.length)];
+document.getElementById("name").innerHTML=(name);
+
+                      </script>
                     </dd>
                   </div>
                   <div>
