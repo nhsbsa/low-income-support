@@ -1,4 +1,13 @@
 {% extends "layout_bsa.html" %} {% block page_title %} NHSBSA Prototype {% endblock %} {% block content %}
+<style>
+    @media print
+    {    
+        .no-print, .no-print *
+        {
+            display: none !important;
+        }
+    }
+</style>
 <script>
     var today = new Date();
     var dd = today.getDate();
