@@ -1,3 +1,9 @@
+// ************************
+// NOTIFY
+// ************************
+var NotifyClient = require('notifications-node-client').NotifyClient
+var notifyClient = new NotifyClient('evidenceemail-d7f10c49-d20f-49b4-95e5-0c8b5e4fe650-277df34b-ea50-4a10-b24b-504213e86940')
+
 var express = require('express')
 var router = express.Router()
 
@@ -5,6 +11,46 @@ var router = express.Router()
 router.get('/', function (req, res) {
   res.render('index')
 })
+
+// The URL here needs to match the URL of the page that the user is on
+// when they type in their email address
+router.get(/sendEmail-handler/, function (req, res) {
+
+  var email = req.session.data['email'];
+  var uploadSkip = req.session.data['uploadskip'];
+
+  if (uploadSkip) {
+    res.redirect('more-information')
+  }
+  else if (email) {
+    
+    notifyClient.sendEmail(
+      // this long string is the template ID, copy it from the template
+      // page in GOV.UK Notify. It’s not a secret so it’s fine to put it
+      // in your code.
+      'c06d2f17-e510-427a-9a49-c0bc2640e7b1',
+      // `emailAddress` here needs to match the name of the form field in
+      // your HTML page
+      req.session.data['email']
+    );
+  
+    // This is the URL the users will be redirected to once the email
+    // has been sent
+    res.redirect('further-information-email');  
+
+  }
+  else {
+    res.redirect('more-information')
+  }
+
+
+
+
+
+
+
+
+});
 
 // add your routes here
 
