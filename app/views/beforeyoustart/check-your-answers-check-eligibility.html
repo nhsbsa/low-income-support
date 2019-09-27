@@ -111,7 +111,22 @@ NHSBSA Prototype
                   <h2 class="heading-small">Your partner receives income from</h2>
                 </dt>
                 <dd class="cya-answer">
-                  <p>Other benefits<br>Pensions<br>Money from somewhere else</p>
+                  <p>
+                      {% if 'pension-income' in data['incomepartner'] %}
+                      Pensions (state, work, private)<br>
+                      {% endif %}
+                      {% if 'earned-income' in data['incomepartner'] %}
+                      Wages from a job<br>
+                      {% endif %}
+                      {% if 'benefits-income' in data['incomepartner'] %}
+                      State benefits<br>
+                      {% endif %}
+                      {% if 'nil-income' in data['incomepartner'] %}
+                      Money from somewhere else<br>
+                      {% endif %}
+                    
+                    
+                  </p>
                 </dd>
                 <dd class="cya-change">
                   <a href="/beforeyoustart/money-coming-in-single">
@@ -127,7 +142,22 @@ NHSBSA Prototype
                           <h2 class="heading-small">You receive income from</h2>
                         </dt>
                         <dd class="cya-answer">
-                          <p>Other benefits<br>Pensions<br>Money from somewhere else</p>
+                          <p>
+                              {% if 'pension-income' in data['incomesingle'] %}
+                              Pensions (state, work, private)<br>
+                              {% endif %}
+                              {% if 'earned-income' in data['incomesingle'] %}
+                              Wages from a job<br>
+                              {% endif %}
+                              {% if 'benefits-income' in data['incomesingle'] %}
+                              State benefits<br>
+                              {% endif %}
+                              {% if 'nil-income' in data['incomesingle'] %}
+                              Money from somewhere else<br>
+                              {% endif %}
+
+
+                          </p>
                         </dd>
                         <dd class="cya-change">
                           <a href="/beforeyoustart/money-coming-in-partner">
