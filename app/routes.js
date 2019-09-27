@@ -112,9 +112,7 @@ router.get(/partner-handler/, function (req, res) {
 });
 
 router.get(/whatispartnersincome-handler/, function (req, res) {
-  if (req.query.incomepartner.includes('earned-income')) {
-    res.redirect('../kickouts/developed');
-  } else if (req.query.incomepartner.includes('maintenance-income')) {
+  if (req.query.incomepartner.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('maternitypaternity-income')) {
     res.redirect('../kickouts/developed');
@@ -124,27 +122,41 @@ router.get(/whatispartnersincome-handler/, function (req, res) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomepartner.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
+  } else if (req.query.incomepartner == 'pension-income') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.incomepartner == 'earned-income') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner == 'benefits-income') {
+      res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.incomepartner == 'nil-income') {
+      res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income') {
+  } else if (req.query.incomepartner.toString() == 'pension-income,earned-income,benefits-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } else if (req.query.incomepartner.toString() == 'benefits-income,pension-income,nil-income') {
+  } else if (req.query.incomepartner.toString() == 'pension-income,earned-income,nil-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
+  } else if (req.query.incomepartner.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else if (req.query.incomepartner.toString() == 'pension-income,benefits-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
   } else if (req.query.incomepartner.toString() == 'pension-income,nil-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } else if (req.query.incomepartner == 'pension-income') {
+  } else if (req.query.incomepartner.toString() == 'earned-income,benefits-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } else if (req.query.incomepartner == 'nil-income') {
+  } else if (req.query.incomepartner.toString() == 'earned-income,nil-income') {
     res.redirect('/beforeyoustart/money-coming-in-single');
-  } 
+  } else if (req.query.incomepartner.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  } else {
+    res.redirect('/beforeyoustart/money-coming-in-partner');
+  }
 });
 
 router.get(/whatissingleincome-handler/, function (req, res) {
-  if (req.query.incomesingle.includes('earned-income')) {
-    res.redirect('../kickouts/developed');
-  } else if (req.query.incomesingle.includes('maintenance-income')) {
+  if (req.query.incomesingle.includes('maintenance-income')) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('maternitypaternity-income')) {
     res.redirect('../kickouts/developed');
@@ -154,21 +166,37 @@ router.get(/whatissingleincome-handler/, function (req, res) {
     res.redirect('../kickouts/developed');
   } else if (req.query.incomesingle.includes('selfemployed-income')) {
     res.redirect('../kickouts/developed');
-  } else if (req.query.incomesingle == 'benefits-income') {
-    res.redirect('/beforeyoustart/answers');
-  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income') {
-    res.redirect('/beforeyoustart/answers');
-  } else if (req.query.incomesingle.toString() == 'benefits-income,pension-income,nil-income') {
-    res.redirect('/beforeyoustart/answers');
-  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
-    res.redirect('/beforeyoustart/answers');
-  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
-    res.redirect('/beforeyoustart/answers');
   } else if (req.query.incomesingle == 'pension-income') {
-    res.redirect('/beforeyoustart/answers');
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle == 'earned-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle == 'benefits-income') {
+      res.redirect('/beforeyoustart/more-than-6000');
   } else if (req.query.incomesingle == 'nil-income') {
-    res.redirect('/beforeyoustart/answers');
-  } 
+      res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,earned-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,benefits-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'pension-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,benefits-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'earned-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else if (req.query.incomesingle.toString() == 'benefits-income,nil-income') {
+    res.redirect('/beforeyoustart/more-than-6000');
+  } else {
+    res.redirect('/beforeyoustart/money-coming-in-single');
+  }
 });
 
 router.get(/asylumsingle-handler/, function (req, res) {
@@ -2736,4 +2764,125 @@ router.get(/moneyfromparents-handler/, function (req, res) {
 
 router.get(/assess-search-handler/, function (req, res) {
     res.redirect('evidence-case');
+});
+
+// ************************
+// Eligibility Checker Divorce
+// ************************
+
+router.get(/applyonlinesplit-handler/, function (req, res) {
+  if (req.query.applyonline == 'yes') {
+    res.redirect('/apply/what-you-will-need-split');
+  } else if (req.query.applyonline == 'no') {
+    res.redirect('/kickouts/apply-offline');
+  }
+});
+
+router.get(/countrysplit-handler/, function (req, res) {
+  if (req.query.country == 'England') {
+    res.redirect('/beforeyoustart/care-home-split');
+  } else if (req.query.country == 'Scotland') {
+    res.redirect('/beforeyoustart/care-home-split');
+  } else if (req.query.country == 'Wales') {
+    res.redirect('/beforeyoustart/care-home-split');
+  } else if (req.query.country == 'Northern Ireland') {
+    res.redirect('/kickouts/northern-ireland-split');
+  } else {
+    res.redirect('/beforeyoustart/country-split');
+  }
+});
+
+router.get(/gppracticesplit-handler/, function (req, res) {
+  if (req.query.gppractice == 'yes') {
+    res.redirect('/beforeyoustart/date-of-birth-split');
+  } else if (req.query.gppractice == 'no') {
+    res.redirect('/beforeyoustart/date-of-birth-split');
+  } else {
+    res.redirect('/beforeyoustart/gp-practice-split');
+  }
+});
+
+router.get(/highlandssplit-handler/, function (req, res) {
+  if (req.query.highlands == 'yes') {
+    res.redirect('/beforeyoustart/date-of-birth-split');
+  } else if (req.query.highlands == 'no') {
+    res.redirect('/beforeyoustart/date-of-birth-split');
+  } else {
+    res.redirect('/beforeyoustart/highlands-split');
+  }
+});
+
+router.get(/dateofbirthsplit-handler/, function (req, res) {
+
+  var today = new Date();
+  var date = new Date(req.query.year,req.query.month,req.query.day,0,0,0);
+  var difference = (today-date)/(1000*60*60*24*365);
+
+  if (difference <= 16) {
+    res.redirect('/beforeyoustart/passport/u16-passport');
+  } else if (difference > 16 && difference <= 19) {
+    res.redirect('/beforeyoustart/full-time-education-split');
+  } else if (difference > 19) {
+    res.redirect('/beforeyoustart/care-home-split');
+  } else {
+    res.redirect('/beforeyoustart/date-of-birth-split');
+  }
+});
+
+router.get(/fulltimeeducationsplit-handler/, function (req, res) {
+  if (req.query.fulltimeeducation == 'yes') {
+    res.redirect('/beforeyoustart/passport/u19-passport');
+  } else if (req.query.fulltimeeducation == 'no') {
+    res.redirect('/beforeyoustart/care-home-split');
+  } else {
+    res.redirect('/beforeyoustart/full-time-education-split');
+  }
+});
+
+router.get(/carehomesplit-handler/, function (req, res) {
+  if (req.query.carehome == 'yes') {
+    res.redirect('/beforeyoustart/care-home-support-split');
+  } else if (req.query.carehome == 'no') {
+    res.redirect('/beforeyoustart/partner');
+  } else {
+    res.redirect('/beforeyoustart/care-home-split');
+  }
+});
+
+router.get(/carehomesupportsplit-handler/, function (req, res) {
+  if (req.query.carehomesupport == 'yes') {
+    res.redirect('/beforeyoustart/care-home-name-split');
+  } else if (req.query.carehomesupport == 'no') {
+    res.redirect('/kickouts/developed');
+  } else {
+    res.redirect('/beforeyoustart/care-home-split');
+  }
+});
+
+router.get(/carehomenamesplit-handler/, function (req, res) {
+  if (req.query.carehomename) {
+    res.redirect('/beforeyoustart/care-home-answers');
+  } else {
+    res.redirect('/beforeyoustart/care-home-name-split');
+  }
+});
+
+router.get(/savingssplit-handler/, function (req, res) {
+  if (req.query.savings== 'yes') {
+    res.redirect('/kickouts/developed');
+  } else if (req.query.savings== 'no') {
+    res.redirect('/beforeyoustart/education-or-training');
+  } else {
+    res.redirect('/beforeyoustart/more-than-6000');
+  }
+});
+
+router.get(/educationtrainingsplit-handler/, function (req, res) {
+  if (req.query.educationtraining== 'yes') {
+    res.redirect('/kickouts/students-developed');
+  } else if (req.query.educationtraining== 'no') {
+    res.redirect('/beforeyoustart/check-your-answers-check-eligibility');
+  } else {
+    res.redirect('/beforeyoustart/more-than-6000');
+  }
 });

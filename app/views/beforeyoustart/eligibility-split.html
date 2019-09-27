@@ -1,0 +1,106 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+  .callout {
+  border: 8px solid #0072ce;
+  padding: 16px;
+  padding-top: 0 !important;
+}
+.form-group {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  float: left;
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+  margin-bottom: 30px;
+}
+}
+.secondary-button {
+  background-color: #005EA5;
+}
+.secondary-button:hover, .secondary-button:focus {
+  background-color: #00458C;
+}
+</style>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Would you like to check what help you are entitled to with your NHS costs?</h1>
+      </header>
+
+      <form action="textemailSaveRestoreiteration1-handler" method="get" class="form">
+
+
+        <fieldset class="form-group">
+
+            <div class="multiple-choice">
+              <input id="yes" name="textemail" type="radio" value="email">
+              <label for="yes" style="line-height: 195%;">Yes</label>
+            </div>
+
+            <div class="multiple-choice" data-target="textmessage">
+              <input id="no" name="textemail" type="radio" value="textmessage">
+              <label for="no" style="line-height: 195%;">No</label>
+            </div>
+
+
+
+
+              <div class="callout form-group js-hidden" id="textmessage">
+                <p style="margin-top: 1.05263em;">You could be eligible depending on your household income and outgoings.</p>
+
+                  <p>You don’t have to be claiming benefits to apply. People on low incomes with jobs may also be eligible. We take your total household income into account as well as your Council Tax and housing costs.</p>
+                  
+                  <p>If you are still unsure, you can:</p>
+                  
+                  <p><a href="#">Check if you can get help with health costs</a></p>
+
+              </div>
+
+          </fieldset>
+
+          <div class="form-group">
+              <input class="button" type="submit" value="Next">
+          </div>
+
+    </form>
+
+
+
+    </div>
+  </div>
+</main>
+</main>
+
+{% endblock %}

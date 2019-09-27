@@ -1,0 +1,186 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block content %}
+
+<main id="content" role="main">
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Apply for help with NHS costs</p>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Check your answers</h1>
+      </header>
+
+
+      <!-- only add a heading for a list if there is more than one list -->
+      <h2 class="heading-medium">
+        Check eligibility
+      </h2>
+
+      <!-- use additional modifier class to change column widths for multiple groups of questions and answers: -->
+      <!--   * `cya-questions-short` for short questions -->
+      <!--   * `cya-questions-long` for long questions -->
+      <!--   * none for single group of q&a -->
+      <dl class="govuk-check-your-answers cya-questions-short">
+
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Country you live in</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['country'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/country-split">
+                  Change
+                </a>
+              </dd>
+            </div>
+          <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Live permanently in a care home</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['carehome'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/care-home-split">
+                  Change
+                </a>
+              </dd>
+            </div>
+    
+            <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Live with a partner</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">{{ data['partner'] }}</p>
+              </dd>
+              <dd class="cya-change">
+                <a href="/beforeyoustart/partner">
+                  Change
+                </a>
+              </dd>
+            </div>
+    
+            <div>
+              <dt class="cya-question">
+                <h2 class="heading-small">Claimed asylum</h2>
+              </dt>
+              <dd class="cya-answer">
+                <p style="text-transform: capitalize;">
+                    {% if data['partner'] == "yes" %}
+                    {{ data['asylumPartner'] }}
+                    {% endif %}
+                    {% if data['partner'] == "no" %}
+                    {{ data['asylumsingle'] }}
+                    {% endif %}</p>
+              </dd>
+              <dd class="cya-change">
+                  {% if data['partner'] == "yes" %}
+                  <a href="/beforeyoustart/asylum/claimed-asylum-partner">
+                    Change
+                  </a>
+                  {% endif %}
+                  {% if data['partner'] == "no" %}
+                  <a href="/beforeyoustart/asylum/claimed-asylum-single">
+                    Change
+                  </a>
+                  {% endif %}
+              </dd>
+            </div>
+
+
+            {% if data['partner'] == "yes" %}
+            <div>
+                <dt class="cya-question">
+                  <h2 class="heading-small">Your partner receives income from</h2>
+                </dt>
+                <dd class="cya-answer">
+                  <p>Other benefits<br>Pensions<br>Money from somewhere else</p>
+                </dd>
+                <dd class="cya-change">
+                  <a href="/beforeyoustart/money-coming-in-single">
+                    Change
+                  </a>
+                </dd>
+              </div>
+            {% endif %}
+    
+    
+                    <div>
+                        <dt class="cya-question">
+                          <h2 class="heading-small">You receive income from</h2>
+                        </dt>
+                        <dd class="cya-answer">
+                          <p>Other benefits<br>Pensions<br>Money from somewhere else</p>
+                        </dd>
+                        <dd class="cya-change">
+                          <a href="/beforeyoustart/money-coming-in-partner">
+                            Change
+                          </a>
+                        </dd>
+                      </div>
+
+
+
+
+
+    
+                      <div>
+                          <dt class="cya-question">
+                            <h2 class="heading-small">Have more than £6000</h2>
+                          </dt>
+                          <dd class="cya-answer">
+                              <p style="text-transform: capitalize;">{{ data['savings'] }}</p>
+                          </dd>
+                          <dd class="cya-change">
+                            <a href="/beforeyoustart/more-than-6000">
+                              Change
+                            </a>
+                          </dd>
+                        </div>
+    
+                        <div>
+                            <dt class="cya-question">
+                              <h2 class="heading-small">In education or training</h2>
+                            </dt>
+                            <dd class="cya-answer">
+                                <p style="text-transform: capitalize;">{{ data['educationtraining'] }}</p>
+                            </dd>
+                            <dd class="cya-change">
+                              <a href="/beforeyoustart/education-or-training">
+                                Change
+                              </a>
+                            </dd>
+                          </div>
+
+      </dl>
+
+      <br>
+
+      <div class="form-group">
+        <a href="/apply/task-list/task-list"><input class="button" type="submit" value="Next"></a>
+      </div>
+
+
+
+    </div>
+  </div>
+</main>
+
+{% endblock %}

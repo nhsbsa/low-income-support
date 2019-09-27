@@ -1,0 +1,98 @@
+{% extends "layout_bsa.html" %}
+
+{% block page_title %}
+NHSBSA Prototype
+{% endblock %}
+
+{% block proposition_header %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block header_class %}
+<!-- blank to remove the proposition header -->
+{% endblock %}
+
+{% block content %}
+<style>
+  .callout {
+    border: 8px solid #0072ce;
+    padding: 16px;
+    padding-top: 0 !important;
+}
+.form-group {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+    width: 100%;
+    margin-bottom: 15px;
+}
+@media (min-width: 641px) {
+.form-group {
+    margin-bottom: 30px;
+}
+}
+</style>
+<main id="content" role="main">
+
+  <div class="phase-banner">
+    <p>
+      <strong class="phase-tag">BETA</strong>
+      This is a new service
+      <span> - your <a target="" href="#">feedback</a> will help us to improve it.</span>
+    </p>
+  </div>
+
+  <div class="grid-row">
+    <div class="column-two-thirds">
+
+      <a href="javascript:history.go(-1)" class="link-back">Back</a>
+
+      <header class="page-header">
+        <p class="page-header--sub heading-secondary">Before you start</p>
+        <h1 style="margin-top: 0; margin-bottom: 0.625em;" class="page-header--lede heading-large">Who is entitled to further help?</h1>
+      </header>
+
+      <p>If you have a low income, the NHS Low Income Scheme could help you pay for:</p>
+
+      <ul class="list list-bullet">
+        <li>NHS prescription charges</li>
+        <li>NHS dental treatment charges</li>
+        <li>the cost of sight tests, glasses and contact lenses</li>
+        <li>the cost of travelling to receive NHS treatment</li>
+        <li>NHS wigs and fabric supports (check with your hospital for their arrangements for supplying NHS wigs)</li>
+      </ul>
+
+      <p>The amount of help you’re entitled to depends on your household income and outgoings. Any help you’re entitled to is also available to your partner, if you have one.</p>
+
+      <p>If you have already paid for treatment, you can apply for a refund at the same time as you apply for the scheme.</p>
+
+      <details>
+        <summary><span class="summary">Who doesn't need to apply</span></summary>
+        <br>
+        <div class="panel panel-border-narrow" id="details-content-0" aria-hidden="false">
+
+          <p>You already get full help with health costs if you or your partner get:</p>
+          <ul class="list-bullet">
+            <li>Income Support</li>
+            <li>Income-based Jobseeker's Allowance</li>
+            <li>Income-related Employment and Support Allowance</li>
+            <li>Pension Credit Guarantee Credit</li>
+            <li>Universal Credit - if your earnings during your last complete assessment period were £435 or less, or £935 or less if you had a child element or had limited capability for work</li>
+          </ul>
+        </div>
+      </details>
+
+      <br><br>
+
+      <div class="form-group">
+        <a href="what-you-will-need-split"><input class="button" type="submit" value="Next"></a>
+      </div>
+
+    </div>
+
+  </div>
+
+</main>
+
+{% endblock %}
