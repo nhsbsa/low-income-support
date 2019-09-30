@@ -41,14 +41,12 @@ Help paying for NHS Costs prototype
             <!--                 <p class="instruction-list-item-extra-information">To work out the help you're entitled to, we need information about your housing costs and income.</p> -->
           </li>
           <li class="task-list-item">
-            <a aria-describedby="personal-details-completed" class="task-name" href="#">Personal details</a> <strong
-              class="task-completed" id="personaldets-completed">Completed</strong>
+            <a aria-describedby="personal-details-completed" class="task-name" href="#">Personal details</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           <li class="task-list-item">
-            <a class="task-name" href=#>Contact details</a><strong class="task-completed" id="contactdets-completed">Completed</strong>
-          </li>
-          <li class="task-list-item">
-            <a class="task-name" href="#">Education and training</a><strong class="task-completed" id="education-completed">Completed</strong>
+            <a class="task-name" href=#>Contact details</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
         </ul>
 
@@ -56,37 +54,44 @@ Help paying for NHS Costs prototype
         <ul class="task-list-items">
           {% if "earned-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/paye/job-title">Wages from a job</a>
+            <a class="task-name" href="/apply/income/paye/job-title">Wages from a job</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "benefits-income" in data['incomesingle'] %}
           <li class="task-list-item">
-              <a class="task-name" href="/apply/income/benefits/universal-credit">Benefits or tax credits</a>
+              <a class="task-name" href="/apply/income/benefits/universal-credit">Benefits or tax credits</a> <strong class="task-completed"
+              id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "pension-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/pension/pension-name">Pensions (state, work, private)</a>
+            <a class="task-name" href="/apply/income/pension/pension-name">Pensions (state, work, private)</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "maintenance-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/maintenance/receiving-for">Maintenance payments from an ex-partner</a>
+            <a class="task-name" href="/apply/income/maintenance/receiving-for">Maintenance payments from an ex-partner</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "selfemployed-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/selfemployed/about-selefemployed">Self-employment</a>
+            <a class="task-name" href="/apply/income/selfemployed/about-selefemployed">Self-employment</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "trustfunds-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/trustfunds/about-trustfunds">Trust funds</a>
+            <a class="task-name" href="/apply/income/trustfunds/about-trustfunds">Trust funds</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "nil-income" in data['incomesingle'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/none/none-how-paying">Money from other sources</a>
+            <a class="task-name" href="/apply/income/none/none-how-paying">Money from other sources</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
         </ul>
@@ -97,48 +102,53 @@ Help paying for NHS Costs prototype
         <h2 class="task-list-section"><span class="task-list-section-number">4.</span> About your partner</h2>
         <ul class="task-list-items">
           <li class="task-list-item">
-            <a class="task-name" href="#">Personal details</a>
-          </li>
-          <li class="task-list-item">
-            <a class="task-name" href="#">Education and training</a>
+            <a class="task-name" href="#">Personal details</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
         </ul>
 
-        <h2 class="task-list-section"><span class="task-list-section-number">3.</span> About your partners income</h2>
+        <h2 class="task-list-section"><span class="task-list-section-number">5.</span> About your partners income</h2>
         <ul class="task-list-items">
           {% if "earned-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/paye/job-title">Wages from a job</a>
+            <a class="task-name" href="/apply/income/paye/job-title">Wages from a job</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "benefits-income" in data['incomepartner'] %}
           <li class="task-list-item">
-              <a class="task-name" href="/apply/income/benefits/universal-credit">Benefits or tax credits</a>
+              <a class="task-name" href="/apply/income/benefits/universal-credit">Benefits or tax credits</a> <strong class="task-completed"
+              id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "pension-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/pension/pension-name">Pensions (state, work, private)</a>
+            <a class="task-name" href="/apply/income/pension/pension-name">Pensions (state, work, private)</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "maintenance-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/maintenance/receiving-for">Maintenance payments from an ex-partner</a>
+            <a class="task-name" href="/apply/income/maintenance/receiving-for">Maintenance payments from an ex-partner</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "selfemployed-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/selfemployed/about-selefemployed">Self-employment</a>
+            <a class="task-name" href="/apply/income/selfemployed/about-selefemployed">Self-employment</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "trustfunds-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/trustfunds/about-trustfunds">Trust funds</a>
+            <a class="task-name" href="/apply/income/trustfunds/about-trustfunds">Trust funds</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
           {% if "nil-income" in data['incomepartner'] %}
           <li class="task-list-item">
-            <a class="task-name" href="/apply/income/none/none-how-paying">Money from other sources</a>
+            <a class="task-name" href="/apply/income/none/none-how-paying">Money from other sources</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           {% endif %}
         </ul>
@@ -151,10 +161,12 @@ Help paying for NHS Costs prototype
         <ul class="task-list-items">
 
           <li class="task-list-item">
-            <a class="task-name" href="#">Where you live</a>
+            <a class="task-name" href="#">Where you live</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
           <li class="task-list-item">
-            <a class="task-name" href="#">People who live with you</a>
+            <a class="task-name" href="#">People who live with you</a> <strong class="task-completed"
+            id="eligibility-completed" style="background-color: #CD4B0A;">Incomplete</strong>
           </li>
         </ul>
 
