@@ -1887,6 +1887,190 @@ router.get(/carersallowanceiteration23-handler/, function (req, res) {
 });
 
 // ************************
+// BENEFITS (Iteration 5)
+// ************************
+
+router.get(/universalcredititeration5-handler/, function (req, res) {
+  if (req.query.universalcredit == 'yes') {
+    res.redirect('universal-credit-any');
+  } if (req.query.universalcredit == 'no') {
+    res.redirect('tax-credits');
+  } else if (req.query.universalcredit == 'not-yet') {
+    res.redirect('universal-credit-awaiting');
+  }
+});
+
+router.get(/universalcreditanyiteration5-handler/, function (req, res) {
+  if (req.query.universalcreditany == 'yes') {
+    res.redirect('universal-credit-935');
+  } else if (req.query.universalcreditany == 'no') {
+    res.redirect('universal-credit-435');
+  }
+});
+
+router.get(/universalcredit935iteration5-handler/, function (req, res) {
+  if (req.query.universalcredit935 == 'yes') {
+    res.redirect('passport-935');
+  } else if (req.query.universalcredit935 == 'no') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/universalcredit435iteration5-handler/, function (req, res) {
+  if (req.query.universalcredit435 == 'yes') {
+    res.redirect('passport-435');
+  } else if (req.query.universalcredit435 == 'no') {
+    res.redirect('tax-credits');
+  }
+});
+
+router.get(/taxcreditsiteration5-handler/, function (req, res) {
+  if (req.query.taxcredits == 'yes') {
+    res.redirect('tax-credits-type');
+  } else if (req.query.taxcredits == 'no') {
+    res.redirect('any-other-benefits');
+  }
+});
+
+router.get(/taxcredittypeiteration5-handler/, function (req, res) {
+  if (req.query.taxcredittype == 'WTCCTC') {
+    res.redirect('any-other-benefits');
+  } if (req.query.taxcredittype == 'WTCDisability') {
+    res.redirect('any-other-benefits');
+  } if (req.query.taxcredittype == 'WTC') {
+    res.redirect('any-other-benefits');
+  } else if (req.query.taxcredittype == 'CTC') {
+    res.redirect('any-other-benefits');
+  }
+});
+
+router.get(/anyotherbenefitsiteration5-handler/, function (req, res) {
+  if (req.query.anyotherbenefits == 'yes') {
+    res.redirect('other-benefits1');
+  } else if (req.query.anyotherbenefits == 'no') {
+    res.redirect('carers-allowance');
+  }
+});
+
+router.get(/otherbenefits1iteration5-handler/, function (req, res) {
+
+  var listofBenefits1 = ['Armed forces independence payment', 'Attendance allowance', 'Bereavement allowance', 'Bereavement payment', 'Bereavement support payment', 'Budgeting loan', 'Carer\'s allowance', 'Carer\'s allowance Supplement (Scotland only)', 'Child benefit', 'Christmas bonus', 'Cold weather payment', 'Council tax reduction', 'Disability living allowance', 'Discretionary housing payment', 'ESA (Employment and support allowance)', 'Funeral payment', 'Guardian\'s allowance', 'Healthy start', 'Help with health costs', 'Housing benefit', 'Income support', 'Industrial injuries disablement benefit', 'JSA (Jobseeker\'s allowance)', 'Maternity allowance', 'Pension credit', 'PIP (Personal independence payment)', 'Reduced earnings allowance', 'Severe disablement allowance', 'State retirement pension', 'Statutory adoption pay', 'Statutory maternity pay', 'Statutory paternity pay', 'Statutory Shared Parental Pay (ShPP)', 'Statutory sick pay', 'Sure start maternity grant', 'Universal credit', 'Vaccine damage payment', 'War disablement pension', 'War widow\'s or widower\'s pension', 'Welfare Supplementary payments (Northern Ireland)', 'Widowed parent\'s allowance', 'Winter fuel payment'];
+
+  if (!listofBenefits1.includes(req.query.inputautocomplete1)) {
+    res.redirect('other-benefits1');
+  } else if (req.query.inputautocomplete1.includes('Income support'))  {
+    res.redirect('passport-incomesupport');
+  } else {
+    res.redirect('other-benefits-another1');
+  }
+
+
+});
+
+router.get(/otherbenefits2iteration5-handler/, function (req, res) {
+
+var listofBenefits2 = ['Armed forces independence payment', 'Attendance allowance', 'Bereavement allowance', 'Bereavement payment', 'Bereavement support payment', 'Budgeting loan', 'Carer\'s allowance', 'Carer\'s allowance Supplement (Scotland only)', 'Child benefit', 'Christmas bonus', 'Cold weather payment', 'Council tax reduction', 'Disability living allowance', 'Discretionary housing payment', 'ESA (Employment and support allowance)', 'Funeral payment', 'Guardian\'s allowance', 'Healthy start', 'Help with health costs', 'Housing benefit', 'Income support', 'Industrial injuries disablement benefit', 'JSA (Jobseeker\'s allowance)', 'Maternity allowance', 'Pension credit', 'PIP (Personal independence payment)', 'Reduced earnings allowance', 'Severe disablement allowance', 'State retirement pension', 'Statutory adoption pay', 'Statutory maternity pay', 'Statutory paternity pay', 'Statutory Shared Parental Pay (ShPP)', 'Statutory sick pay', 'Sure start maternity grant', 'Universal credit', 'Vaccine damage payment', 'War disablement pension', 'War widow\'s or widower\'s pension', 'Welfare Supplementary payments (Northern Ireland)', 'Widowed parent\'s allowance', 'Winter fuel payment'];
+
+if (!listofBenefits2.includes(req.query.inputautocomplete2)) {
+  res.redirect('other-benefits2');
+} else if (req.query.inputautocomplete2.includes('Income support'))  {
+  res.redirect('passport-incomesupport');
+} else {
+  res.redirect('other-benefits-another2');
+}
+
+});
+
+router.get(/benefitanother1-iteration-5-handler/, function (req, res) {
+  if (req.query.benefitanother1 == 'yes') {
+    res.redirect('other-benefits2');
+  } else if (req.query.benefitanother1 == 'no' && req.session.data['inputautocomplete1'].includes('JSA (Jobseeker\'s allowance)')) {
+    res.redirect('jobseekers-allowance-type');
+  } else if (req.query.benefitanother1 == 'no' && req.session.data['inputautocomplete1'].includes('ESA (Employment and support allowance)')) {
+    res.redirect('employment-support-allowance-type');
+  } else if (req.query.benefitanother1 == 'no' && req.session.data['inputautocomplete1'].includes('Pension credit')) {
+    res.redirect('pension-credit-type');
+  } else if (req.query.benefitanother1 == 'no') {
+    res.redirect('carers-allowance');
+  } else {
+    res.redirect('other-benefits-another1');
+  }
+});
+
+router.get(/otherbenefits2iteration5-handler/, function (req, res) {
+  res.redirect('other-benefits-another2');
+});
+
+router.get(/benefitanother2-iteration-5-handler/, function (req, res) {
+
+  var benefit1 = req.session.data['inputautocomplete1'] || 'N/A';
+  var benefit2 = req.session.data['inputautocomplete2'] || 'N/A';
+
+  if (req.query.benefitanother2 == 'yes') {
+    res.redirect('other-benefits2');
+  } else if (req.query.benefitanother2 == 'no' && (benefit1.includes('JSA (Jobseeker\'s allowance)') || benefit2.includes('JSA (Jobseeker\'s allowance)'))) {
+    res.redirect('jobseekers-allowance-type');
+  } else if (req.query.benefitanother2 == 'no' && (benefit1.includes('ESA (Employment and support allowance)') || benefit2.includes('ESA (Employment and support allowance)'))) {
+    res.redirect('employment-support-allowance-type');
+  } else if (req.query.benefitanother2 == 'no' && (benefit1.includes('Pension credit') || benefit2.includes('Pension credit'))) {
+    res.redirect('pension-credit-type');
+  } else if (req.query.benefitanother2 == 'no') {
+    res.redirect('carers-allowance');
+  } else {
+    res.redirect('other-benefits-another1');
+  }
+});
+
+router.get(/jobseekerstypeiteration-5-handler/, function (req, res) {
+
+  var benefit1 = req.session.data['inputautocomplete1'] || 'N/A';
+  var benefit2 = req.session.data['inputautocomplete2'] || 'N/A';
+
+  if (req.query.jobseekerstype == 'income') {
+    res.redirect('passport-jsa');
+  } else if (req.query.jobseekerstype == 'contribution' && (benefit1.includes('ESA (Employment and support allowance)') || benefit2.includes('ESA (Employment and support allowance)'))) {
+    res.redirect('employment-support-allowance-type');
+  } else if (req.query.jobseekerstype == 'contribution' && (benefit1.includes('Pension credit') || benefit2.includes('Pension credit'))) {
+    res.redirect('pension-credit-type');
+  } else if (req.query.jobseekerstype == 'contribution') {
+    res.redirect('carers-allowance');
+  }
+});
+
+router.get(/employmentsupporttypeiteration-5-handler/, function (req, res) {
+
+  var benefit1 = req.session.data['inputautocomplete1'] || 'N/A';
+  var benefit2 = req.session.data['inputautocomplete2'] || 'N/A';
+
+  if (req.query.employmentsupporttype == 'income') {
+    res.redirect('passport-esa');
+  } else if (req.query.employmentsupporttype == 'contribution' && (benefit1.includes('Pension credit') || benefit2.includes('Pension credit'))) {
+    res.redirect('pension-credit-type');
+  } else if (req.query.employmentsupporttype == 'contribution') {
+    res.redirect('carers-allowance');
+  }
+});
+
+router.get(/pensioncredittypeiteration5-handler/, function (req, res) {
+  if (req.query.pensioncredittype == 'GC') {
+    res.redirect('passport-pensioncredit');
+  } else if (req.query.pensioncredittype == 'GCwithSC') {
+    res.redirect('passport-pensioncredit');
+  } else if (req.query.pensioncredittype == 'SC') {
+    res.redirect('carers-allowance');
+  }
+});
+
+router.get(/additionalbenefitsiteration5-handler/, function (req, res) {
+  res.redirect('carers-allowance');
+});
+
+router.get(/carersallowanceiteration5-handler/, function (req, res) {
+  res.redirect('answers');
+});
+
+
+// ************************
 // COUNCIL TAX (Iteration 1)
 // ************************
 
@@ -2886,3 +3070,5 @@ router.get(/educationtrainingsplit-handler/, function (req, res) {
     res.redirect('/beforeyoustart/more-than-6000');
   }
 });
+
+

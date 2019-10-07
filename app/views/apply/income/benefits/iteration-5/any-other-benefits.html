@@ -13,7 +13,6 @@ NHSBSA Prototype
 {% endblock %}
 
 {% block content %}
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 
 <main id="content" role="main">
 
@@ -32,18 +31,27 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">State benefits</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">What other benefits do you receive?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Do you get any other benefits?</h1>
       </header>
 
-      <form action="additionalbenefitsiteration5-handler" method="get" class="form">
+      <form action="anyotherbenefitsiteration5-handler" method="get" class="form">
 
         <div class="form-group">
 
           <fieldset class="inline">
+            <legend class="visually-hidden">
+            </legend>
 
-              <p class="form-hint">We will only ask further details about benefits that can affect the outcome of your application.</p>
-              <textarea rows="5" class="form-control" id="textarea" id="pay" name="nonehowsupporting" maxlength="375"></textarea>
-              <p class="form-hint" style="margin-top: 10px;">You have <span id="chars">375</span> characters remaining</p>
+            <div class="multiple-choice">
+              <input id="yes" type="radio" name="anyotherbenefits" value="yes">
+              <label for="yes">Yes</label>
+            </div>
+
+            <div class="multiple-choice">
+              <input id="no" type="radio" name="anyotherbenefits" value="no">
+              <label for="no">No</label>
+            </div>
+
           </fieldset>
 
         </div>
@@ -56,14 +64,6 @@ NHSBSA Prototype
     </div>
   </div>
 </main>
-
-<script>
-  var maxLength = 375;
-  $('textarea').keyup(function() {
-    var length = $(this).val().length;
-    var length = maxLength-length;
-    $('#chars').text(length);
-  });
-</script>
+</main>
 
 {% endblock %}
