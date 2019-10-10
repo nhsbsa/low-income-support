@@ -2373,7 +2373,109 @@ router.get(/industrialinjuriestypeiteration5-handler/, function (req, res) {
     }
 });
 
-router.get(/carersallowanceiteration5-handler/, function (req, res) {
+router.get(/carersallowancetypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Incapacity Benefit'))) {
+      res.redirect('incapacity-benefit');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Severe disablement allowance'))) {
+      res.redirect('severe-disablement-allowance');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Armed Forces Compensation Scheme'))) {
+      res.redirect('armed-forces-compensation');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('War disablement pension'))) {
+      res.redirect('war-disablement-pension');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Bereavement allowance (previously Widow\'s Pension)'))) {
+      res.redirect('bereavement-allowance-amount');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Widowed parent\'s allowance'))) {
+      res.redirect('widowed-parents-allowance');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Bereavement support payment'))) {
+      res.redirect('bereavement-support-rate');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('War widow\'s or widower\'s pension'))) {
+      res.redirect('war-widow-pension');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Industrial death benefit'))) {
+      res.redirect('industrial-death-benefit');
+    } else if ((req.query.carersallowanceweek || req.query.carersallowance4weeks) && (benefitList.includes('Maternity allowance'))) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.carersallowanceweek || req.query.carersallowance4weeks) {
+      res.redirect('answers');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('carers-allowance');
+    }
+
+});
+
+router.get(/incapacitybenefittypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Severe disablement allowance'))) {
+      res.redirect('severe-disablement-allowance');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Armed Forces Compensation Scheme'))) {
+      res.redirect('armed-forces-compensation');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('War disablement pension'))) {
+      res.redirect('war-disablement-pension');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Bereavement allowance (previously Widow\'s Pension)'))) {
+      res.redirect('bereavement-allowance-amount');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Widowed parent\'s allowance'))) {
+      res.redirect('widowed-parents-allowance');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Bereavement support payment'))) {
+      res.redirect('bereavement-support-rate');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('War widow\'s or widower\'s pension'))) {
+      res.redirect('war-widow-pension');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Industrial death benefit'))) {
+      res.redirect('industrial-death-benefit');
+    } else if ((req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) && (benefitList.includes('Maternity allowance'))) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.incapacitybenefitweek || req.query.incapacitybenefit2weeks) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('incapacity-benefit');
+    }
+
+});
+
+router.get(/severedisablementtypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.severedisablement && benefitList.includes('Armed Forces Compensation Scheme')) {
+      res.redirect('armed-forces-compensation');
+    } else if (req.query.severedisablement && benefitList.includes('War disablement pension')) {
+      res.redirect('war-disablement-pension');
+    } else if (req.query.severedisablement && benefitList.includes('Bereavement allowance (previously Widow\'s Pension)')) {
+      res.redirect('bereavement-allowance-amount');
+    } else if (req.query.severedisablement && benefitList.includes('Widowed parent\'s allowance')) {
+      res.redirect('widowed-parents-allowance');
+    } else if (req.query.severedisablement && benefitList.includes('Bereavement support payment')) {
+      res.redirect('bereavement-support-rate');
+    } else if (req.query.severedisablement && benefitList.includes('War widow\'s or widower\'s pension')) {
+      res.redirect('war-widow-pension');
+    } else if (req.query.severedisablement && benefitList.includes('Industrial death benefit')) {
+      res.redirect('industrial-death-benefit');
+    } else if (req.query.severedisablement && benefitList.includes('Maternity allowance')) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.severedisablement) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('severe-disablement-allowance');
+    }
+
+});
+
+router.get(/carersallowanceotherbenefititeration5-handler/, function (req, res) {
   res.redirect('answers');
 });
 
