@@ -12,7 +12,7 @@ NHSBSA Prototype
 <!-- blank to remove the proposition header -->
 {% endblock %}
 
-{% set benefitCount = benefitList | length %}
+{% set benefitCount = data['benefitList'] | length %}
 
 {% block content %}
 
@@ -33,16 +33,31 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">State benefits</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">You have {{ benefitCount }} benefit</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">You have added {{ benefitCount }} additional benefit{% if benefitCount > 1 %}s{% endif %}</h1>
       </header>
 
-      <h2 class="heading-small">Benefits</h2>
+      <h2 class="heading-small">Additional benefits</h2>
 
-      <li>{{ data | dump }}</li>
+      <table>
+          <tbody>
+{% for benefitName in data['benefitList'] %}
+
+        <tr>
+            <td valign="top" style="width: 75%">{{ benefitName}}</td>
+            <td valign="top" style="width: 25%"><a href="#">Edit<span class="visuallyhidden">Scottish Widows pension amount or
+                        frequency of payments</span></a> or <a href="#">Remove<span class="visuallyhidden">Scottish
+                        Widows from your pension income</span></a>
+            </td>
+        </tr>
+
+{% endfor %}
+    </tbody>
+    </table>
 
 
 
-      <h2 class="heading-medium">Do you get another benefit?</h2>
+
+      <h2 class="heading-medium">Do you get any another benefits?</h2>
 
       <form action="addanotherbenefititeration5-handler" method="get" class="form">
 
