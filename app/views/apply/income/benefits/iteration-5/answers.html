@@ -119,10 +119,7 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
             <p id="capitalize">
-              {{ data['inputautocomplete1'] }}
-              {% if data['inputautocomplete2']%}
-              ,<br>{{ data['inputautocomplete2'] }}
-              {% endif %}
+              {{ data['inputautocomplete1'] }}{% if data['inputautocomplete2']%},<br>{{ data['inputautocomplete2'] }}{% endif %}
             </p>
           </dd>
           <dd class="cya-change">
@@ -139,7 +136,7 @@ NHSBSA Prototype
 {% if (data['inputautocomplete1'] == "JSA (Jobseeker's allowance)") or (data['inputautocomplete2'] == "JSA (Jobseeker's allowance)") %}
 <div>
     <dt class="cya-question">
-      <h2 class="heading-small">Type of JSA</h2>
+      <h2 class="heading-small">JSA type</h2>
     </dt>
     <dd class="cya-answer">
       <p id="capitalize">
@@ -162,7 +159,7 @@ NHSBSA Prototype
 {% if (data['inputautocomplete1'] == "ESA (Employment and support allowance)") or (data['inputautocomplete2'] == "ESA (Employment and support allowance)") %}
 <div>
     <dt class="cya-question">
-      <h2 class="heading-small">Type of ESA</h2>
+      <h2 class="heading-small">ESA type</h2>
     </dt>
     <dd class="cya-answer">
       <p id="capitalize">
@@ -175,6 +172,60 @@ NHSBSA Prototype
           {% endif %}
         
         </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if (data['inputautocomplete1'] == "PIP (Personal independence payment)") or (data['inputautocomplete2'] == "PIP (Personal independence payment)") %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">PIP type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['dailyliving'] == "daily-living" %}
+          Daily living part
+          {% endif %}
+          {% if data['dailylivingtype'] == "enhanced" %}
+          <br>Enhanced rate
+          {% else %}
+          <br>Standard rate
+          {% endif %}
+          {% if data['mobility'] == "mobility" %}
+          <br>Mobility part
+          {% endif %}        
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if (data['inputautocomplete1'] == "Pension credit") or (data['inputautocomplete2'] == "Pension credit") %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">Pension credit type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['pensioncredittype'] == "GC" %}
+          Guarantee Credit only
+          {% endif %}
+          {% if data['pensioncredittype'] == "GCwithSC" %}
+          Guarantee Credit with Savings Credit
+          {% endif %}   
+          {% if data['pensioncredittype'] == "SC" %}
+          Savings Credit
+          {% endif %}         
+      </p>
     </dd>
     <dd class="cya-change">
       <a href="#">
@@ -204,7 +255,7 @@ NHSBSA Prototype
       <br>
 
       <div class="form-group">
-        <a href="/apply/task-list/task-list"><input class="button" type="submit" value="Next"></a>
+        <a href="task-list-complete"><input class="button" type="submit" value="Next"></a>
       </div>
 
 
