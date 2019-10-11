@@ -4,6 +4,8 @@
 NHSBSA Prototype
 {% endblock %}
 
+{% set benefitCount = data['benefitList'] | length %}
+
 {% block content %}
 <style>
 #capitalize::first-letter {
@@ -119,7 +121,18 @@ NHSBSA Prototype
           </dt>
           <dd class="cya-answer">
             <p id="capitalize">
-              {{ data['inputautocomplete1'] }}{% if data['inputautocomplete2']%},<br>{{ data['inputautocomplete2'] }}{% endif %}
+              
+                <table>
+                    <tbody>
+          {% for benefitName in data['benefitList'] %}
+          
+          {{ benefitName}}{% if benefitCount > 1 %},{% endif %}<br>
+          
+          {% endfor %}
+              </tbody>
+              </table>
+
+
             </p>
           </dd>
           <dd class="cya-change">
@@ -131,9 +144,7 @@ NHSBSA Prototype
         {% endif %}
 
 
-
-
-{% if (data['inputautocomplete1'] == "JSA (Jobseeker's allowance)") or (data['inputautocomplete2'] == "JSA (Jobseeker's allowance)") %}
+{% if "JSA (Jobseeker's allowance)" in data['benefitList'] %}
 <div>
     <dt class="cya-question">
       <h2 class="heading-small">JSA type</h2>
@@ -156,7 +167,7 @@ NHSBSA Prototype
   </div>
 {% endif %}
 
-{% if (data['inputautocomplete1'] == "ESA (Employment and support allowance)") or (data['inputautocomplete2'] == "ESA (Employment and support allowance)") %}
+{% if "ESA (Employment and support allowance)" in data['benefitList'] %}
 <div>
     <dt class="cya-question">
       <h2 class="heading-small">ESA type</h2>
@@ -181,7 +192,33 @@ NHSBSA Prototype
   </div>
 {% endif %}
 
-{% if (data['inputautocomplete1'] == "PIP (Personal independence payment)") or (data['inputautocomplete2'] == "PIP (Personal independence payment)") %}
+{% if "Pension credit" in data['benefitList'] %}
+<div>
+    <dt class="cya-question">
+      <h2 class="heading-small">Pension credit type</h2>
+    </dt>
+    <dd class="cya-answer">
+      <p id="capitalize">
+          {% if data['pensioncredittype'] == "GC" %}
+          Guarantee Credit only
+          {% endif %}
+          {% if data['pensioncredittype'] == "GCwithSC" %}
+          Guarantee Credit with Savings Credit
+          {% endif %}   
+          {% if data['pensioncredittype'] == "SC" %}
+          Savings Credit
+          {% endif %}         
+      </p>
+    </dd>
+    <dd class="cya-change">
+      <a href="#">
+        Change
+      </a>
+    </dd>
+  </div>
+{% endif %}
+
+{% if "PIP (Personal independence payment)" in data['benefitList'] %}
 <div>
     <dt class="cya-question">
       <h2 class="heading-small">PIP type</h2>
@@ -209,7 +246,7 @@ NHSBSA Prototype
   </div>
 {% endif %}
 
-{% if (data['inputautocomplete1'] == "Pension credit") or (data['inputautocomplete2'] == "Pension credit") %}
+{% if "Pension credit" in data['benefitList'] %}
 <div>
     <dt class="cya-question">
       <h2 class="heading-small">Pension credit type</h2>
@@ -236,12 +273,13 @@ NHSBSA Prototype
 {% endif %}
 
 
+
             <div>
               <dt class="cya-question">
                 <h2 class="heading-small">Looking after someone but can't get Carer's allowance</h2>
               </dt>
               <dd class="cya-answer">
-                <p id="capitalize">{{ data['carersallowance'] }}</p>
+                <p id="capitalize">{{ data['carersallowanceother'] }}</p>
               </dd>
               <dd class="cya-change">
                 <a href="#">
