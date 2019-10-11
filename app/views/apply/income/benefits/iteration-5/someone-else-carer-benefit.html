@@ -31,12 +31,15 @@ NHSBSA Prototype
 
       <header class="page-header">
         <p class="page-header--sub heading-secondary">State benefits</p>
-        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Are you looking after someone but can't get Carer's Allowance because you get another benefit instead?</h1>
+        <h1 class="page-header--lede heading-large" style="margin-bottom: 0.5555555556em;">Does someone get one of these benefits because they care for you?</h1>
       </header>
 
-      <p>Carer's Allowance is paid to someone caring for a severely disabled person</p>
+      <ul class="list list-bullet">
+          <li>Carer's Allowance</li>
+          <li>Carer element of Universal Credit</li>
+      </ul>
 
-      <form action="carersallowanceotherbenefititeration5-handler" method="get" class="form">
+      <form action="someoneelsecarertypeiteration5-handler" method="get" class="form">
 
         <div class="form-group">
 
@@ -45,12 +48,12 @@ NHSBSA Prototype
             </legend>
 
             <div class="multiple-choice">
-              <input id="yes" type="radio" name="carersallowanceother" value="yes">
+              <input id="yes" type="radio" name="someoneelsecarer" value="yes">
               <label for="yes">Yes</label>
             </div>
 
             <div class="multiple-choice">
-              <input id="no" type="radio" name="carersallowanceother" value="no">
+              <input id="no" type="radio" name="someoneelsecarer" value="no">
               <label for="no">No</label>
             </div>
 

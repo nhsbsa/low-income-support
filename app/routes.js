@@ -2656,7 +2656,46 @@ router.get(/maternityallowancetypeiteration5-handler/, function (req, res) {
 });
 
 router.get(/carersallowanceotherbenefititeration5-handler/, function (req, res) {
-  res.redirect('answers');
+
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.carersallowanceother && benefitList.includes('PIP (Personal independence payment)')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother && benefitList.includes('Disability living allowance')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother && benefitList.includes('Attendance allowance')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother && benefitList.includes('Industrial injuries disablement benefit')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother && benefitList.includes('Armed forces independence payment')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother && benefitList.includes('War disablement pension')) {
+      res.redirect('someone-else-carer-benefit');
+    } else if (req.query.carersallowanceother) {
+      res.redirect('answers');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('carers-allowance-other-benefit');
+    }
+
+});
+
+router.get(/someoneelsecarertypeiteration5-handler/, function (req, res) {
+
+  // Other benefits
+  
+    if (req.query.someoneelsecarer) {
+      res.redirect('answers');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('someone-else-carer-benefit');
+    }
 });
 
 
