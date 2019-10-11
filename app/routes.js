@@ -2559,6 +2559,102 @@ router.get(/bereavementallowancetypeiteration5-handler/, function (req, res) {
 
 });
 
+router.get(/widowedparentstypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.widowedparents && benefitList.includes('Bereavement support payment')) {
+      res.redirect('bereavement-support-rate');
+    } else if (req.query.widowedparents && benefitList.includes('War widow\'s or widower\'s pension')) {
+      res.redirect('war-widow-pension');
+    } else if (req.query.widowedparents && benefitList.includes('Industrial death benefit')) {
+      res.redirect('industrial-death-benefit');
+    } else if (req.query.widowedparents && benefitList.includes('Maternity allowance')) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.widowedparents) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('widowed-parents-allowance');
+    }
+
+});
+
+router.get(/bereavementsupporttypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.bereavementsupport && benefitList.includes('War widow\'s or widower\'s pension')) {
+      res.redirect('war-widow-pension');
+    } else if (req.query.bereavementsupport && benefitList.includes('Industrial death benefit')) {
+      res.redirect('industrial-death-benefit');
+    } else if (req.query.bereavementsupport && benefitList.includes('Maternity allowance')) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.bereavementsupport) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('bereavement-support-rate');
+    }
+});
+
+router.get(/warwidowtypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.warwidow && benefitList.includes('Industrial death benefit')) {
+      res.redirect('industrial-death-benefit');
+    } else if (req.query.warwidow && benefitList.includes('Maternity allowance')) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.warwidow) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('war-widow-pension');
+    }
+});
+
+router.get(/industrialdeathtypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.industrialdeath && benefitList.includes('Maternity allowance')) {
+      res.redirect('maternity-allowance');
+    } else if (req.query.industrialdeath) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('industrial-death-benefit');
+    }
+});
+
+router.get(/maternityallowancetypeiteration5-handler/, function (req, res) {
+  var benefitList = req.session.data['benefitList'];
+
+  // Other benefits
+  
+    if (req.query.maternityallowance) {
+      res.redirect('carers-allowance-other-benefit');
+  
+  // Refresh page in all other circumstances
+  
+    } else {
+      res.redirect('industrial-death-benefit');
+    }
+});
+
 router.get(/carersallowanceotherbenefititeration5-handler/, function (req, res) {
   res.redirect('answers');
 });
