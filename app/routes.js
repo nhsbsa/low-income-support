@@ -1950,19 +1950,36 @@ router.get(/taxcreditsiteration5-handler/, function (req, res) {
 
 router.get(/taxcredittypeiteration5-handler/, function (req, res) {
   if (req.query.taxcredittype == 'WTCCTC') {
-    res.redirect('any-other-benefits');
+    res.redirect('tax-credit-income');
   } if (req.query.taxcredittype == 'WTCDisability') {
-    res.redirect('any-other-benefits');
+    res.redirect('tax-credit-income');
   } if (req.query.taxcredittype == 'WTC') {
     res.redirect('any-other-benefits');
   } else if (req.query.taxcredittype == 'CTC') {
+    res.redirect('tax-credit-income');
+  }
+});
+
+router.get(/taxcreditincomeiteration5-handler/, function (req, res) {
+  if (req.query.taxcreditincome == 'yes') {
+    res.redirect('passport-taxcredits');
+  } if (req.query.taxcreditincome == 'no') {
     res.redirect('any-other-benefits');
+  } else {
+    res.redirect('tax-credit-income');
   }
 });
 
 router.get(/anyotherbenefitsiteration5-handler/, function (req, res) {
+
+  var universalCredit = req.session.data['universalcredit'];
+  var taxCredits = req.session.data['taxcredits'];
+
+
   if (req.query.anyotherbenefits == 'yes') {
     res.redirect('choose-benefit');
+  } else if (universalCredit == 'no' && taxCredits == 'no' && req.query.anyotherbenefits == 'no') {
+    res.redirect('any-other-benefits-error');
   } else if (req.query.anyotherbenefits == 'no') {
     res.redirect('carers-allowance-other-benefit');
   }
