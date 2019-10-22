@@ -1951,19 +1951,21 @@ router.get(/taxcreditsiteration5-handler/, function (req, res) {
 router.get(/taxcredittypeiteration5-handler/, function (req, res) {
   if (req.query.taxcredittype == 'WTCCTC') {
     res.redirect('tax-credit-income');
-  } if (req.query.taxcredittype == 'WTCDisability') {
+  } else if (req.query.taxcredittype == 'WTCDisability') {
     res.redirect('tax-credit-income');
-  } if (req.query.taxcredittype == 'WTC') {
+  } else if (req.query.taxcredittype == 'WTC') {
     res.redirect('any-other-benefits');
   } else if (req.query.taxcredittype == 'CTC') {
     res.redirect('tax-credit-income');
+  } else {
+    res.redirect('tax-credits-type');
   }
 });
 
 router.get(/taxcreditincomeiteration5-handler/, function (req, res) {
   if (req.query.taxcreditincome == 'yes') {
     res.redirect('passport-taxcredits');
-  } if (req.query.taxcreditincome == 'no') {
+  } else if (req.query.taxcreditincome == 'no') {
     res.redirect('any-other-benefits');
   } else {
     res.redirect('tax-credit-income');
