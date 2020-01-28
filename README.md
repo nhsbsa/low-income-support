@@ -1,7 +1,14 @@
-# NHSBSA prototype template
+# Low Income Scheme
 
+If you have a low income, the NHS Low Income Scheme could help you pay for:
 
-## About the prototype kit
+* NHS prescription charges
+* NHS dental treatment charges
+* the cost of sight tests, glasses and contact lenses
+* the cost of travelling to receive NHS treatment
+* NHS wigs and fabric supports (check with your hospital for their arrangements for supplying NHS wigs)
+
+## About the NHS BSA prototype kit
 
 This prototype is an adapted version of the GOV.UK prototype kit. It provides a simple way to make interactive prototypes which can be used to show ideas to people you work with, and to do user research.
 
