@@ -4,7 +4,7 @@ const _ = require('lodash');
 // NOTIFY
 // ************************
 var NotifyClient = require('notifications-node-client').NotifyClient
-var notifyClient = new NotifyClient('evidenceemail-d7f10c49-d20f-49b4-95e5-0c8b5e4fe650-277df34b-ea50-4a10-b24b-504213e86940')
+var notifyClient = new NotifyClient('###') // TO GET NOTIFY WORKING - INSERT NOTIFY API TOKEN HERE
 
 var express = require('express')
 var router = express.Router()
